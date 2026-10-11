@@ -16,7 +16,7 @@ SHAPES = {
     "clouds": (4, 6),
     "projectiles": (4, 2, 9),
 }
-SCHEMA = "thuai10-fourway-obs-v0.5"
+SCHEMA = "thuai10-fourway-obs-v0.6"
 
 
 def observe(game, player):
@@ -104,7 +104,11 @@ def observe(game, player):
         else:
             slot = structure_positions.index(game.local(e.pos, e.player))
             interval = (
-                game.cfg["buildings"][e.type].get("attack_ticks", 2) if modern else 2
+                game.attack_interval(e)
+                if game.cfg.get("targeting", {}).get("grid")
+                else game.cfg["buildings"][e.type].get("attack_ticks", 2)
+                if modern
+                else 2
             )
             arrays["structures"][e.player, slot] = (
                 1,
@@ -164,7 +168,7 @@ def observe(game, player):
 
 class FourWayEnv:
     metadata: ClassVar[dict] = {
-        "name": "THUAI10-Disconnect-v0.5",
+        "name": "THUAI10-Disconnect-v0.6",
         "obs_schema_version": SCHEMA,
     }
 
@@ -182,6 +186,7 @@ class FourWayEnv:
     def info(self):
         return {
             "mask": self.game.legal_masks(),
+            "skill_mask": self.game.skill_masks(),
             "alive": {side: p.alive for side, p in zip(SIDES, self.game.players)},
             "schema": self.game.cfg["obs_schema_version"],
         }

@@ -659,7 +659,7 @@ export class FourScene {
                             : data.linked
                               ? " · 联网"
                               : " · 离线")
-                      : `${data.hp}/${data.max_hp} HP`;
+                      : `${data.hp}/${data.max_hp} HP${data.jammed && data.attack_interval ? " · EMP射速压制" : ""}`;
             this.projectLabel(
                 e.label,
                 labelPos,

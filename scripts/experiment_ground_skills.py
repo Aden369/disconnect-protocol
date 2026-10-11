@@ -1,5 +1,6 @@
 """Controlled ground-target experiment; actors hold fire to isolate skill effects."""
 
+import argparse
 import copy
 import json
 import sys
@@ -9,8 +10,13 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from thuai10.fourway.game import FourWayGame
 
 
-def setup(moving=False):
-    game = FourWayGame()
+def setup(moving=False, config=None):
+    legacy = json.loads(
+        (Path(__file__).resolve().parents[1] / "configs/balance-v0.5.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    game = FourWayGame(config=config or legacy)
     game.entities = [e for e in game.entities if e.type == "hq"]
     game.nodes[0]["owner"] = 0
     game.nodes[1]["owner"] = 1
@@ -34,13 +40,13 @@ def setup(moving=False):
     return game, [e.uid for e in targets]
 
 
-def run():
-    base, target_ids = setup()
+def run(config=None):
+    base, target_ids = setup(config=config)
     rows = []
     for mode in ("control", "missile", "emp", "moving_missile"):
         game = copy.deepcopy(base)
         if mode == "moving_missile":
-            game, target_ids = setup(moving=True)
+            game, target_ids = setup(moving=True, config=config)
         before = {e.uid: e.hp for e in game.entities if e.uid in target_ids}
         start_linked = sum(uid in game.connected for uid in target_ids)
         start_commanded = sum(
@@ -85,8 +91,14 @@ def run():
 
 
 if __name__ == "__main__":
-    result = run()
-    out = Path("results/ground-skills-v0.5.json")
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--rules", choices=["v0.5", "v0.6"], default="v0.6")
+    args = parser.parse_args()
+    config = json.loads(
+        Path("configs/balance-" + args.rules + ".json").read_text(encoding="utf-8")
+    )
+    result = run(config=config)
+    out = Path("results/ground-skills-" + args.rules + ".json")
     out.write_text(
         json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )

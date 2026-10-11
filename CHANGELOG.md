@@ -1,6 +1,12 @@
 # Changelog
 
-## Unreleased
+## v0.6.0 — 2026-10-11
+
+- Adapt grid-targeted tactical skills and tower suppression from the teammate Sovereign design, retaining four-way real-time play.
+- Accept structured signal/missile/EMP coordinates alongside the existing 41 integer actions.
+- Make enemy tower attack intervals double under EMP or fixed interference; show suppression and ground impacts in the spectator UI.
+- Version replays and observations as v0.6; retain v0.3–v0.5 replay compatibility.
+
 
 - Experiment with missile ground clusters and frontline EMP targeting; record stationary/moving controls and real-match limitations.
 - Explain tactical ground-skill decisions in the spectator UI and preserve in-flight missile beacons.

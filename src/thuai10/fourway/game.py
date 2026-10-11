@@ -9,7 +9,7 @@ from collections import defaultdict, deque
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
 
-CONFIG_PATH = Path(__file__).resolve().parents[3] / "configs/balance-v0.5.json"
+CONFIG_PATH = Path(__file__).resolve().parents[3] / "configs/balance-v0.6.json"
 SIDES = ("p0", "p1", "p2", "p3")
 UNIT_TYPES = ("dog", "robot", "siege", "drone")
 N_ACTIONS = 41
@@ -327,6 +327,58 @@ class FourWayGame:
             beacon["center"], beacon["player"]
         )
 
+    def skill_legal(self, player, kind, center):
+        p = self.players[player]
+        if (
+            self.over
+            or not p.alive
+            or p.resources < self.cfg[kind]["cost"]
+            or self.tick < p.cooldowns[kind]
+        ):
+            return False
+        if kind == "signal":
+            return any(e.uid in self.connected for e in self.units(player))
+        if kind == "missile":
+            return self.tick + self.cfg["missile"]["flight"] <= self.cfg["time"][
+                "max_ticks"
+            ] and any(
+                b["player"] == player
+                and tuple(b["center"]) == tuple(center)
+                and self.beacon_active(b)
+                for b in self.beacons
+            )
+        return True
+
+    def skill_masks(self):
+        return {
+            side: {
+                kind: self.skill_legal(
+                    i,
+                    kind,
+                    next(
+                        (b["center"] for b in self.beacons if b["player"] == i),
+                        self.headquarters(i).pos,
+                    ),
+                )
+                for kind in ("signal", "missile", "jam")
+            }
+            for i, side in enumerate(SIDES)
+        }
+
+    def entities_type(self, uid):
+        return next(e.type for e in self.entities if e.uid == uid)
+
+    def attack_interval(self, entity):
+        spec = self.cfg["units"].get(
+            entity.type, self.cfg["buildings"].get(entity.type)
+        )
+        interval = spec.get("attack_ticks", 2)
+        if entity.type in ("cannon", "mortar", "antiair") and self.jammed(
+            entity.pos, entity.player
+        ):
+            interval *= self.cfg["jam"].get("tower_interval_multiplier", 1)
+        return interval
+
     def mask(self, player):
         mask = [False] * N_ACTIONS
         mask[0] = True
@@ -393,6 +445,8 @@ class FourWayGame:
         return {side: self.mask(i) for i, side in enumerate(SIDES)}
 
     def execute(self, player, action):
+        target = tuple(action["target"]) if isinstance(action, dict) else None
+        action = action["action"] if isinstance(action, dict) else action
         p = self.players[player]
         events = []
 
@@ -453,7 +507,7 @@ class FourWayGame:
             b = {
                 "uid": self.next_uid,
                 "player": player,
-                "center": self.region(action - 14),
+                "center": target or self.region(action - 14),
                 "until": self.tick + self.cfg["signal"]["duration"],
             }
             self.next_uid += 1
@@ -462,7 +516,7 @@ class FourWayGame:
         elif 23 <= action <= 40:
             missile = action <= 31
             kind = "missile" if missile else "jam"
-            center = self.region(action - (23 if missile else 32))
+            center = target or self.region(action - (23 if missile else 32))
             p.resources -= self.cfg[kind]["cost"]
             p.cooldowns[kind] = self.tick + self.cfg[kind]["cooldown"]
             beacon = next(
@@ -732,7 +786,7 @@ class FourWayGame:
                     target_uid=target.uid,
                     label="破坏城墙" if target.type == "wall" else "攻击" + target.type,
                 )
-                if self.tick - e.last_attack >= spec["attack_ticks"]:
+                if self.tick - e.last_attack >= self.attack_interval(e):
                     e.last_attack = self.tick
                     dmg = (
                         spec["damage"]
@@ -812,6 +866,10 @@ class FourWayGame:
                         "damage": amount,
                         "locked": projectile["locked"],
                         "hit": hit,
+                        "ground_hits": sum(
+                            self.entities_type(uid) in ("dog", "robot", "siege")
+                            for uid in hit
+                        ),
                         "tick": self.tick,
                     }
                 )
@@ -934,6 +992,24 @@ class FourWayGame:
                 and 0 <= value < N_ACTIONS
                 and old_masks[SIDES[i]][value]
             )
+            if isinstance(value, dict) and self.cfg.get("targeting", {}).get("grid"):
+                aid, center = value.get("action"), value.get("target")
+                valid = (
+                    isinstance(aid, int)
+                    and 14 <= aid <= 40
+                    and isinstance(center, (list, tuple))
+                    and len(center) == 2
+                    and all(
+                        type(v) is int and 0 <= v < self.cfg["map"]["size"]
+                        for v in center
+                    )
+                )
+                if valid:
+                    kind = "signal" if aid < 23 else "missile" if aid < 32 else "jam"
+                    # Evaluate against the same pre-action world as integer masks.
+                    valid = self.skill_legal(i, kind, center)
+                if valid:
+                    value = {"action": aid, "target": list(center)}
             effective.append(value if valid else 0)
             if not valid:
                 illegal.append(
@@ -957,6 +1033,7 @@ class FourWayGame:
             "state": self.snapshot(),
             "done": self.over,
             "masks": self.legal_masks(),
+            "skill_masks": self.skill_masks(),
             "illegal": illegal,
         }
 
@@ -1012,7 +1089,15 @@ class FourWayGame:
                 if e.type in UNIT_TYPES
             ],
             "buildings": [
-                asdict(e) for e in self.entities if e.type not in (*UNIT_TYPES, "wall")
+                {
+                    **asdict(e),
+                    "jammed": self.jammed(e.pos, e.player),
+                    "attack_interval": self.attack_interval(e)
+                    if e.type in ("cannon", "mortar", "antiair")
+                    else None,
+                }
+                for e in self.entities
+                if e.type not in (*UNIT_TYPES, "wall")
             ],
             "walls": [asdict(e) for e in self.entities if e.type == "wall"],
             "nodes": copy.deepcopy(self.nodes),

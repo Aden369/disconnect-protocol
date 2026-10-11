@@ -26,14 +26,18 @@ def play(seed, names):
     while not game.over:
         actions = [bot.act(game, i) for i, bot in enumerate(bots)]
         types = {e.uid: e.type for e in game.entities}
-        counts["ground_skill_decisions"] += sum(
+        counts["tactical_skill_decisions"] += sum(
             bool(getattr(bot, "last_reason", "")) for bot in bots
         )
         out = game.step(actions)
         for event in out["events"]:
             if event["type"] == "missile_impact":
-                counts["missile_ground_hits"] += sum(
-                    types.get(uid) in ("dog", "robot", "siege") for uid in event["hit"]
+                counts["missile_ground_hits"] += event.get(
+                    "ground_hits",
+                    sum(
+                        types.get(uid) in ("dog", "robot", "siege")
+                        for uid in event["hit"]
+                    ),
                 )
                 counts["missile_structure_hits"] += sum(
                     types.get(uid)
@@ -60,8 +64,8 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--mode", choices=["scripts", "random"], default="scripts")
     parser.add_argument("--games", type=int, default=24)
-    parser.add_argument("--out", default="results/fourway-scripts-v0.5.json")
-    parser.add_argument("--replay-out", default="results/fourway-replay-v0.5.json")
+    parser.add_argument("--out", default="results/fourway-scripts-v0.6.json")
+    parser.add_argument("--replay-out", default="results/fourway-replay-v0.6.json")
     args = parser.parse_args()
     permutations = list(itertools.permutations(POLICIES))
     rows = []
@@ -104,7 +108,7 @@ def main():
     path.write_text(
         json.dumps(
             {
-                "rules_version": "game-rules-v0.5",
+                "rules_version": "game-rules-v0.6",
                 "mode": args.mode,
                 "summary": summary,
                 "games": rows,

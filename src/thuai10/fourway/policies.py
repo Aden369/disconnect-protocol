@@ -49,6 +49,91 @@ def ground_region(game, player, radius, linked_only=False):
     return min(candidates, key=lambda c: (-c[0], -c[1], c[2][1], c[2][0]))[3]
 
 
+def ground_point(game, player):
+    """Estimate impact positions from current movement/engagement, then rank clusters."""
+    activity = {a["uid"]: a for a in game.activity}
+    enemies = [
+        e
+        for e in game.entities
+        if e.type in ("dog", "robot", "siege")
+        and e.hp > 0
+        and e.player != player
+        and game.players[e.player].alive
+    ]
+    predicted = []
+    for e in enemies:
+        a = activity.get(e.uid, {})
+        point = e.pos
+        if a.get("kind") == "move" and a.get("next"):
+            dx, dy = a["next"][0] - a["from"][0], a["next"][1] - a["from"][1]
+            steps = (
+                game.cfg["missile"]["flight"] // game.cfg["units"][e.type]["move_ticks"]
+            )
+            goal = (
+                e.command_goal if e.command_until > game.tick else e.objective or e.pos
+            )
+            steps = min(steps, distance(e.pos, goal))
+            point = tuple(
+                max(0, min(game.cfg["map"]["size"] - 1, e.pos[i] + (dx, dy)[i] * steps))
+                for i in range(2)
+            )
+        predicted.append((e, point))
+    candidates = {p for _, p in predicted}
+    ranked = []
+    for center in candidates:
+        if game.jammed(center, player):
+            continue
+        victims = [
+            e
+            for e, pos in predicted
+            if distance(pos, center) <= game.cfg["missile"]["radius"]
+        ]
+        score = sum(min(e.hp, game.cfg["missile"]["damage"]) for e in victims)
+        if len(victims) >= 2 and score >= 90:
+            ranked.append((score, len(victims), game.local(center, player), center))
+    return (
+        min(ranked, key=lambda r: (-r[0], -r[1], r[2][1], r[2][0]))[3]
+        if ranked
+        else None
+    )
+
+
+def frontline_point(game, player):
+    candidates = [
+        e.pos
+        for e in game.entities
+        if e.hp > 0
+        and e.player != player
+        and game.players[e.player].alive
+        and e.type in ("dog", "robot", "siege", "cannon", "mortar", "antiair")
+        and any(distance(e.pos, f.pos) <= 6 for f in game.units(player))
+    ]
+    ranked = []
+    for center in candidates:
+        affected = [
+            e
+            for e in game.entities
+            if e.hp > 0
+            and e.player != player
+            and game.players[e.player].alive
+            and not game.jammed(e.pos, e.player)
+            and distance(center, e.pos) <= game.cfg["jam"]["radius"]
+            and (
+                (e.type in ("cannon", "mortar", "antiair"))
+                or (
+                    e.type in ("dog", "robot", "siege", "drone")
+                    and e.uid in game.connected
+                )
+            )
+        ]
+        score = sum(
+            3 if e.type in ("cannon", "mortar", "antiair") else 1 for e in affected
+        )
+        if score >= 2:
+            ranked.append((score, game.local(center, player), center))
+    return min(ranked, key=lambda r: (-r[0], r[1][1], r[1][0]))[2] if ranked else None
+
+
 class Policy:
     def __init__(self, name, seed=0):
         if name not in POLICIES:
@@ -93,33 +178,66 @@ class Policy:
                 key=lambda m: (m["land_tick"], (m["player"] - player) % 4),
             )
             for missile in guided:
-                aid = 32 + region(missile["center"])
-                if mask[aid]:
-                    return aid
+                if game.cfg.get("targeting", {}).get("grid"):
+                    if game.skill_legal(player, "jam", missile["center"]):
+                        return {"action": 32, "target": list(missile["center"])}
+                else:
+                    aid = 32 + region(missile["center"])
+                    if mask[aid]:
+                        return aid
         own_missile = any(
             m["type"] == "missile" and m["player"] == player for m in game.projectiles
         )
-        if self.name == "electronic":
-            front = ground_region(
-                game, player, game.cfg["jam"]["radius"], linked_only=True
+        if game.cfg.get("targeting", {}).get("grid"):
+            if self.name == "electronic":
+                front = frontline_point(game, player)
+                if front and game.skill_legal(player, "jam", front):
+                    self.last_reason = "前线EMP：压制防御塔射速并切断部队通信"
+                    return {"action": 32, "target": list(front)}
+            beacon = next(
+                (
+                    b
+                    for b in game.beacons
+                    if b["player"] == player and game.beacon_active(b)
+                ),
+                None,
             )
-            if front is not None and mask[32 + front]:
-                self.last_reason = "EMP覆盖前线联网地面部队，取消已收信号指令"
-                return 32 + front
-        ground = ground_region(game, player, game.cfg["missile"]["radius"])
-        if ground is not None:
-            if mask[23 + ground]:
-                self.last_reason = "导弹打击地面集群；落地时重新判断命中"
-                return 23 + ground
+            if beacon and game.skill_legal(player, "missile", beacon["center"]):
+                self.last_reason = "按当前精确信标发射；落地时判定实际命中"
+                return {"action": 23, "target": list(beacon["center"])}
+            point = ground_point(game, player)
             if (
-                not own_missile
-                and mask[14 + ground]
+                point
+                and not own_missile
                 and game.tick >= p.cooldowns["missile"]
+                and game.skill_legal(player, "signal", point)
                 and p.resources
                 >= game.cfg["signal"]["cost"] + game.cfg["missile"]["cost"]
             ):
-                self.last_reason = "给地面集群建立导弹信标"
-                return 14 + ground
+                self.last_reason = "按预测地面集群逐格建立信标"
+                return {"action": 14, "target": list(point)}
+        else:
+            if self.name == "electronic":
+                front = ground_region(
+                    game, player, game.cfg["jam"]["radius"], linked_only=True
+                )
+                if front is not None and mask[32 + front]:
+                    self.last_reason = "EMP覆盖前线联网地面部队，取消已收信号指令"
+                    return 32 + front
+            ground = ground_region(game, player, game.cfg["missile"]["radius"])
+            if ground is not None:
+                if mask[23 + ground]:
+                    self.last_reason = "导弹打击地面集群；落地时重新判断命中"
+                    return 23 + ground
+                if (
+                    not own_missile
+                    and mask[14 + ground]
+                    and game.tick >= p.cooldowns["missile"]
+                    and p.resources
+                    >= game.cfg["signal"]["cost"] + game.cfg["missile"]["cost"]
+                ):
+                    self.last_reason = "给地面集群建立导弹信标"
+                    return 14 + ground
         live = [
             other.index
             for other in game.players

@@ -31,7 +31,7 @@ class CreateGameReq(BaseModel):
 
 class StepReq(BaseModel):
     action: Optional[int] = None
-    actions: Optional[dict[str, int]] = None
+    actions: Optional[dict[str, int | dict]] = None
 
 
 class ResetReq(BaseModel):
@@ -52,7 +52,7 @@ def create_game(req: CreateGameReq) -> dict:
             raise HTTPException(400, "四方各需要一个有效策略")
         sid, sess = four.create(req.seed, req.policies)
         return {"game_id": sid, "state": sess.game.snapshot(), "frame": sess.game.frame(),
-                "masks": sess.game.legal_masks(), "config": sess.game.cfg, "policies": sess.names}
+                "masks": sess.game.legal_masks(), "skill_masks": sess.game.skill_masks(), "config": sess.game.cfg, "policies": sess.names}
     if req.mode not in ("human", "watch"):
         raise HTTPException(400, "mode 应为 human 或 watch")
     if req.bot_left not in BOTS or req.bot_right not in BOTS:
@@ -79,7 +79,7 @@ def get_game(sid: str) -> dict:
     if sid in four.sessions:
         sess = four.sessions[sid]
         return {"game_id": sid, "state": sess.game.snapshot(), "frame": sess.game.frame(),
-                "masks": sess.game.legal_masks(), "mode": "four", "policies": sess.names}
+                "masks": sess.game.legal_masks(), "skill_masks": sess.game.skill_masks(), "mode": "four", "policies": sess.names}
     sess = _sess_or_404(sid)
     return {
         "game_id": sid,

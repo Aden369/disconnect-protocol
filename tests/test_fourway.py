@@ -227,7 +227,7 @@ def test_electronic_policy_interdicts_a_rivals_guided_missile():
     game = FourWayGame()
     game.step([16, 0, 0, 0])
     game.step([25, 0, 0, 0])
-    assert Policy("electronic").act(game, 2) == 34
+    assert Policy("electronic").act(game, 2) == {"action": 32, "target": [24, 4]}
 
 
 def test_rotating_policy_lineup_preserves_outcome_and_core_health():
@@ -260,7 +260,7 @@ def test_default_http_game_is_four_sided_with_skill_frames():
     assert len(out["decisions"]) == 4 and len(out["frames"]) == 4
     assert (
         client.get(f"/api/games/{sid}/replay").json()["rules_version"]
-        == "game-rules-v0.5"
+        == "game-rules-v0.6"
     )
 
 
@@ -551,3 +551,132 @@ def test_policy_does_not_replace_beacon_while_own_missile_is_in_flight():
     game.tick = 8
     assert game.mask(0)[18]
     assert Policy("missile").act(game, 0) not in range(14, 23)
+
+
+def test_precise_non_region_signal_and_missile_hit_ground_cluster():
+    import runpy
+
+    game, ids = runpy.run_path("scripts/experiment_ground_skills.py")["setup"](
+        config=FourWayGame().cfg
+    )
+    for uid, pos in zip(ids, ((11, 12), (11, 11), (12, 12))):
+        entity = next(e for e in game.entities if e.uid == uid)
+        entity.x, entity.y = pos
+    assert (11, 12) not in [game.region(i) for i in range(9)]
+    game.step([{"action": 14, "target": [11, 12]}, 0, 0, 0])
+    assert game.skill_masks()["p0"]["missile"]
+    assert not any(game.mask(0)[23:32])  # Coarse masks do not describe grid targets.
+    game.step([{"action": 23, "target": [11, 12]}, 0, 0, 0])
+    out = game.step([0, 0, 0, 0])
+    hit = next(e for e in out["events"] if e["type"] == "missile_impact")
+    assert hit["center"] == (11, 12) and hit["ground_hits"] == 3
+
+
+def test_precision_action_requires_correct_beacon_and_valid_grid():
+    game = FourWayGame()
+    initial = game.players[0].resources
+    out = game.step([{"action": 23, "target": [11, 12]}, 0, 0, 0])
+    assert out["illegal"] and not game.projectiles
+    assert game.players[0].resources == initial + 6
+    out = game.step([{"action": 14, "target": [29, 12]}, 0, 0, 0])
+    assert out["illegal"] and not game.beacons
+    game.step([{"action": 14, "target": [11, 12]}, 0, 0, 0])
+    out = game.step([{"action": 23, "target": [12, 12]}, 0, 0, 0])
+    assert out["illegal"] and not game.projectiles
+
+
+def test_emp_halves_enemy_tower_fire_rate_without_harming_friendly_tower():
+    game = FourWayGame()
+    game.entities = [e for e in game.entities if e.type == "hq"]
+    enemy = game.spawn(1, "cannon", (10, 10))
+    friend = game.spawn(0, "cannon", (10, 11))
+    for player, pos in ((0, (10, 15)), (1, (10, 16))):
+        unit = game.spawn(player, "siege", pos, slot=0)
+        unit.last_attack = unit.last_move = 1000
+    game.clouds.append({"uid": 9999, "player": 0, "center": (10, 10), "until": 100})
+    attacks = {enemy.uid: 0, friend.uid: 0}
+    for _ in range(8):
+        game.resolve_tick()
+        for intent in game.activity:
+            if intent["uid"] in attacks and intent["kind"] == "attack":
+                attacks[intent["uid"]] += 1
+    assert attacks == {enemy.uid: 2, friend.uid: 4}
+    assert game.attack_interval(enemy) == 4 and game.attack_interval(friend) == 2
+    assert next(b for b in game.frame()["buildings"] if b["uid"] == enemy.uid)["jammed"]
+
+
+def test_precise_replay_roundtrips_and_legacy_v05_remains_valid():
+    import json
+    from pathlib import Path
+
+    from thuai10.core.replay import verify
+
+    game = FourWayGame()
+    game.step([{"action": 14, "target": [11, 12]}, 0, 0, 0])
+    game.step([{"action": 23, "target": [11, 12]}, 0, 0, 0])
+    game.step([0, 0, 0, 0])
+    replay = json.loads(json.dumps(game.replay()))
+    assert verify(replay)["ok"]
+    old = json.loads(
+        Path("results/fourway-replay-v0.5.json").read_text(encoding="utf-8")
+    )
+    assert verify(old)["ok"]
+
+
+def test_policy_aims_at_grid_ground_cluster_and_counters_grid_missile():
+    import runpy
+
+    from thuai10.fourway.policies import Policy
+
+    game, ids = runpy.run_path("scripts/experiment_ground_skills.py")["setup"](
+        config=FourWayGame().cfg
+    )
+    for uid, pos in zip(ids, ((11, 12), (11, 11), (12, 12))):
+        e = next(e for e in game.entities if e.uid == uid)
+        e.x, e.y = pos
+    action = Policy("missile").act(game, 0)
+    assert action == {"action": 14, "target": [11, 12]}
+    game.execute(0, action)
+    game.execute(0, {"action": 23, "target": [11, 12]})
+    assert Policy("electronic").act(game, 2) == {"action": 32, "target": [11, 12]}
+
+
+def test_predictive_policy_does_not_modify_shared_world():
+    from thuai10.fourway.policies import Policy
+
+    game = FourWayGame()
+    game.headquarters(0).hp = 0
+    game.players[0].eliminated_tick = 0
+    game.entities = [e for e in game.entities if e.player != 0 or e.type == "hq"]
+    mover = next(e for e in game.units(3) if e.type == "robot")
+    game.activity = [
+        {
+            "uid": mover.uid,
+            "kind": "move",
+            "from": mover.pos,
+            "next": (mover.x + 1, mover.y),
+        }
+    ]
+    # An enemy's previous HQ objective is now dead; evaluating predictions must stay read-only.
+    game.compute_network()
+    before = game.checksum()
+    Policy("missile").act(game, 2)
+    assert game.checksum() == before
+
+
+def test_http_precision_actions_expose_skill_availability():
+    client = TestClient(app)
+    created = client.post("/api/games", json={}).json()
+    assert created["skill_masks"]["p0"]["signal"]
+    sid = created["game_id"]
+    out = client.post(
+        f"/api/games/{sid}/step",
+        json={"actions": {"p0": {"action": 14, "target": [11, 12]}}},
+    )
+    assert out.status_code == 200
+    assert out.json()["skill_masks"]["p0"]["missile"]
+    out = client.post(
+        f"/api/games/{sid}/step",
+        json={"actions": {"p0": {"action": 23, "target": [11, 12]}}},
+    )
+    assert out.status_code == 200 and not out.json()["illegal"]

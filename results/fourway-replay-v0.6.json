@@ -1,0 +1,1028 @@
+{
+  "schema_version": "thuai10-fourway-replay-v0.6",
+  "rules_version": "game-rules-v0.6",
+  "config": {
+    "version": "balance-v0.6",
+    "rules_version": "game-rules-v0.6",
+    "schema_version": "thuai10-fourway-replay-v0.6",
+    "obs_schema_version": "thuai10-fourway-obs-v0.6",
+    "map": {
+      "size": 29,
+      "hq_local": [
+        4,
+        4
+      ],
+      "deploy_local": [
+        [
+          9,
+          4
+        ],
+        [
+          4,
+          9
+        ]
+      ],
+      "nodes": [
+        [
+          10,
+          10
+        ],
+        [
+          18,
+          10
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          10,
+          18
+        ]
+      ],
+      "regions": [
+        4,
+        14,
+        24
+      ],
+      "wall_radius": 4,
+      "initial_buildings": [
+        [
+          "cannon",
+          [
+            6,
+            5
+          ]
+        ],
+        [
+          "mortar",
+          [
+            5,
+            6
+          ]
+        ],
+        [
+          "antiair",
+          [
+            2,
+            4
+          ]
+        ],
+        [
+          "jammer",
+          [
+            1,
+            1
+          ]
+        ]
+      ],
+      "building_sites": {
+        "cannon": [
+          [
+            6,
+            5
+          ],
+          [
+            6,
+            3
+          ]
+        ],
+        "jammer": [
+          [
+            1,
+            1
+          ]
+        ]
+      }
+    },
+    "time": {
+      "tick_seconds": 0.5,
+      "decision_ticks": 4,
+      "max_ticks": 360,
+      "overload_tick": 240,
+      "overload_initial": 12,
+      "overload_increment": 6,
+      "overload_period": 20
+    },
+    "economy": {
+      "initial": 140,
+      "income": 6,
+      "relay_income": 2,
+      "cap": 300
+    },
+    "limits": {
+      "units": 12,
+      "cannons": 2,
+      "jammers": 1,
+      "repairs": 5,
+      "drones": 2
+    },
+    "units": {
+      "dog": {
+        "hp": 65,
+        "damage": 9,
+        "building_damage": 9,
+        "range": 1,
+        "attack_ticks": 2,
+        "move_ticks": 1,
+        "batch": 2,
+        "cost": 40,
+        "air": false,
+        "anti_air": false
+      },
+      "robot": {
+        "hp": 110,
+        "damage": 15,
+        "building_damage": 15,
+        "range": 2,
+        "attack_ticks": 2,
+        "move_ticks": 1,
+        "batch": 2,
+        "cost": 70,
+        "air": false,
+        "anti_air": true
+      },
+      "siege": {
+        "hp": 170,
+        "damage": 7,
+        "building_damage": 38,
+        "range": 3,
+        "attack_ticks": 3,
+        "move_ticks": 2,
+        "batch": 1,
+        "cost": 50,
+        "air": false,
+        "anti_air": false
+      },
+      "drone": {
+        "hp": 45,
+        "damage": 0,
+        "building_damage": 0,
+        "range": 0,
+        "attack_ticks": 2,
+        "move_ticks": 1,
+        "batch": 1,
+        "cost": 45,
+        "air": true,
+        "armed": false,
+        "capture": false
+      }
+    },
+    "buildings": {
+      "hq": {
+        "hp": 500
+      },
+      "cannon": {
+        "hp": 180,
+        "damage": 18,
+        "range": 6,
+        "attack_ticks": 2,
+        "cost": 55
+      },
+      "jammer": {
+        "hp": 140,
+        "radius": 4,
+        "cost": 45
+      },
+      "wall": {
+        "hp": 100
+      },
+      "mortar": {
+        "hp": 150,
+        "damage": 12,
+        "range": 7,
+        "attack_ticks": 6,
+        "anti_air": false,
+        "indirect": true,
+        "splash": 1
+      },
+      "antiair": {
+        "hp": 120,
+        "damage": 15,
+        "range": 7,
+        "attack_ticks": 2,
+        "air_only": true
+      }
+    },
+    "support": {
+      "wall_cost": 25,
+      "wall_repair": 35,
+      "repair_cost": 30,
+      "repair_hp": 60,
+      "repair_cooldown": 16,
+      "tech_cost": 50,
+      "tech_unit_damage": 3,
+      "tech_cannon_damage": 4
+    },
+    "network": {
+      "hq_link": 16,
+      "relay_link": 8,
+      "hq_coverage": 9,
+      "relay_coverage": 6,
+      "drone_coverage": 4
+    },
+    "nodes": {
+      "range": 1,
+      "capture_ticks": 4
+    },
+    "signal": {
+      "cost": 8,
+      "duration": 24,
+      "cooldown": 8
+    },
+    "missile": {
+      "cost": 45,
+      "flight": 8,
+      "cooldown": 24,
+      "radius": 1,
+      "damage": 75,
+      "lost_damage": 15
+    },
+    "jam": {
+      "cost": 25,
+      "flight": 2,
+      "duration": 20,
+      "cooldown": 20,
+      "radius": 4,
+      "tower_interval_multiplier": 2
+    },
+    "targeting": {
+      "grid": true
+    }
+  },
+  "seed": 0,
+  "actions": [
+    [
+      {
+        "action": 14,
+        "target": [
+          24,
+          9
+        ]
+      },
+      {
+        "action": 14,
+        "target": [
+          19,
+          24
+        ]
+      },
+      {
+        "action": 14,
+        "target": [
+          4,
+          19
+        ]
+      },
+      {
+        "action": 14,
+        "target": [
+          9,
+          4
+        ]
+      }
+    ],
+    [
+      {
+        "action": 23,
+        "target": [
+          24,
+          9
+        ]
+      },
+      {
+        "action": 23,
+        "target": [
+          19,
+          24
+        ]
+      },
+      {
+        "action": 23,
+        "target": [
+          4,
+          19
+        ]
+      },
+      {
+        "action": 23,
+        "target": [
+          9,
+          4
+        ]
+      }
+    ],
+    [
+      3,
+      0,
+      {
+        "action": 32,
+        "target": [
+          9,
+          4
+        ]
+      },
+      5
+    ],
+    [
+      13,
+      10,
+      11,
+      12
+    ],
+    [
+      3,
+      0,
+      2,
+      3
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      4,
+      0,
+      0
+    ],
+    [
+      0,
+      {
+        "action": 14,
+        "target": [
+          12,
+          11
+        ]
+      },
+      {
+        "action": 32,
+        "target": [
+          6,
+          23
+        ]
+      },
+      0
+    ],
+    [
+      0,
+      {
+        "action": 23,
+        "target": [
+          12,
+          11
+        ]
+      },
+      0,
+      1
+    ],
+    [
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      {
+        "action": 32,
+        "target": [
+          10,
+          10
+        ]
+      },
+      1
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      4,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      4,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      34,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      {
+        "action": 14,
+        "target": [
+          18,
+          18
+        ]
+      },
+      0,
+      0
+    ],
+    [
+      0,
+      {
+        "action": 23,
+        "target": [
+          18,
+          18
+        ]
+      },
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      {
+        "action": 32,
+        "target": [
+          18,
+          18
+        ]
+      },
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      14,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      {
+        "action": 23,
+        "target": [
+          4,
+          4
+        ]
+      },
+      34,
+      0
+    ],
+    [
+      32,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      12,
+      0,
+      0
+    ],
+    [
+      4,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      34,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      1
+    ],
+    [
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      34,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      4,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      22
+    ],
+    [
+      0,
+      0,
+      1,
+      {
+        "action": 23,
+        "target": [
+          24,
+          24
+        ]
+      }
+    ],
+    [
+      0,
+      0,
+      13,
+      0
+    ],
+    [
+      0,
+      {
+        "action": 14,
+        "target": [
+          19,
+          18
+        ]
+      },
+      0,
+      1
+    ],
+    [
+      0,
+      {
+        "action": 23,
+        "target": [
+          19,
+          18
+        ]
+      },
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      {
+        "action": 32,
+        "target": [
+          19,
+          18
+        ]
+      },
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      {
+        "action": 14,
+        "target": [
+          11,
+          10
+        ]
+      },
+      38,
+      0
+    ],
+    [
+      0,
+      {
+        "action": 23,
+        "target": [
+          11,
+          10
+        ]
+      },
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      3,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      38,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      1
+    ],
+    [
+      3,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      {
+        "action": 14,
+        "target": [
+          10,
+          10
+        ]
+      },
+      0,
+      0
+    ],
+    [
+      0,
+      {
+        "action": 23,
+        "target": [
+          10,
+          10
+        ]
+      },
+      38,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      38,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      9,
+      {
+        "action": 14,
+        "target": [
+          9,
+          18
+        ]
+      },
+      8,
+      0
+    ],
+    [
+      0,
+      {
+        "action": 23,
+        "target": [
+          9,
+          18
+        ]
+      },
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      8,
+      0,
+      38,
+      1
+    ],
+    [
+      0,
+      8,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      8
+    ],
+    [
+      0,
+      0,
+      8,
+      0
+    ],
+    [
+      8,
+      8,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      8
+    ],
+    [
+      0,
+      13,
+      0,
+      10
+    ],
+    [
+      8,
+      0,
+      0,
+      0
+    ]
+  ],
+  "checks": [
+    "121f099a31f91e7a5f7539165bae1e156589f026fef4bb0d64f8f431b89a7dee",
+    "4863f33ceba3f959bd5930ef9ca02ca03ba7b95989c025255a0331618d1c5a8c",
+    "8474297d8e6ab0fefe7d11438fc1ee792440cef235e64c49217538c65955da99",
+    "e04828153571cd70edd83cc9bd99b24504af2013f9fcb83350c09d8f2a53a52c",
+    "f1d66b66d4bc107b28a651864cf67d50f720bb2ff725666af4ca4e226dcd216f",
+    "ed118f4a5e6eda9d7160cfe4b35628e8affb9cc188639a4e9aa3e7261d40d143",
+    "2bca4f9f5714b7b7f70c983a861d9b20003e9db752b2068add401176006b407c",
+    "5638a02f81db3c7d6a8c03c5b9df58873df1c74b1f293f27a92ca277b176e635",
+    "472de7646ee934893c86e555cf115700851466f393662a27bdb86ccf2c6ade1f",
+    "dca89d629ffde1711d482d58a58f191203070b933064d514584261d7ec6a73fc",
+    "22080f09a460f830232ab8083367683dab8ea7f7a92639feac30339f8ae29902",
+    "f94338e2e858eee7cd01c7ca0e87fd64fa5963dad83bf7b9faf363f0236f70f2",
+    "c3375e21bab3d582e253abd84559e7d26230f9686a7305e13dfeacdb2f0d214a",
+    "f610771ce2279b077a94e273c3f8dbdaf7c5bb408f3fa374a95aae3474e1470b",
+    "072cc0b3460f0860aaa70ff13853ec919529d957644a6e91be01994e75d81a1a",
+    "dd080daeb7e62ace315adf70f05407f573e25fa2cb6afd2b08108f7a7fbe1158",
+    "5c883553d567f48c055bade3d7dc0269d52f47a0f7e7c0ce7ec48fc376a554e2",
+    "ec1d8bcd276b21de22e958791a4ac9471740fa6c10261ba8efd15ebd4637cf90",
+    "11843e02d64d90ea848c296219547b42ab640bb0da3fb94f3670f6ff75987b0c",
+    "a414f026983ec8fb2ae4e73e121bbd790e7f592bfa37ca917328bcc401c80dbd",
+    "8f1d555ee807ae85d38fb1ccdf1ab6c2e7c33ac3b7367c85c90748d92855b189",
+    "e86a005547de299c5b2d12739c5ff18959b6bc2c9999915ff900847d65e29da0",
+    "8590492d39832fa067355196fcd744c95cbcd68ef5ca5f9d994eb0525deb2455",
+    "82b49036f44c50b52bb2323af1d20e2d57cfe2df5d0c673e6be704abe9741006",
+    "ae3c3da09b929e2c9b49095546f6fbdf7177f433e5d73cf8393167ee2cf6d9e5",
+    "0abfc19eb75a62cd0b41373b150988d2c5d049e3d515fbb2d1c233c7dde0a294",
+    "d9d4a491dc898e0e8cb5943883078c3947e26380e225e53afda8789f5be2a56f",
+    "4b180e836e713aadc7ba2259d83ba0690f18e0e62506d37af6ec31fb9dae33ae",
+    "3466956018ba69fa18200a8f6bb51ecd7c921a3ecb903cb8ea25ccd3fd42a252",
+    "3a62f616cd2947046e13b35d5f4346022c3a621ec260e176094ebece6af142ce",
+    "a6d2f856e1848f58464aa717e7cb8e5d9f76b82292ad1353246c80e4669c48e1",
+    "6bb30e1e4b9e9c0d694237a304859ae68e0665d6226be278a8d104325797ae9e",
+    "166b65b7e8d7e9e3058687d56c4cffdbc564609fb880d8c29f8d8bb1f68d952b",
+    "5721d4a19d1ff3e8882b8572a47d85d2619096b3a77d1a31083436c410957f96",
+    "51b0c13924d70e5bf0400234a7acfeecc13d3983ac4ff14bd0f8ff66e28b5f34",
+    "bd3a20a1c68a7d2bbb4886dc7aadb5dc75780242b9f1b5f595cd5d1832b3e6b6",
+    "76f4d04e4d403a4b0bb868666eb57f02a24338b69d96db4de365c8dc637a94f6",
+    "c22fd2ba94eb2a7d1c7a7e2321f39095c2b105d08ba5f154cda82193f2c7a864",
+    "c1cff467cbf13ca4a0d989604374f4190d917b1b0fb5c72d17f6b6643be542b4",
+    "5f360ea71f3aa51bbe62da681563b9dd34dc1ff6d8357366629eff8aeb2c2865",
+    "bb4c0ff8965bdf5a5dda493804bb30bc0040f7cbcf7d1bffed1d79dad23a3d0c",
+    "984b878d024bdbd4e72d43d8bd323de48d82c9ee6719bb4c26e50f67a50875ef",
+    "444474cbe8887eac2051e35b0854f988d6370bef614b53b2ba53cac4c4c7774a",
+    "24be5a3bc75f6d6959a6ca194f2732def8e5437bda8aed73d7fb7fc94a85f244",
+    "b1cac35cdde05d2b0d9b2fd7b676eb21b717fd5b90ed9b1c50038f0b33abfac0",
+    "5ff483c3eda225d24a589c39f535c1424830c892c191e86b2cec25232d5517b2",
+    "288f16858bc4eda331b35c7da9324b392c5f44749d421bd9597a5689e2de5523",
+    "5df7ed2b26bbcd122f0f2459a84dd68fd37e1786ff27afacd65086d29ae2778c",
+    "f990b96f39a47c42b806ae7d286ce8fae65519ddb27d8edc362992221ad2621f",
+    "9e3ecb77e1b1905be9183b836b1d3c79d0075d9a2499704f9fd4434e167e366e",
+    "93599827513612c628f003b177add0cec865bf173a6b9341abfaec3ca25b1177",
+    "753945fc7be644eb01f2b03c02ac5b79a7e681dd0b7ba5b53be3a36cfec7890f",
+    "d8af65497728e880ca608290f818ee98c9941d0fdfcd8e03034f3a84f0c63ccc",
+    "2e48e4137c88f5b5b984966ec7ffd72e91af305e937639279624cb9f8ffba867",
+    "dc3ef24a96a05bae405433abcc647a28e4fe24004d02de49115dd6e9901cc138",
+    "aff7450011f0bb7cbcf770a742e16aa40b607797891a94b4df124ea61c8d237e",
+    "9199e1c571e7bdb68a9f5595a940edd3fb39b3016228a2fe023ff22856fc401a",
+    "ac4829834061457c24c191c08ab0e208d19cd1a632d60cf127c4186adcdc99d3",
+    "51a7cc6000991881e7985efabb83ceebe9dcfd07a2be8eb316c9c93b2f322b92",
+    "b38b6dece76ecc03c48ddf4f8943e4363a36558bf54bf78ff00bf18fb080537d",
+    "a4ff350fcc5e3f6b6a21ec34dbac28d307ca718ab628097ddbbf89f45bdcdcf2",
+    "f094a811b4012ab12aa2f61b049c61c9a00c786bd1737b2e469c608a4ab5f242",
+    "0cb9683e1f9f59c91104fe64273afd07625505e4fcfaa4982b15065f39bd5a6d",
+    "e5e2d97d0fb2d659b884e87b8b9e82fc231d450f349fd0df2f707c6f2488a266",
+    "f5599102b4187deeacac1fa2f1cbfdde7668edfb960d0952f1561e5d926bae71",
+    "5e64ed91dfb10a863eed00aeeed0add4dd253af0876a341af4fb7f57e6ba65ff",
+    "ecf35c39840101ae26e9905d833b077233d1affba5011aaf38260c249e853774",
+    "cd3da6ee2303155a9d283befdd587d8325f90cf77992782a8472382dd59353db",
+    "e5e5e5fd6a0031c857e564a2eae92f6b070af19afb0fdcffbe9c513ffca918d8",
+    "0946740967dc6fe97e0d6608fefa541f2fbb96753bd788917b2189fc4c967936",
+    "8d0f6314760cf1e2303b21e7847583d8cc55c8315604e80e6c86eb14f3fd1c38",
+    "0c3a55598f5db486b7473ed3720d8392ce72d24326545ca104e0b57d7fd94bfd",
+    "78a8f8fb61f41bcd12cef8147dad159e3dcaea1c0eb0faa597746d8ce39f506a",
+    "3fb320deecd1f3ef2879b414050caf9b48287ff06e96880dbf141ce508baeca3",
+    "678c17daa2c6775bc9ffa8cc07c3c69f1349ef6a1adc048f7046f19396fa218c",
+    "d5bab32c1b0d41e446c9fefe5af619452fa2035023fdcf9c91d11a1f4152e922",
+    "081c4ee3c79f1472ea57c13d09f27841cdbc7e29ef35dc8e85c26bf32aa657ab",
+    "212506c341747e0acc171109df8e034b5b5581d0ccb740149435a8e7aaa08417",
+    "a1e15efe40f8d6aa6620421c12e4987acbd87dabe6ea86372f80cea112566a3b",
+    "d2809d7255d64285cf7fd24a6d270de53bfc706c8071f8217a13d98bd7369b27",
+    "a0b209b8726e0c3b22bd2de792093452a2710688420c64d93d8ef24d300bf9e0",
+    "67c90763da3a5f5c6656a9ecdef58c5d9f16588d1dd56a81bcb37627719abc3c",
+    "0f5bf61b8eb84c03d715dc533d138e449bd6b6b2ab7e57d6d27246a67868c4ce",
+    "437f046c68a2135b57013cfccc370f006a6f95a908c079ee43246eb4cab56df5",
+    "98cb475904d3ed7d05b1c65cef7a5301a987ec9f58baa7fd4ef70b2cc1b7f859"
+  ],
+  "final": {
+    "winner": 0,
+    "reason": "last_survivor",
+    "tick": 340
+  },
+  "meta": {
+    "policies": [
+      "breach",
+      "missile",
+      "electronic",
+      "fortress"
+    ]
+  }
+}

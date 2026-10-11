@@ -41,6 +41,7 @@ def verify(replay: dict) -> dict:
         "game-rules-v0.3",
         "game-rules-v0.4",
         "game-rules-v0.5",
+        "game-rules-v0.6",
     ):
         from thuai10.fourway.game import verify_replay
 

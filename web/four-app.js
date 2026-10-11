@@ -228,7 +228,7 @@ function updateUnits() {
         row.className =
             "unit-row " + (u.uid === app.selected ? "selected" : "");
         row.style.setProperty("--team", hex(u.player));
-        row.innerHTML = `<b>${NAMES[u.type]} #${u.uid} · ${u.hp}HP · ${ROLES[u.type] || { cannon: "拦截", mortar: "地面范围打击", antiair: "防空", jammer: "通信干扰" }[u.type]}</b><small>${u.type === "jammer" ? "持续屏蔽附近敌方通信" : behaviorText(activity.get(u.uid))}</small>`;
+        row.innerHTML = `<b>${NAMES[u.type]} #${u.uid} · ${u.hp}HP · ${ROLES[u.type] || { cannon: "拦截", mortar: "地面范围打击", antiair: "防空", jammer: "通信干扰" }[u.type]}</b><small>${u.type === "jammer" ? "持续屏蔽附近敌方通信" : behaviorText(activity.get(u.uid))}${u.attack_interval && u.jammed ? " · EMP压制，攻击间隔" + u.attack_interval * 0.5 + "秒" : ""}</small>`;
         row.onclick = () => {
             app.selected = u.uid;
             updateUnits();
@@ -239,13 +239,26 @@ function updateUnits() {
             (e) => e.uid === app.selected,
         ),
         a = activity.get(app.selected);
+    const suppression =
+        selected?.jammed && selected?.attack_interval
+            ? " · EMP压制：攻击间隔 " + selected.attack_interval * 0.5 + "秒"
+            : "";
     $("selected-info").textContent = selected
-        ? `${TEAM_NAMES[selected.player]} ${NAMES[selected.type]} #${selected.uid} · ${selected.hp}/${selected.max_hp}HP · ${ROLES[selected.type] || "设施"} · 格(${selected.x},${selected.y}) · ${selected.type === "wall" ? (selected.gate ? "授权门：己方可通过，敌方需破门" : "阻挡地面移动与敌方射线") : behaviorText(a)}${a?.target ? " → 目标(" + a.target.join(",") + ")" : ""}${selected.linked !== undefined ? " · " + (selected.jammed ? "受屏蔽" : selected.linked ? "在线" : "离线") : ""}`
+        ? `${TEAM_NAMES[selected.player]} ${NAMES[selected.type]} #${selected.uid} · ${selected.hp}/${selected.max_hp}HP · ${ROLES[selected.type] || "设施"} · 格(${selected.x},${selected.y}) · ${selected.type === "wall" ? (selected.gate ? "授权门：己方可通过，敌方需破门" : "阻挡地面移动与敌方射线") : behaviorText(a)}${a?.target ? " → 目标(" + a.target.join(",") + ")" : ""}${selected.linked !== undefined ? " · " + (selected.jammed ? "受屏蔽" : selected.linked ? "在线" : "离线") : ""}${suppression}`
         : app.selected !== null
           ? "该实体已被摧毁。"
           : "点击单位或城墙查看行为、目标、通信状态与生命。";
 }
 function describe(a) {
+    if (typeof a === "object" && a !== null) {
+        const name =
+            a.action < 23
+                ? "精确信号弹"
+                : a.action < 32
+                  ? "精确制导导弹"
+                  : "精确EMP";
+        return name + " → 格(" + a.target.join(",") + ")";
+    }
     if (!a) return "维持自主任务";
     if (a <= 4)
         return "生产 " + NAMES[["dog", "robot", "siege", "drone"][a - 1]];
@@ -291,13 +304,13 @@ function logEvent(e) {
             text = `${team}发射信号屏蔽弹`;
             break;
         case "jam_cloud":
-            text = `${team}展开 EMP 云，干扰其他方通信`;
+            text = `${team}展开 EMP 云，切断敌方通信并压制防御射速`;
             break;
         case "lock_lost":
             text = `${team}导弹失锁，伤害降至 ${app.config.missile.lost_damage}`;
             break;
         case "missile_impact":
-            text = `${team}${e.locked ? "制导命中" : "失锁落弹"}，${e.damage}伤害 / ${e.hit.length}目标`;
+            text = `${team}${e.locked ? "制导命中" : "失锁落弹"}，${e.damage}伤害 / ${e.hit.length}目标 · 地面${e.ground_hits || 0}`;
             break;
         case "wall_destroyed":
             text = `${team}城墙被突破`;
