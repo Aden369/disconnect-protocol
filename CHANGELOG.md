@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Experiment with missile ground clusters and frontline EMP targeting; record stationary/moving controls and real-match limitations.
+- Explain tactical ground-skill decisions in the spectator UI and preserve in-flight missile beacons.
+
 - Consolidate current documentation under a single index and rules file.
 - Archive old rules/plans/review reports by version and repair relative links.
 

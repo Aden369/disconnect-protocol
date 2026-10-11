@@ -25,7 +25,21 @@ def play(seed, names):
     counts = Counter()
     while not game.over:
         actions = [bot.act(game, i) for i, bot in enumerate(bots)]
+        types = {e.uid: e.type for e in game.entities}
+        counts["ground_skill_decisions"] += sum(
+            bool(getattr(bot, "last_reason", "")) for bot in bots
+        )
         out = game.step(actions)
+        for event in out["events"]:
+            if event["type"] == "missile_impact":
+                counts["missile_ground_hits"] += sum(
+                    types.get(uid) in ("dog", "robot", "siege") for uid in event["hit"]
+                )
+                counts["missile_structure_hits"] += sum(
+                    types.get(uid)
+                    in ("hq", "wall", "cannon", "mortar", "antiair", "jammer")
+                    for uid in event["hit"]
+                )
         counts.update(e["type"] for e in out["events"])
         assert game.steps <= 90 and game.tick <= 360
         assert all(0 <= p.resources <= game.cfg["economy"]["cap"] for p in game.players)
@@ -47,6 +61,7 @@ def main():
     parser.add_argument("--mode", choices=["scripts", "random"], default="scripts")
     parser.add_argument("--games", type=int, default=24)
     parser.add_argument("--out", default="results/fourway-scripts-v0.5.json")
+    parser.add_argument("--replay-out", default="results/fourway-replay-v0.5.json")
     args = parser.parse_args()
     permutations = list(itertools.permutations(POLICIES))
     rows = []
@@ -60,7 +75,9 @@ def main():
         row, game = play(i, names)
         rows.append(row)
         if i == 0 and args.mode == "scripts":
-            Path("results/fourway-replay-v0.5.json").write_text(
+            replay_path = Path(args.replay_out)
+            replay_path.parent.mkdir(parents=True, exist_ok=True)
+            replay_path.write_text(
                 json.dumps(
                     game.replay({"policies": names}), ensure_ascii=False, indent=2
                 ),

@@ -129,7 +129,7 @@ async function requestStep() {
         $("decisions").innerHTML = out.decisions
             .map(
                 (d) =>
-                    `<div class="order" style="--team:${hex(d.player)}"><b>${TEAM_NAMES[d.player]}</b><small>${POLICY_NAMES[d.bot]} / ${(d.tick * 0.5).toFixed(1)}s</small><p>${describe(d.action)}</p></div>`,
+                    `<div class="order" style="--team:${hex(d.player)}"><b>${TEAM_NAMES[d.player]}</b><small>${POLICY_NAMES[d.bot]} / ${(d.tick * 0.5).toFixed(1)}s</small><p>${describe(d.action)}</p>${d.reason ? "<small>" + d.reason + "</small>" : ""}</div>`,
             )
             .join("");
     } catch (e) {

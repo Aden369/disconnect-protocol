@@ -1,0 +1,50 @@
+{
+  "rules_version": "game-rules-v0.5",
+  "setup": "Three ground targets near (14,14), connected through a support drone. Ordinary attacks disabled; stationary targets hold position except moving_missile.",
+  "cases": [
+    {
+      "case": "control",
+      "ground_damage": 0,
+      "ground_kills": 0,
+      "linked_before": 3,
+      "linked_after": 3,
+      "commanded_before": 3,
+      "commanded_after": 3,
+      "missile_ground_hits": 0,
+      "seconds": 6.0
+    },
+    {
+      "case": "missile",
+      "ground_damage": 215,
+      "ground_kills": 1,
+      "linked_before": 3,
+      "linked_after": 2,
+      "commanded_before": 3,
+      "commanded_after": 2,
+      "missile_ground_hits": 3,
+      "seconds": 6.0
+    },
+    {
+      "case": "emp",
+      "ground_damage": 0,
+      "ground_kills": 0,
+      "linked_before": 3,
+      "linked_after": 0,
+      "commanded_before": 3,
+      "commanded_after": 0,
+      "missile_ground_hits": 0,
+      "seconds": 6.0
+    },
+    {
+      "case": "moving_missile",
+      "ground_damage": 75,
+      "ground_kills": 0,
+      "linked_before": 3,
+      "linked_after": 3,
+      "commanded_before": 3,
+      "commanded_after": 3,
+      "missile_ground_hits": 1,
+      "seconds": 6.0
+    }
+  ]
+}

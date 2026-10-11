@@ -23,6 +23,9 @@ class FourSession:
                 "bot": self.names[i],
                 "action": action,
                 "tick": self.game.tick,
+                "reason": getattr(self.bots[i], "last_reason", "")
+                if overrides is None
+                else "",
             }
             for i, action in enumerate(actions)
         ]

@@ -507,3 +507,47 @@ def test_technology_applies_to_all_defensive_guns_but_not_structure_damage():
     game.resolve_tick()
     assert wall.hp == 62
     assert next(a for a in game.activity if a["uid"] == siege.uid)["damage"] == 38
+
+
+def test_ground_skill_experiment_damage_disruption_and_escape():
+    import runpy
+
+    run = runpy.run_path("scripts/experiment_ground_skills.py")["run"]
+    cases = {row["case"]: row for row in run()["cases"]}
+    assert cases["control"]["ground_damage"] == 0
+    assert cases["missile"]["ground_damage"] == 215
+    assert cases["missile"]["missile_ground_hits"] == 3
+    assert cases["missile"]["ground_kills"] == 1
+    assert cases["emp"]["ground_damage"] == 0
+    assert cases["emp"]["linked_before"] == 3
+    assert cases["emp"]["linked_after"] == cases["emp"]["commanded_after"] == 0
+    assert cases["moving_missile"]["missile_ground_hits"] < 3
+
+
+def test_policies_use_ground_signal_missile_and_frontline_emp():
+    import runpy
+
+    from thuai10.fourway.policies import Policy
+
+    game, _ = runpy.run_path("scripts/experiment_ground_skills.py")["setup"]()
+    missile = Policy("missile")
+    assert missile.act(game, 0) == 18  # Signal the central ground cluster.
+    game.execute(0, 18)
+    assert missile.act(game, 0) == 27  # Launch at that signal instead of an HQ.
+    electronic = Policy("electronic")
+    assert electronic.act(game, 0) == 36
+    assert "地面" in electronic.last_reason
+
+
+def test_policy_does_not_replace_beacon_while_own_missile_is_in_flight():
+    import runpy
+
+    from thuai10.fourway.policies import Policy
+
+    game, _ = runpy.run_path("scripts/experiment_ground_skills.py")["setup"]()
+    game.execute(0, 16)  # Establish a separate HQ strike.
+    game.tick = 4
+    game.execute(0, 25)
+    game.tick = 8
+    assert game.mask(0)[18]
+    assert Policy("missile").act(game, 0) not in range(14, 23)
