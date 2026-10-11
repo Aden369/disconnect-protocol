@@ -1,6 +1,8 @@
 # 实现说明与接口 Schema
 
-日期：2026-10-10。实现版本：`configs/balance-v0.2.json`（`schema_version = thuai10-replay-v0.1`，`obs_schema_version = thuai10-obs-v0.2`）。规则依据 [game-rules.md](game-rules.md)，计划依据 [demo-plan.md](demo-plan.md)。动作编号与观测字段一经发布不得静默改变含义。
+> 历史归档（v0.2）：保留当时的规则与验证记录。当前有效规则见 [游戏规则](../../game-rules.md)，本文件不再跟随当前实现更新。
+
+日期：2026-10-10。实现版本：`configs/balance-v0.2.json`（`schema_version = thuai10-replay-v0.1`，`obs_schema_version = thuai10-obs-v0.2`）。规则依据 [game-rules.md](game-rules-v0.2.md)，计划依据 [demo-plan.md](demo-plan-v0.2.md)。动作编号与观测字段一经发布不得静默改变含义。
 
 ## 1. 时间结构
 

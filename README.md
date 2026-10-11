@@ -2,7 +2,7 @@
 
 四家公司由四个算法实时交战。中继扩展指挥链路，信号弹引导军队并锁定导弹，EMP 屏蔽破坏通信和制导，陆军需要突破城墙。**最后存活者胜，资源从不参与判胜**。
 
-当前主规则：[docs/game-rules.md](docs/game-rules.md)。当前验收：[docs/base-review-v0.5.md](docs/base-review-v0.5.md)；规则核对：[docs/rules-audit-v0.5.md](docs/rules-audit-v0.5.md)；历史v0.3 review：[docs/fourway-review.md](docs/fourway-review.md)。
+文档入口：[文档导航](docs/README.md)。玩法以 [当前游戏规则](docs/game-rules.md) 为准；测试与已知限制见 [当前验证](docs/validation.md)。
 
 ## 运行
 
@@ -49,7 +49,7 @@ observations, rewards, terminated, truncated, info = env.step(actions)
 - `tests/test_fourway.py`：资源不判胜、四方同步、墙/空军、制导反制、淘汰与旋转对照等。
 - `docs/`：规则、设计来源、计划、实现说明与 review；`results/`：批量结果与回放。
 
-`src/thuai10/core/`、旧双人策略和 `balance-v0.1/v0.2.json` 保留历史规则与回放兼容，不是默认比赛模式。旧文档以 `*-v0.2.md` 标记。
+`src/thuai10/core/`、旧双人策略和 `balance-v0.1/v0.2.json` 保留历史规则与回放兼容，不是默认比赛模式。旧规则及评测统一位于 `docs/archive/<version>/`，不与当前文档并列。
 
 ## 当前限度
 

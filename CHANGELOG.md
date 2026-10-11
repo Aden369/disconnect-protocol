@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- Consolidate current documentation under a single index and rules file.
+- Archive old rules/plans/review reports by version and repair relative links.
+
 ## v0.5.0 — 2026-10-11
 
 First Git baseline of the current playable prototype; rules and balance version v0.5.

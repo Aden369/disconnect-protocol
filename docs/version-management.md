@@ -10,7 +10,7 @@ Run `python -m pytest tests -q` before merging. GitHub Actions runs the same sui
 
 ## Rule releases
 
-Copy the previous balance configuration to a new version before changing mechanics or numbers. Update the current default, versioned rules, replay routing, and observation schema if its shape or encoding changes. Preserve historical configuration and replay fixtures, and verify old replays. Record changes in `CHANGELOG.md`.
+Copy the previous balance configuration to a new version before changing mechanics or numbers. Archive the previous rules under `docs/archive/<version>/`, then update the single current rules document `docs/game-rules.md`, the default configuration, replay routing, and observation schema if its shape or encoding changes. Preserve historical configuration and replay fixtures, and verify old replays. Record changes in `CHANGELOG.md`.
 
 After validation, create an annotated tag, for example:
 
@@ -24,3 +24,7 @@ Tag names describe prototype releases; they do not imply the competition rules a
 ## Repository contents
 
 Track source, rules, balance files, tests, bundled third-party assets/licenses, and selected replay/evaluation evidence. Caches, virtual environments, credentials, and local editor/agent state are ignored. Write disposable evaluation runs to `results/local/` so committed historical fixtures are preserved.
+
+## Documentation policy
+
+`docs/README.md` is the documentation entry point. `docs/game-rules.md` is the only current rules document. Keep current implementation, plan, and validation in stable filenames; put obsolete rules and dated review reports in `docs/archive/<version>/` with a historical notice. Do not create another versioned rules copy beside the current rules. Historical balance files and replay fixtures retain their existing paths for compatibility.

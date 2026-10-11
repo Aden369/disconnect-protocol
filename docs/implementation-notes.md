@@ -1,6 +1,6 @@
 # 四方实现与接口 v0.5
 
-当前规则：[game-rules.md](game-rules.md)，实现位于 `src/thuai10/fourway/`。历史双人接口见 [implementation-notes-v0.2.md](implementation-notes-v0.2.md)。
+当前规则：[game-rules.md](game-rules.md)，实现位于 `src/thuai10/fourway/`。历史双人接口见 [implementation-notes-v0.2.md](archive/v0.2/implementation-notes-v0.2.md)。
 
 ## 核心
 
@@ -45,10 +45,6 @@ Schema：`thuai10-fourway-replay-v0.5`。保存完整配置、seed、四方动�
 
 通用 `thuai10.core.replay.verify` 根据规则版本路由到四方校验器；旧 v0.1/v0.2 回放继续走旧逻辑。默认 HTTP 创建四方对战，旧 human/watch 仅用于历史调试。
 
-## v0.4 历史兵种变更
-
-该历史版本使用 `configs/balance-v0.4.json`；当前默认配置见下节。无人机掩码检查每方2架上限，`armed=false` 禁止所有攻击（含科技加成），`capture=false` 排除占领/争夺；狗与破城机 `anti_air=false`。机甲和炮塔对空射线越墙。无人机默认跟随攻城/机甲部队、屏蔽时回总部；有效信号仍可改变部署。观测形状保持 v0.3，回放协议升级 v0.4；历史 v0.3 配置缺省字段恢复原有行为。
-
-## v0.5 地图和防御
+## 地图与防御
 
 默认配置改为 `configs/balance-v0.5.json`。地图29×29，基地9×9，墙内7×7，四类防御设施真实结算。结构观测扩大到38槽、类型扩展为6种，坐标除以地图边长减一；观察协议v0.5，2681维。旧回放仍按其原始配置运行，历史观测保留21结构槽。迫击炮范围伤害在同tick同步伤害队列内结算，弧线仅是射击表现，不增加隐藏飞行时间。

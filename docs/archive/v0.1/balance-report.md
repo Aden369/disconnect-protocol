@@ -1,6 +1,8 @@
 # 初始数值验证报告（balance-v0.1 历史基线）
 
-本报告是 v0.1 历史结果，不能用于评价当前 v0.2 策略。最新统计见 [demo-review.md](demo-review.md)。
+> 历史归档（v0.1）：保留当时的规则与验证记录。当前有效规则见 [游戏规则](../../game-rules.md)，本文件不再跟随当前实现更新。
+
+本报告是 v0.1 历史结果，不能用于评价当前 v0.2 策略。最新统计见 [demo-review.md](../v0.2/demo-review.md)。
 
 日期：2026-10-10。配置：`configs/balance-v0.1.json`。数据：`results/bot-matchups.json`（36 局）、`results/random-games.json`（100 局）。机器环境见 `scripts/benchmark.py` 输出（Python 3.13.5 / Windows 11 / Intel64，约 1279 tick/s 无界面推进）。
 
@@ -44,4 +46,4 @@
 - 配置版本：`balance-v0.1`（未改动过发布数值；调参时另存 `balance-v0.2.json` 并重跑本脚本）。
 - 批量结果：`results/bot-matchups.json`、`results/random-games.json`（含逐局明细与汇总）。
 - 回放示例：`results/replay-example.json`（node_grabber vs robot_push，65 步）。
-- 复现命令见 [../README.md](../README.md)。
+- 复现命令见 [../README.md](../../../README.md)。
