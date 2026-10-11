@@ -1,0 +1,5701 @@
+{
+  "mode": "random",
+  "games": [
+    {
+      "seed": 0,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 0,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        460,
+        410
+      ],
+      "scores": [
+        940.0,
+        410.0
+      ],
+      "control_seconds": [
+        160.0,
+        0.0
+      ],
+      "node_flips": 2,
+      "produced": [
+        {
+          "dog": 4
+        },
+        {}
+      ],
+      "deaths": [
+        {
+          "dog": 3
+        },
+        {
+          "robot": 1,
+          "dog": 2
+        }
+      ],
+      "spend": [
+        {
+          "build": 120,
+          "signal": 130,
+          "bomb": 180,
+          "repair": 20,
+          "produce": 80
+        },
+        {
+          "build": 120,
+          "signal": 80,
+          "bomb": 120,
+          "tech": 60,
+          "repair": 40
+        }
+      ]
+    },
+    {
+      "seed": 1,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 1,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        500
+      ],
+      "scores": [
+        777.5,
+        831.5
+      ],
+      "control_seconds": [
+        92.5,
+        110.5
+      ],
+      "node_flips": 2,
+      "produced": [
+        {
+          "robot": 4,
+          "dog": 2
+        },
+        {}
+      ],
+      "deaths": [
+        {
+          "dog": 4,
+          "robot": 3
+        },
+        {
+          "dog": 2,
+          "robot": 1
+        }
+      ],
+      "spend": [
+        {
+          "build": 110,
+          "signal": 80,
+          "bomb": 30,
+          "tech": 60,
+          "repair": 40,
+          "produce": 180
+        },
+        {
+          "build": 130,
+          "bomb": 120,
+          "signal": 145,
+          "repair": 60,
+          "tech": 60
+        }
+      ]
+    },
+    {
+      "seed": 2,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 0,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        500
+      ],
+      "scores": [
+        770.0,
+        620.0
+      ],
+      "control_seconds": [
+        90.0,
+        40.0
+      ],
+      "node_flips": 3,
+      "produced": [
+        {
+          "dog": 4
+        },
+        {}
+      ],
+      "deaths": [
+        {
+          "dog": 4,
+          "robot": 1
+        },
+        {
+          "dog": 2,
+          "robot": 1
+        }
+      ],
+      "spend": [
+        {
+          "build": 110,
+          "bomb": 90,
+          "signal": 100,
+          "produce": 80,
+          "repair": 40,
+          "tech": 60
+        },
+        {
+          "build": 120,
+          "signal": 90,
+          "bomb": 150,
+          "tech": 60,
+          "repair": 40
+        }
+      ]
+    },
+    {
+      "seed": 3,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 0,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        350
+      ],
+      "scores": [
+        945.5,
+        459.5
+      ],
+      "control_seconds": [
+        148.5,
+        36.5
+      ],
+      "node_flips": 7,
+      "produced": [
+        {
+          "robot": 4,
+          "dog": 2
+        },
+        {
+          "robot": 2,
+          "dog": 2
+        }
+      ],
+      "deaths": [
+        {
+          "dog": 4,
+          "robot": 5
+        },
+        {
+          "dog": 4,
+          "robot": 3
+        }
+      ],
+      "spend": [
+        {
+          "build": 120,
+          "bomb": 90,
+          "signal": 130,
+          "produce": 180,
+          "repair": 20
+        },
+        {
+          "build": 110,
+          "signal": 100,
+          "bomb": 60,
+          "produce": 110,
+          "tech": 60,
+          "repair": 20
+        }
+      ]
+    },
+    {
+      "seed": 4,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 0,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        500
+      ],
+      "scores": [
+        866.0,
+        734.0
+      ],
+      "control_seconds": [
+        122.0,
+        78.0
+      ],
+      "node_flips": 4,
+      "produced": [
+        {
+          "dog": 2
+        },
+        {
+          "dog": 8
+        }
+      ],
+      "deaths": [
+        {
+          "dog": 4
+        },
+        {
+          "dog": 7,
+          "robot": 1
+        }
+      ],
+      "spend": [
+        {
+          "produce": 40,
+          "signal": 130,
+          "bomb": 120,
+          "build": 190,
+          "repair": 40
+        },
+        {
+          "build": 120,
+          "bomb": 90,
+          "signal": 90,
+          "repair": 40,
+          "produce": 160
+        }
+      ]
+    },
+    {
+      "seed": 5,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 1,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        440,
+        500
+      ],
+      "scores": [
+        764.0,
+        863.0
+      ],
+      "control_seconds": [
+        108.0,
+        121.0
+      ],
+      "node_flips": 3,
+      "produced": [
+        {
+          "dog": 2
+        },
+        {
+          "robot": 2
+        }
+      ],
+      "deaths": [
+        {
+          "dog": 4,
+          "robot": 1
+        },
+        {
+          "dog": 2,
+          "robot": 1
+        }
+      ],
+      "spend": [
+        {
+          "produce": 40,
+          "signal": 100,
+          "bomb": 90,
+          "build": 250,
+          "repair": 40
+        },
+        {
+          "produce": 70,
+          "signal": 120,
+          "bomb": 120,
+          "build": 130,
+          "repair": 20,
+          "tech": 60
+        }
+      ]
+    },
+    {
+      "seed": 6,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 0,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        500
+      ],
+      "scores": [
+        1013.0,
+        500.0
+      ],
+      "control_seconds": [
+        171.0,
+        0.0
+      ],
+      "node_flips": 2,
+      "produced": [
+        {
+          "dog": 4
+        },
+        {}
+      ],
+      "deaths": [
+        {
+          "dog": 2
+        },
+        {
+          "dog": 2,
+          "robot": 1
+        }
+      ],
+      "spend": [
+        {
+          "build": 110,
+          "bomb": 180,
+          "signal": 130,
+          "produce": 80,
+          "repair": 20,
+          "tech": 60
+        },
+        {
+          "build": 180,
+          "signal": 90,
+          "bomb": 90,
+          "tech": 60
+        }
+      ]
+    },
+    {
+      "seed": 7,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 0,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        500
+      ],
+      "scores": [
+        1037.0,
+        537.5
+      ],
+      "control_seconds": [
+        179.0,
+        12.5
+      ],
+      "node_flips": 4,
+      "produced": [
+        {
+          "dog": 2,
+          "robot": 2
+        },
+        {
+          "dog": 2
+        }
+      ],
+      "deaths": [
+        {
+          "robot": 3,
+          "dog": 4
+        },
+        {
+          "dog": 3
+        }
+      ],
+      "spend": [
+        {
+          "build": 180,
+          "signal": 80,
+          "bomb": 90,
+          "produce": 110,
+          "repair": 60,
+          "tech": 60
+        },
+        {
+          "build": 110,
+          "signal": 130,
+          "bomb": 120,
+          "repair": 20,
+          "produce": 40
+        }
+      ]
+    },
+    {
+      "seed": 8,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 1,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        500
+      ],
+      "scores": [
+        590.0,
+        830.0
+      ],
+      "control_seconds": [
+        30.0,
+        110.0
+      ],
+      "node_flips": 3,
+      "produced": [
+        {},
+        {
+          "dog": 6
+        }
+      ],
+      "deaths": [
+        {
+          "dog": 2,
+          "robot": 1
+        },
+        {
+          "dog": 8,
+          "robot": 1
+        }
+      ],
+      "spend": [
+        {
+          "tech": 60,
+          "signal": 110,
+          "bomb": 120,
+          "build": 130,
+          "repair": 40
+        },
+        {
+          "build": 110,
+          "signal": 100,
+          "bomb": 90,
+          "produce": 120,
+          "repair": 20,
+          "tech": 60
+        }
+      ]
+    },
+    {
+      "seed": 9,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 0,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        500
+      ],
+      "scores": [
+        1016.0,
+        611.0
+      ],
+      "control_seconds": [
+        172.0,
+        37.0
+      ],
+      "node_flips": 3,
+      "produced": [
+        {
+          "dog": 8
+        },
+        {}
+      ],
+      "deaths": [
+        {
+          "dog": 2,
+          "robot": 1
+        },
+        {
+          "dog": 2,
+          "robot": 1
+        }
+      ],
+      "spend": [
+        {
+          "build": 120,
+          "bomb": 60,
+          "signal": 85,
+          "repair": 60,
+          "tech": 60,
+          "produce": 160
+        },
+        {
+          "build": 130,
+          "signal": 130,
+          "bomb": 120,
+          "tech": 60,
+          "repair": 20
+        }
+      ]
+    },
+    {
+      "seed": 10,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 1,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        470,
+        500
+      ],
+      "scores": [
+        582.5,
+        924.5
+      ],
+      "control_seconds": [
+        37.5,
+        141.5
+      ],
+      "node_flips": 3,
+      "produced": [
+        {
+          "dog": 2
+        },
+        {
+          "dog": 8
+        }
+      ],
+      "deaths": [
+        {
+          "robot": 1,
+          "dog": 4
+        },
+        {
+          "robot": 1,
+          "dog": 6
+        }
+      ],
+      "spend": [
+        {
+          "build": 110,
+          "bomb": 90,
+          "signal": 120,
+          "repair": 40,
+          "produce": 40,
+          "tech": 60
+        },
+        {
+          "build": 120,
+          "bomb": 90,
+          "signal": 80,
+          "repair": 60,
+          "produce": 160
+        }
+      ]
+    },
+    {
+      "seed": 11,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 0,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        389
+      ],
+      "scores": [
+        903.5,
+        654.5
+      ],
+      "control_seconds": [
+        134.5,
+        88.5
+      ],
+      "node_flips": 8,
+      "produced": [
+        {
+          "dog": 4
+        },
+        {
+          "siege": 2
+        }
+      ],
+      "deaths": [
+        {
+          "dog": 2,
+          "robot": 1
+        },
+        {
+          "robot": 1,
+          "dog": 2,
+          "siege": 1
+        }
+      ],
+      "spend": [
+        {
+          "build": 120,
+          "bomb": 150,
+          "signal": 110,
+          "produce": 80,
+          "tech": 60,
+          "repair": 20
+        },
+        {
+          "build": 160,
+          "signal": 40,
+          "bomb": 90,
+          "tech": 60,
+          "produce": 110,
+          "repair": 40
+        }
+      ]
+    },
+    {
+      "seed": 12,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 1,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        470,
+        470
+      ],
+      "scores": [
+        779.0,
+        797.0
+      ],
+      "control_seconds": [
+        103.0,
+        109.0
+      ],
+      "node_flips": 6,
+      "produced": [
+        {
+          "dog": 2,
+          "siege": 1
+        },
+        {
+          "dog": 2,
+          "robot": 2
+        }
+      ],
+      "deaths": [
+        {
+          "robot": 1,
+          "dog": 4,
+          "siege": 1
+        },
+        {
+          "dog": 4,
+          "robot": 2
+        }
+      ],
+      "spend": [
+        {
+          "build": 110,
+          "signal": 95,
+          "bomb": 120,
+          "produce": 95,
+          "tech": 60,
+          "repair": 40
+        },
+        {
+          "build": 110,
+          "signal": 125,
+          "bomb": 120,
+          "produce": 110,
+          "repair": 20
+        }
+      ]
+    },
+    {
+      "seed": 13,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 0,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        470
+      ],
+      "scores": [
+        1139.0,
+        522.5
+      ],
+      "control_seconds": [
+        213.0,
+        17.5
+      ],
+      "node_flips": 4,
+      "produced": [
+        {
+          "robot": 4,
+          "dog": 4
+        },
+        {}
+      ],
+      "deaths": [
+        {
+          "dog": 1,
+          "robot": 3
+        },
+        {
+          "dog": 2,
+          "robot": 1
+        }
+      ],
+      "spend": [
+        {
+          "produce": 220,
+          "signal": 100,
+          "bomb": 150,
+          "build": 110,
+          "repair": 20
+        },
+        {
+          "build": 130,
+          "bomb": 120,
+          "signal": 110,
+          "tech": 60,
+          "repair": 20
+        }
+      ]
+    },
+    {
+      "seed": 14,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 0,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        500
+      ],
+      "scores": [
+        1020.5,
+        500.0
+      ],
+      "control_seconds": [
+        173.5,
+        0.0
+      ],
+      "node_flips": 2,
+      "produced": [
+        {
+          "dog": 4,
+          "siege": 2
+        },
+        {}
+      ],
+      "deaths": [
+        {
+          "dog": 2
+        },
+        {
+          "robot": 1,
+          "dog": 2
+        }
+      ],
+      "spend": [
+        {
+          "build": 120,
+          "bomb": 60,
+          "signal": 110,
+          "tech": 60,
+          "produce": 190,
+          "repair": 20
+        },
+        {
+          "build": 170,
+          "bomb": 90,
+          "signal": 100,
+          "tech": 60
+        }
+      ]
+    },
+    {
+      "seed": 15,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 1,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        470,
+        470
+      ],
+      "scores": [
+        512.0,
+        1010.0
+      ],
+      "control_seconds": [
+        14.0,
+        180.0
+      ],
+      "node_flips": 3,
+      "produced": [
+        {},
+        {
+          "dog": 8
+        }
+      ],
+      "deaths": [
+        {
+          "dog": 2,
+          "robot": 1
+        },
+        {
+          "dog": 9,
+          "robot": 1
+        }
+      ],
+      "spend": [
+        {
+          "bomb": 120,
+          "signal": 90,
+          "build": 130,
+          "repair": 40,
+          "tech": 60
+        },
+        {
+          "build": 130,
+          "signal": 105,
+          "bomb": 90,
+          "produce": 160,
+          "tech": 60
+        }
+      ]
+    },
+    {
+      "seed": 16,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 1,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        500
+      ],
+      "scores": [
+        656.0,
+        920.0
+      ],
+      "control_seconds": [
+        52.0,
+        140.0
+      ],
+      "node_flips": 4,
+      "produced": [
+        {
+          "dog": 4
+        },
+        {
+          "dog": 4,
+          "robot": 2
+        }
+      ],
+      "deaths": [
+        {
+          "dog": 4,
+          "robot": 1
+        },
+        {
+          "dog": 6,
+          "robot": 3
+        }
+      ],
+      "spend": [
+        {
+          "build": 110,
+          "signal": 130,
+          "bomb": 120,
+          "produce": 80,
+          "repair": 20
+        },
+        {
+          "build": 110,
+          "signal": 150,
+          "bomb": 120,
+          "produce": 150
+        }
+      ]
+    },
+    {
+      "seed": 17,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 0,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        470,
+        500
+      ],
+      "scores": [
+        933.5,
+        638.0
+      ],
+      "control_seconds": [
+        154.5,
+        46.0
+      ],
+      "node_flips": 3,
+      "produced": [
+        {
+          "robot": 2,
+          "dog": 4
+        },
+        {
+          "dog": 4
+        }
+      ],
+      "deaths": [
+        {
+          "dog": 2,
+          "robot": 2
+        },
+        {
+          "dog": 6,
+          "robot": 1
+        }
+      ],
+      "spend": [
+        {
+          "build": 110,
+          "bomb": 90,
+          "signal": 110,
+          "produce": 150,
+          "repair": 40,
+          "tech": 60
+        },
+        {
+          "build": 120,
+          "signal": 60,
+          "bomb": 120,
+          "produce": 80,
+          "repair": 20,
+          "tech": 60
+        }
+      ]
+    },
+    {
+      "seed": 18,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 1,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        500
+      ],
+      "scores": [
+        669.5,
+        1010.0
+      ],
+      "control_seconds": [
+        56.5,
+        170.0
+      ],
+      "node_flips": 8,
+      "produced": [
+        {
+          "dog": 4
+        },
+        {
+          "dog": 2
+        }
+      ],
+      "deaths": [
+        {
+          "dog": 6,
+          "robot": 1
+        },
+        {
+          "dog": 4
+        }
+      ],
+      "spend": [
+        {
+          "build": 130,
+          "bomb": 120,
+          "signal": 110,
+          "produce": 80,
+          "repair": 20
+        },
+        {
+          "tech": 60,
+          "signal": 100,
+          "bomb": 150,
+          "build": 230,
+          "produce": 40
+        }
+      ]
+    },
+    {
+      "seed": 19,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 1,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        470
+      ],
+      "scores": [
+        516.5,
+        1077.5
+      ],
+      "control_seconds": [
+        5.5,
+        202.5
+      ],
+      "node_flips": 4,
+      "produced": [
+        {},
+        {
+          "dog": 6
+        }
+      ],
+      "deaths": [
+        {
+          "robot": 1,
+          "dog": 2
+        },
+        {
+          "dog": 5,
+          "robot": 1
+        }
+      ],
+      "spend": [
+        {
+          "build": 180,
+          "signal": 100,
+          "bomb": 60,
+          "repair": 40,
+          "tech": 60
+        },
+        {
+          "produce": 120,
+          "signal": 120,
+          "bomb": 90,
+          "build": 130,
+          "repair": 60,
+          "tech": 60
+        }
+      ]
+    },
+    {
+      "seed": 20,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 1,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        500
+      ],
+      "scores": [
+        525.5,
+        1076.0
+      ],
+      "control_seconds": [
+        8.5,
+        192.0
+      ],
+      "node_flips": 3,
+      "produced": [
+        {
+          "siege": 2
+        },
+        {
+          "dog": 4
+        }
+      ],
+      "deaths": [
+        {
+          "robot": 1,
+          "dog": 2,
+          "siege": 1
+        },
+        {
+          "dog": 2
+        }
+      ],
+      "spend": [
+        {
+          "build": 110,
+          "signal": 60,
+          "bomb": 60,
+          "tech": 60,
+          "repair": 20,
+          "produce": 110
+        },
+        {
+          "build": 130,
+          "signal": 165,
+          "bomb": 150,
+          "repair": 40,
+          "produce": 80
+        }
+      ]
+    },
+    {
+      "seed": 21,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 0,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        460,
+        500
+      ],
+      "scores": [
+        940.0,
+        620.0
+      ],
+      "control_seconds": [
+        160.0,
+        40.0
+      ],
+      "node_flips": 6,
+      "produced": [
+        {
+          "dog": 8
+        },
+        {
+          "dog": 4
+        }
+      ],
+      "deaths": [
+        {
+          "dog": 6,
+          "robot": 1
+        },
+        {
+          "robot": 1,
+          "dog": 6
+        }
+      ],
+      "spend": [
+        {
+          "build": 130,
+          "signal": 120,
+          "bomb": 90,
+          "produce": 160,
+          "repair": 20,
+          "tech": 60
+        },
+        {
+          "tech": 60,
+          "signal": 70,
+          "bomb": 60,
+          "build": 110,
+          "produce": 80,
+          "repair": 60
+        }
+      ]
+    },
+    {
+      "seed": 22,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 1,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        470
+      ],
+      "scores": [
+        603.5,
+        864.5
+      ],
+      "control_seconds": [
+        34.5,
+        131.5
+      ],
+      "node_flips": 3,
+      "produced": [
+        {
+          "dog": 2
+        },
+        {
+          "dog": 4,
+          "robot": 2
+        }
+      ],
+      "deaths": [
+        {
+          "dog": 2,
+          "robot": 1
+        },
+        {
+          "robot": 3,
+          "dog": 2
+        }
+      ],
+      "spend": [
+        {
+          "build": 170,
+          "signal": 80,
+          "bomb": 90,
+          "repair": 20,
+          "tech": 60,
+          "produce": 40
+        },
+        {
+          "build": 200,
+          "bomb": 90,
+          "signal": 60,
+          "produce": 150,
+          "repair": 20
+        }
+      ]
+    },
+    {
+      "seed": 23,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 1,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        500
+      ],
+      "scores": [
+        708.5,
+        864.5
+      ],
+      "control_seconds": [
+        69.5,
+        121.5
+      ],
+      "node_flips": 4,
+      "produced": [
+        {
+          "dog": 4
+        },
+        {
+          "robot": 2
+        }
+      ],
+      "deaths": [
+        {
+          "dog": 3,
+          "robot": 1
+        },
+        {
+          "dog": 2,
+          "robot": 3
+        }
+      ],
+      "spend": [
+        {
+          "build": 110,
+          "bomb": 120,
+          "signal": 135,
+          "produce": 80,
+          "repair": 20
+        },
+        {
+          "build": 230,
+          "bomb": 60,
+          "signal": 140,
+          "repair": 20,
+          "produce": 70
+        }
+      ]
+    },
+    {
+      "seed": 24,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 1,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        500
+      ],
+      "scores": [
+        531.5,
+        888.5
+      ],
+      "control_seconds": [
+        10.5,
+        129.5
+      ],
+      "node_flips": 3,
+      "produced": [
+        {},
+        {
+          "robot": 2,
+          "dog": 2
+        }
+      ],
+      "deaths": [
+        {
+          "dog": 2,
+          "robot": 1
+        },
+        {
+          "dog": 2,
+          "robot": 1
+        }
+      ],
+      "spend": [
+        {
+          "build": 180,
+          "signal": 70,
+          "bomb": 90,
+          "tech": 60,
+          "repair": 20
+        },
+        {
+          "produce": 110,
+          "bomb": 120,
+          "signal": 120,
+          "build": 110,
+          "repair": 40
+        }
+      ]
+    },
+    {
+      "seed": 25,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 0,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        470
+      ],
+      "scores": [
+        819.5,
+        771.5
+      ],
+      "control_seconds": [
+        106.5,
+        100.5
+      ],
+      "node_flips": 4,
+      "produced": [
+        {
+          "robot": 2
+        },
+        {
+          "dog": 2,
+          "robot": 2
+        }
+      ],
+      "deaths": [
+        {
+          "dog": 2,
+          "robot": 2
+        },
+        {
+          "dog": 4,
+          "robot": 2
+        }
+      ],
+      "spend": [
+        {
+          "build": 170,
+          "signal": 120,
+          "bomb": 60,
+          "produce": 70,
+          "repair": 40,
+          "tech": 60
+        },
+        {
+          "build": 130,
+          "signal": 110,
+          "bomb": 90,
+          "tech": 60,
+          "produce": 110
+        }
+      ]
+    },
+    {
+      "seed": 26,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 0,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        500
+      ],
+      "scores": [
+        971.0,
+        648.5
+      ],
+      "control_seconds": [
+        157.0,
+        49.5
+      ],
+      "node_flips": 9,
+      "produced": [
+        {
+          "dog": 12
+        },
+        {
+          "dog": 4
+        }
+      ],
+      "deaths": [
+        {
+          "dog": 14,
+          "robot": 1
+        },
+        {
+          "dog": 4
+        }
+      ],
+      "spend": [
+        {
+          "build": 130,
+          "bomb": 60,
+          "signal": 70,
+          "tech": 60,
+          "produce": 240
+        },
+        {
+          "build": 130,
+          "signal": 180,
+          "bomb": 90,
+          "produce": 80
+        }
+      ]
+    },
+    {
+      "seed": 27,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 0,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        500
+      ],
+      "scores": [
+        1062.5,
+        587.0
+      ],
+      "control_seconds": [
+        187.5,
+        29.0
+      ],
+      "node_flips": 3,
+      "produced": [
+        {
+          "dog": 4,
+          "siege": 2
+        },
+        {}
+      ],
+      "deaths": [
+        {
+          "robot": 1,
+          "dog": 1
+        },
+        {
+          "dog": 2,
+          "robot": 1
+        }
+      ],
+      "spend": [
+        {
+          "build": 120,
+          "bomb": 60,
+          "signal": 130,
+          "produce": 190,
+          "tech": 60,
+          "repair": 20
+        },
+        {
+          "bomb": 150,
+          "signal": 180,
+          "build": 130
+        }
+      ]
+    },
+    {
+      "seed": 28,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 0,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        468
+      ],
+      "scores": [
+        990.5,
+        520.5
+      ],
+      "control_seconds": [
+        163.5,
+        17.5
+      ],
+      "node_flips": 3,
+      "produced": [
+        {
+          "dog": 8
+        },
+        {
+          "dog": 4
+        }
+      ],
+      "deaths": [
+        {
+          "dog": 4,
+          "robot": 1
+        },
+        {
+          "dog": 4,
+          "robot": 1
+        }
+      ],
+      "spend": [
+        {
+          "build": 120,
+          "signal": 70,
+          "bomb": 90,
+          "produce": 160,
+          "tech": 60,
+          "repair": 40
+        },
+        {
+          "build": 110,
+          "signal": 70,
+          "bomb": 60,
+          "produce": 80,
+          "tech": 60,
+          "repair": 40
+        }
+      ]
+    },
+    {
+      "seed": 29,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 0,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        470
+      ],
+      "scores": [
+        902.0,
+        542.0
+      ],
+      "control_seconds": [
+        134.0,
+        24.0
+      ],
+      "node_flips": 5,
+      "produced": [
+        {
+          "dog": 6
+        },
+        {
+          "dog": 6
+        }
+      ],
+      "deaths": [
+        {
+          "robot": 1,
+          "dog": 8
+        },
+        {
+          "dog": 8,
+          "robot": 1
+        }
+      ],
+      "spend": [
+        {
+          "build": 110,
+          "signal": 120,
+          "bomb": 150,
+          "produce": 120,
+          "tech": 60
+        },
+        {
+          "build": 110,
+          "signal": 90,
+          "bomb": 60,
+          "repair": 40,
+          "produce": 120
+        }
+      ]
+    },
+    {
+      "seed": 30,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 0,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        500
+      ],
+      "scores": [
+        825.5,
+        542.0
+      ],
+      "control_seconds": [
+        108.5,
+        14.0
+      ],
+      "node_flips": 3,
+      "produced": [
+        {
+          "robot": 2,
+          "dog": 2
+        },
+        {
+          "dog": 4
+        }
+      ],
+      "deaths": [
+        {
+          "dog": 4,
+          "robot": 3
+        },
+        {
+          "dog": 4,
+          "robot": 1
+        }
+      ],
+      "spend": [
+        {
+          "produce": 110,
+          "signal": 110,
+          "bomb": 60,
+          "build": 120,
+          "repair": 60,
+          "tech": 60
+        },
+        {
+          "build": 110,
+          "signal": 70,
+          "bomb": 60,
+          "produce": 80,
+          "tech": 60,
+          "repair": 40
+        }
+      ]
+    },
+    {
+      "seed": 31,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 1,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        455,
+        500
+      ],
+      "scores": [
+        540.5,
+        1044.5
+      ],
+      "control_seconds": [
+        28.5,
+        181.5
+      ],
+      "node_flips": 3,
+      "produced": [
+        {
+          "dog": 4,
+          "robot": 2
+        },
+        {
+          "robot": 4
+        }
+      ],
+      "deaths": [
+        {
+          "dog": 5,
+          "robot": 2
+        },
+        {
+          "dog": 2,
+          "robot": 3
+        }
+      ],
+      "spend": [
+        {
+          "produce": 150,
+          "signal": 120,
+          "bomb": 90,
+          "build": 100
+        },
+        {
+          "produce": 140,
+          "bomb": 60,
+          "signal": 120,
+          "tech": 60,
+          "build": 130,
+          "repair": 40
+        }
+      ]
+    },
+    {
+      "seed": 32,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 1,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        500
+      ],
+      "scores": [
+        713.0,
+        887.0
+      ],
+      "control_seconds": [
+        71.0,
+        129.0
+      ],
+      "node_flips": 5,
+      "produced": [
+        {
+          "dog": 4,
+          "robot": 2
+        },
+        {
+          "dog": 12
+        }
+      ],
+      "deaths": [
+        {
+          "robot": 1,
+          "dog": 6
+        },
+        {
+          "robot": 1,
+          "dog": 6
+        }
+      ],
+      "spend": [
+        {
+          "tech": 60,
+          "bomb": 30,
+          "signal": 70,
+          "build": 110,
+          "produce": 150,
+          "repair": 60
+        },
+        {
+          "build": 130,
+          "signal": 80,
+          "bomb": 90,
+          "produce": 240
+        }
+      ]
+    },
+    {
+      "seed": 33,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 1,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        500
+      ],
+      "scores": [
+        518.0,
+        1049.0
+      ],
+      "control_seconds": [
+        6.0,
+        183.0
+      ],
+      "node_flips": 3,
+      "produced": [
+        {},
+        {
+          "dog": 10
+        }
+      ],
+      "deaths": [
+        {
+          "robot": 1,
+          "dog": 2
+        },
+        {
+          "dog": 8,
+          "robot": 1
+        }
+      ],
+      "spend": [
+        {
+          "build": 120,
+          "signal": 130,
+          "bomb": 90,
+          "repair": 40,
+          "tech": 60
+        },
+        {
+          "produce": 200,
+          "bomb": 60,
+          "signal": 130,
+          "build": 70,
+          "tech": 60,
+          "repair": 60
+        }
+      ]
+    },
+    {
+      "seed": 34,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 0,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        230
+      ],
+      "scores": [
+        1131.5,
+        260.0
+      ],
+      "control_seconds": [
+        210.5,
+        10.0
+      ],
+      "node_flips": 4,
+      "produced": [
+        {
+          "dog": 4,
+          "robot": 4
+        },
+        {}
+      ],
+      "deaths": [
+        {
+          "dog": 5,
+          "robot": 2
+        },
+        {
+          "dog": 2,
+          "robot": 1
+        }
+      ],
+      "spend": [
+        {
+          "build": 130,
+          "bomb": 90,
+          "signal": 120,
+          "produce": 220,
+          "repair": 40
+        },
+        {
+          "build": 130,
+          "signal": 110,
+          "bomb": 120,
+          "repair": 80
+        }
+      ]
+    },
+    {
+      "seed": 35,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 0,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        500
+      ],
+      "scores": [
+        1031.0,
+        578.0
+      ],
+      "control_seconds": [
+        177.0,
+        26.0
+      ],
+      "node_flips": 5,
+      "produced": [
+        {
+          "dog": 2,
+          "robot": 2
+        },
+        {
+          "dog": 2
+        }
+      ],
+      "deaths": [
+        {
+          "dog": 4,
+          "robot": 1
+        },
+        {
+          "dog": 4,
+          "robot": 1
+        }
+      ],
+      "spend": [
+        {
+          "build": 120,
+          "signal": 165,
+          "bomb": 90,
+          "produce": 110,
+          "repair": 20
+        },
+        {
+          "build": 180,
+          "signal": 60,
+          "bomb": 60,
+          "repair": 40,
+          "tech": 60,
+          "produce": 40
+        }
+      ]
+    },
+    {
+      "seed": 36,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 1,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        500
+      ],
+      "scores": [
+        690.5,
+        908.0
+      ],
+      "control_seconds": [
+        63.5,
+        136.0
+      ],
+      "node_flips": 4,
+      "produced": [
+        {},
+        {
+          "dog": 4
+        }
+      ],
+      "deaths": [
+        {
+          "dog": 2,
+          "robot": 1
+        },
+        {
+          "robot": 1,
+          "dog": 3
+        }
+      ],
+      "spend": [
+        {
+          "build": 130,
+          "bomb": 120,
+          "signal": 190,
+          "tech": 60
+        },
+        {
+          "build": 120,
+          "signal": 140,
+          "bomb": 90,
+          "tech": 60,
+          "produce": 80,
+          "repair": 20
+        }
+      ]
+    },
+    {
+      "seed": 37,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 0,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        490,
+        370
+      ],
+      "scores": [
+        989.5,
+        527.5
+      ],
+      "control_seconds": [
+        166.5,
+        52.5
+      ],
+      "node_flips": 7,
+      "produced": [
+        {
+          "dog": 2
+        },
+        {
+          "dog": 2
+        }
+      ],
+      "deaths": [
+        {
+          "dog": 4,
+          "robot": 1
+        },
+        {
+          "robot": 1,
+          "dog": 2
+        }
+      ],
+      "spend": [
+        {
+          "produce": 40,
+          "signal": 160,
+          "bomb": 120,
+          "build": 130,
+          "repair": 80,
+          "tech": 60
+        },
+        {
+          "build": 110,
+          "signal": 100,
+          "bomb": 90,
+          "repair": 40,
+          "tech": 60,
+          "produce": 40
+        }
+      ]
+    },
+    {
+      "seed": 38,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 1,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        500
+      ],
+      "scores": [
+        551.0,
+        735.5
+      ],
+      "control_seconds": [
+        17.0,
+        78.5
+      ],
+      "node_flips": 3,
+      "produced": [
+        {
+          "dog": 6
+        },
+        {
+          "dog": 4
+        }
+      ],
+      "deaths": [
+        {
+          "dog": 8,
+          "robot": 1
+        },
+        {
+          "robot": 1,
+          "dog": 6
+        }
+      ],
+      "spend": [
+        {
+          "build": 110,
+          "signal": 90,
+          "bomb": 60,
+          "produce": 120,
+          "repair": 40
+        },
+        {
+          "build": 110,
+          "bomb": 120,
+          "signal": 110,
+          "tech": 60,
+          "produce": 80,
+          "repair": 20
+        }
+      ]
+    },
+    {
+      "seed": 39,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 1,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        470,
+        500
+      ],
+      "scores": [
+        470.0,
+        873.5
+      ],
+      "control_seconds": [
+        0.0,
+        124.5
+      ],
+      "node_flips": 2,
+      "produced": [
+        {},
+        {
+          "dog": 4
+        }
+      ],
+      "deaths": [
+        {
+          "dog": 2,
+          "robot": 1
+        },
+        {
+          "dog": 3,
+          "robot": 1
+        }
+      ],
+      "spend": [
+        {
+          "build": 130,
+          "bomb": 120,
+          "signal": 70,
+          "repair": 40,
+          "tech": 60
+        },
+        {
+          "build": 110,
+          "signal": 135,
+          "bomb": 120,
+          "produce": 80,
+          "repair": 20
+        }
+      ]
+    },
+    {
+      "seed": 40,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 0,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        500
+      ],
+      "scores": [
+        1040.0,
+        537.5
+      ],
+      "control_seconds": [
+        180.0,
+        12.5
+      ],
+      "node_flips": 3,
+      "produced": [
+        {
+          "dog": 4
+        },
+        {}
+      ],
+      "deaths": [
+        {
+          "robot": 1,
+          "dog": 4
+        },
+        {
+          "robot": 1,
+          "dog": 2
+        }
+      ],
+      "spend": [
+        {
+          "produce": 80,
+          "signal": 145,
+          "bomb": 150,
+          "build": 110,
+          "tech": 60
+        },
+        {
+          "build": 130,
+          "bomb": 120,
+          "signal": 110,
+          "tech": 60,
+          "repair": 20
+        }
+      ]
+    },
+    {
+      "seed": 41,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 0,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        365
+      ],
+      "scores": [
+        1074.5,
+        417.5
+      ],
+      "control_seconds": [
+        191.5,
+        17.5
+      ],
+      "node_flips": 3,
+      "produced": [
+        {
+          "robot": 4
+        },
+        {
+          "dog": 2
+        }
+      ],
+      "deaths": [
+        {},
+        {
+          "dog": 4,
+          "robot": 1
+        }
+      ],
+      "spend": [
+        {
+          "produce": 140,
+          "signal": 140,
+          "tech": 60,
+          "bomb": 90,
+          "repair": 40,
+          "build": 130
+        },
+        {
+          "build": 160,
+          "signal": 100,
+          "bomb": 60,
+          "tech": 60,
+          "produce": 40
+        }
+      ]
+    },
+    {
+      "seed": 42,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 1,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        500
+      ],
+      "scores": [
+        542.0,
+        906.5
+      ],
+      "control_seconds": [
+        14.0,
+        135.5
+      ],
+      "node_flips": 4,
+      "produced": [
+        {
+          "siege": 1
+        },
+        {
+          "dog": 8
+        }
+      ],
+      "deaths": [
+        {
+          "robot": 1,
+          "dog": 2,
+          "siege": 1
+        },
+        {
+          "dog": 2,
+          "robot": 1
+        }
+      ],
+      "spend": [
+        {
+          "build": 110,
+          "signal": 115,
+          "bomb": 60,
+          "tech": 60,
+          "produce": 55,
+          "repair": 20
+        },
+        {
+          "bomb": 90,
+          "signal": 110,
+          "build": 120,
+          "tech": 60,
+          "produce": 160
+        }
+      ]
+    },
+    {
+      "seed": 43,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 0,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        500
+      ],
+      "scores": [
+        911.0,
+        542.0
+      ],
+      "control_seconds": [
+        137.0,
+        14.0
+      ],
+      "node_flips": 3,
+      "produced": [
+        {
+          "dog": 8
+        },
+        {}
+      ],
+      "deaths": [
+        {
+          "dog": 2,
+          "robot": 1
+        },
+        {
+          "robot": 1,
+          "dog": 2
+        }
+      ],
+      "spend": [
+        {
+          "build": 120,
+          "bomb": 60,
+          "signal": 80,
+          "tech": 60,
+          "repair": 20,
+          "produce": 160
+        },
+        {
+          "build": 230,
+          "bomb": 60,
+          "signal": 50,
+          "tech": 60,
+          "repair": 20
+        }
+      ]
+    },
+    {
+      "seed": 44,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 1,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        500
+      ],
+      "scores": [
+        590.0,
+        1011.5
+      ],
+      "control_seconds": [
+        30.0,
+        170.5
+      ],
+      "node_flips": 5,
+      "produced": [
+        {},
+        {
+          "dog": 8
+        }
+      ],
+      "deaths": [
+        {
+          "dog": 2,
+          "robot": 1
+        },
+        {
+          "robot": 1,
+          "dog": 6
+        }
+      ],
+      "spend": [
+        {
+          "build": 130,
+          "signal": 50,
+          "bomb": 120,
+          "tech": 60,
+          "repair": 60
+        },
+        {
+          "build": 130,
+          "signal": 140,
+          "bomb": 90,
+          "produce": 160,
+          "tech": 60,
+          "repair": 20
+        }
+      ]
+    },
+    {
+      "seed": 45,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 0,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        500
+      ],
+      "scores": [
+        1098.5,
+        500.0
+      ],
+      "control_seconds": [
+        199.5,
+        0.0
+      ],
+      "node_flips": 2,
+      "produced": [
+        {
+          "dog": 8
+        },
+        {
+          "dog": 2
+        }
+      ],
+      "deaths": [
+        {
+          "robot": 1,
+          "dog": 3
+        },
+        {
+          "dog": 4,
+          "robot": 1
+        }
+      ],
+      "spend": [
+        {
+          "build": 130,
+          "bomb": 60,
+          "signal": 90,
+          "repair": 100,
+          "tech": 60,
+          "produce": 160
+        },
+        {
+          "tech": 60,
+          "bomb": 90,
+          "signal": 100,
+          "build": 110,
+          "produce": 40,
+          "repair": 20
+        }
+      ]
+    },
+    {
+      "seed": 46,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 1,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        340,
+        500
+      ],
+      "scores": [
+        617.5,
+        909.5
+      ],
+      "control_seconds": [
+        92.5,
+        136.5
+      ],
+      "node_flips": 7,
+      "produced": [
+        {
+          "robot": 4,
+          "dog": 4
+        },
+        {
+          "dog": 8
+        }
+      ],
+      "deaths": [
+        {
+          "dog": 6,
+          "robot": 2
+        },
+        {
+          "robot": 1,
+          "dog": 6
+        }
+      ],
+      "spend": [
+        {
+          "produce": 220,
+          "bomb": 60,
+          "signal": 110,
+          "build": 50,
+          "tech": 60
+        },
+        {
+          "build": 130,
+          "signal": 110,
+          "bomb": 60,
+          "tech": 60,
+          "produce": 160,
+          "repair": 20
+        }
+      ]
+    },
+    {
+      "seed": 47,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 0,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        500
+      ],
+      "scores": [
+        1091.0,
+        608.0
+      ],
+      "control_seconds": [
+        197.0,
+        36.0
+      ],
+      "node_flips": 5,
+      "produced": [
+        {
+          "dog": 12
+        },
+        {
+          "dog": 4,
+          "siege": 1
+        }
+      ],
+      "deaths": [
+        {
+          "robot": 1,
+          "dog": 6
+        },
+        {
+          "robot": 1,
+          "dog": 6,
+          "siege": 1
+        }
+      ],
+      "spend": [
+        {
+          "build": 130,
+          "bomb": 30,
+          "signal": 80,
+          "repair": 60,
+          "produce": 240,
+          "tech": 60
+        },
+        {
+          "build": 110,
+          "bomb": 30,
+          "signal": 65,
+          "repair": 40,
+          "tech": 60,
+          "produce": 135
+        }
+      ]
+    },
+    {
+      "seed": 48,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 0,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        500
+      ],
+      "scores": [
+        923.0,
+        707.0
+      ],
+      "control_seconds": [
+        141.0,
+        69.0
+      ],
+      "node_flips": 7,
+      "produced": [
+        {
+          "dog": 2,
+          "robot": 4
+        },
+        {
+          "dog": 4,
+          "siege": 1
+        }
+      ],
+      "deaths": [
+        {
+          "dog": 4,
+          "robot": 4
+        },
+        {
+          "robot": 1,
+          "dog": 6,
+          "siege": 1
+        }
+      ],
+      "spend": [
+        {
+          "build": 60,
+          "bomb": 120,
+          "signal": 135,
+          "repair": 60,
+          "produce": 180
+        },
+        {
+          "build": 110,
+          "signal": 45,
+          "bomb": 30,
+          "tech": 60,
+          "repair": 80,
+          "produce": 135
+        }
+      ]
+    },
+    {
+      "seed": 49,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 0,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        500
+      ],
+      "scores": [
+        821.0,
+        707.0
+      ],
+      "control_seconds": [
+        107.0,
+        69.0
+      ],
+      "node_flips": 3,
+      "produced": [
+        {
+          "dog": 2,
+          "robot": 2
+        },
+        {}
+      ],
+      "deaths": [
+        {
+          "robot": 1,
+          "dog": 3
+        },
+        {
+          "robot": 1,
+          "dog": 2
+        }
+      ],
+      "spend": [
+        {
+          "build": 110,
+          "bomb": 90,
+          "signal": 90,
+          "repair": 40,
+          "produce": 110,
+          "tech": 60
+        },
+        {
+          "build": 180,
+          "bomb": 90,
+          "signal": 150,
+          "tech": 60,
+          "repair": 20
+        }
+      ]
+    },
+    {
+      "seed": 50,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 0,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        460
+      ],
+      "scores": [
+        891.5,
+        460.0
+      ],
+      "control_seconds": [
+        130.5,
+        0.0
+      ],
+      "node_flips": 2,
+      "produced": [
+        {
+          "siege": 2
+        },
+        {}
+      ],
+      "deaths": [
+        {
+          "dog": 2,
+          "robot": 1
+        },
+        {
+          "robot": 1,
+          "dog": 2
+        }
+      ],
+      "spend": [
+        {
+          "build": 110,
+          "signal": 140,
+          "bomb": 60,
+          "tech": 60,
+          "repair": 60,
+          "produce": 110
+        },
+        {
+          "build": 180,
+          "bomb": 90,
+          "signal": 50,
+          "tech": 60,
+          "repair": 40
+        }
+      ]
+    },
+    {
+      "seed": 51,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 0,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        470
+      ],
+      "scores": [
+        1070.0,
+        498.5
+      ],
+      "control_seconds": [
+        190.0,
+        9.5
+      ],
+      "node_flips": 3,
+      "produced": [
+        {
+          "dog": 6
+        },
+        {}
+      ],
+      "deaths": [
+        {
+          "dog": 5
+        },
+        {
+          "robot": 1,
+          "dog": 2
+        }
+      ],
+      "spend": [
+        {
+          "produce": 120,
+          "bomb": 150,
+          "signal": 160,
+          "build": 130,
+          "repair": 20
+        },
+        {
+          "signal": 100,
+          "bomb": 120,
+          "build": 120,
+          "repair": 40,
+          "tech": 60
+        }
+      ]
+    },
+    {
+      "seed": 52,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 0,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        456,
+        500
+      ],
+      "scores": [
+        570.0,
+        569.0
+      ],
+      "control_seconds": [
+        38.0,
+        23.0
+      ],
+      "node_flips": 3,
+      "produced": [
+        {
+          "siege": 2,
+          "robot": 2
+        },
+        {
+          "robot": 2,
+          "dog": 4
+        }
+      ],
+      "deaths": [
+        {
+          "robot": 3,
+          "dog": 2,
+          "siege": 1
+        },
+        {
+          "dog": 3,
+          "robot": 3
+        }
+      ],
+      "spend": [
+        {
+          "build": 110,
+          "signal": 60,
+          "bomb": 30,
+          "tech": 60,
+          "produce": 180
+        },
+        {
+          "produce": 150,
+          "signal": 90,
+          "bomb": 90,
+          "build": 110
+        }
+      ]
+    },
+    {
+      "seed": 53,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 1,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        470,
+        500
+      ],
+      "scores": [
+        555.5,
+        1071.5
+      ],
+      "control_seconds": [
+        28.5,
+        190.5
+      ],
+      "node_flips": 5,
+      "produced": [
+        {},
+        {
+          "dog": 8
+        }
+      ],
+      "deaths": [
+        {
+          "robot": 1,
+          "dog": 2
+        },
+        {
+          "dog": 8,
+          "robot": 1
+        }
+      ],
+      "spend": [
+        {
+          "build": 130,
+          "signal": 90,
+          "bomb": 120,
+          "tech": 60,
+          "repair": 40
+        },
+        {
+          "build": 120,
+          "bomb": 120,
+          "signal": 90,
+          "produce": 160,
+          "repair": 60
+        }
+      ]
+    },
+    {
+      "seed": 54,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 1,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        460,
+        500
+      ],
+      "scores": [
+        550.0,
+        965.0
+      ],
+      "control_seconds": [
+        30.0,
+        155.0
+      ],
+      "node_flips": 3,
+      "produced": [
+        {},
+        {
+          "dog": 2,
+          "robot": 2
+        }
+      ],
+      "deaths": [
+        {
+          "dog": 2,
+          "robot": 1
+        },
+        {
+          "dog": 4,
+          "robot": 1
+        }
+      ],
+      "spend": [
+        {
+          "build": 180,
+          "signal": 120,
+          "bomb": 120,
+          "repair": 20
+        },
+        {
+          "build": 110,
+          "signal": 120,
+          "bomb": 120,
+          "repair": 40,
+          "tech": 60,
+          "produce": 110
+        }
+      ]
+    },
+    {
+      "seed": 55,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 1,
+      "end_reason": "hq_destroyed",
+      "ticks": 298,
+      "sim_seconds": 149.0,
+      "hq_hp": [
+        -10,
+        500
+      ],
+      "scores": [
+        26.0,
+        915.5
+      ],
+      "control_seconds": [
+        12.0,
+        138.5
+      ],
+      "node_flips": 4,
+      "produced": [
+        {
+          "dog": 2,
+          "siege": 1
+        },
+        {
+          "robot": 6
+        }
+      ],
+      "deaths": [
+        {
+          "robot": 1,
+          "dog": 4
+        },
+        {
+          "robot": 3,
+          "dog": 2
+        }
+      ],
+      "spend": [
+        {
+          "build": 110,
+          "signal": 65,
+          "bomb": 30,
+          "tech": 60,
+          "produce": 95
+        },
+        {
+          "produce": 210,
+          "bomb": 90,
+          "signal": 30,
+          "build": 110,
+          "repair": 40
+        }
+      ]
+    },
+    {
+      "seed": 56,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 1,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        500
+      ],
+      "scores": [
+        554.0,
+        1079.0
+      ],
+      "control_seconds": [
+        18.0,
+        193.0
+      ],
+      "node_flips": 4,
+      "produced": [
+        {},
+        {
+          "dog": 4,
+          "robot": 2
+        }
+      ],
+      "deaths": [
+        {
+          "robot": 1,
+          "dog": 2
+        },
+        {
+          "dog": 2
+        }
+      ],
+      "spend": [
+        {
+          "signal": 70,
+          "bomb": 90,
+          "build": 180,
+          "repair": 40,
+          "tech": 60
+        },
+        {
+          "build": 110,
+          "signal": 160,
+          "bomb": 120,
+          "produce": 150,
+          "repair": 60
+        }
+      ]
+    },
+    {
+      "seed": 57,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 1,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        500
+      ],
+      "scores": [
+        705.5,
+        723.5
+      ],
+      "control_seconds": [
+        68.5,
+        74.5
+      ],
+      "node_flips": 4,
+      "produced": [
+        {
+          "dog": 2,
+          "siege": 1,
+          "robot": 2
+        },
+        {
+          "robot": 4
+        }
+      ],
+      "deaths": [
+        {
+          "dog": 4,
+          "robot": 3,
+          "siege": 1
+        },
+        {
+          "robot": 4,
+          "dog": 2
+        }
+      ],
+      "spend": [
+        {
+          "build": 110,
+          "bomb": 30,
+          "signal": 95,
+          "tech": 60,
+          "produce": 165,
+          "repair": 20
+        },
+        {
+          "build": 110,
+          "bomb": 60,
+          "signal": 90,
+          "produce": 140,
+          "tech": 60,
+          "repair": 20
+        }
+      ]
+    },
+    {
+      "seed": 58,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 1,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        500
+      ],
+      "scores": [
+        797.0,
+        845.0
+      ],
+      "control_seconds": [
+        99.0,
+        115.0
+      ],
+      "node_flips": 3,
+      "produced": [
+        {
+          "dog": 2
+        },
+        {
+          "dog": 4
+        }
+      ],
+      "deaths": [
+        {
+          "dog": 4,
+          "robot": 1
+        },
+        {
+          "dog": 2,
+          "robot": 1
+        }
+      ],
+      "spend": [
+        {
+          "build": 110,
+          "signal": 165,
+          "bomb": 120,
+          "tech": 60,
+          "repair": 20,
+          "produce": 40
+        },
+        {
+          "build": 130,
+          "bomb": 90,
+          "signal": 95,
+          "tech": 60,
+          "produce": 80,
+          "repair": 40
+        }
+      ]
+    },
+    {
+      "seed": 59,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 0,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        470
+      ],
+      "scores": [
+        644.0,
+        627.5
+      ],
+      "control_seconds": [
+        48.0,
+        52.5
+      ],
+      "node_flips": 3,
+      "produced": [
+        {
+          "dog": 4
+        },
+        {
+          "dog": 4
+        }
+      ],
+      "deaths": [
+        {
+          "dog": 6,
+          "robot": 1
+        },
+        {
+          "dog": 3,
+          "robot": 1
+        }
+      ],
+      "spend": [
+        {
+          "build": 50,
+          "bomb": 180,
+          "signal": 170,
+          "produce": 80
+        },
+        {
+          "build": 110,
+          "signal": 150,
+          "bomb": 60,
+          "repair": 60,
+          "produce": 80
+        }
+      ]
+    },
+    {
+      "seed": 60,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 0,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        470
+      ],
+      "scores": [
+        1013.0,
+        594.5
+      ],
+      "control_seconds": [
+        171.0,
+        41.5
+      ],
+      "node_flips": 3,
+      "produced": [
+        {
+          "dog": 4
+        },
+        {
+          "siege": 1
+        }
+      ],
+      "deaths": [
+        {
+          "dog": 6,
+          "robot": 1
+        },
+        {
+          "dog": 2,
+          "robot": 1,
+          "siege": 1
+        }
+      ],
+      "spend": [
+        {
+          "build": 130,
+          "bomb": 150,
+          "signal": 135,
+          "repair": 20,
+          "produce": 80
+        },
+        {
+          "build": 180,
+          "signal": 85,
+          "bomb": 60,
+          "tech": 60,
+          "produce": 55,
+          "repair": 20
+        }
+      ]
+    },
+    {
+      "seed": 61,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 1,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        460
+      ],
+      "scores": [
+        500.0,
+        964.0
+      ],
+      "control_seconds": [
+        0.0,
+        168.0
+      ],
+      "node_flips": 2,
+      "produced": [
+        {},
+        {
+          "robot": 8
+        }
+      ],
+      "deaths": [
+        {
+          "dog": 2,
+          "robot": 1
+        },
+        {
+          "robot": 4,
+          "dog": 2
+        }
+      ],
+      "spend": [
+        {
+          "build": 180,
+          "bomb": 90,
+          "signal": 70,
+          "tech": 60,
+          "repair": 20
+        },
+        {
+          "build": 110,
+          "bomb": 30,
+          "signal": 100,
+          "repair": 40,
+          "produce": 280
+        }
+      ]
+    },
+    {
+      "seed": 62,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 0,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        410
+      ],
+      "scores": [
+        776.0,
+        726.5
+      ],
+      "control_seconds": [
+        92.0,
+        105.5
+      ],
+      "node_flips": 4,
+      "produced": [
+        {
+          "dog": 2,
+          "robot": 6
+        },
+        {}
+      ],
+      "deaths": [
+        {
+          "dog": 4,
+          "robot": 4
+        },
+        {
+          "robot": 1,
+          "dog": 2
+        }
+      ],
+      "spend": [
+        {
+          "build": 110,
+          "bomb": 60,
+          "signal": 60,
+          "produce": 250,
+          "repair": 20
+        },
+        {
+          "build": 180,
+          "signal": 120,
+          "bomb": 120,
+          "tech": 60,
+          "repair": 40
+        }
+      ]
+    },
+    {
+      "seed": 63,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 0,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        500
+      ],
+      "scores": [
+        1103.0,
+        578.0
+      ],
+      "control_seconds": [
+        201.0,
+        26.0
+      ],
+      "node_flips": 3,
+      "produced": [
+        {
+          "dog": 12
+        },
+        {}
+      ],
+      "deaths": [
+        {
+          "dog": 3,
+          "robot": 1
+        },
+        {
+          "dog": 2,
+          "robot": 1
+        }
+      ],
+      "spend": [
+        {
+          "build": 120,
+          "signal": 80,
+          "bomb": 60,
+          "produce": 240,
+          "repair": 40,
+          "tech": 60
+        },
+        {
+          "build": 130,
+          "bomb": 120,
+          "signal": 90,
+          "tech": 60,
+          "repair": 40
+        }
+      ]
+    },
+    {
+      "seed": 64,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 0,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        480
+      ],
+      "scores": [
+        1077.5,
+        480.0
+      ],
+      "control_seconds": [
+        192.5,
+        0.0
+      ],
+      "node_flips": 2,
+      "produced": [
+        {
+          "robot": 2,
+          "dog": 4
+        },
+        {
+          "dog": 4
+        }
+      ],
+      "deaths": [
+        {
+          "dog": 6,
+          "robot": 3
+        },
+        {
+          "dog": 6,
+          "robot": 1
+        }
+      ],
+      "spend": [
+        {
+          "build": 130,
+          "bomb": 90,
+          "signal": 135,
+          "produce": 150,
+          "tech": 60
+        },
+        {
+          "tech": 60,
+          "bomb": 60,
+          "signal": 70,
+          "build": 110,
+          "produce": 80,
+          "repair": 40
+        }
+      ]
+    },
+    {
+      "seed": 65,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 1,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        500
+      ],
+      "scores": [
+        789.5,
+        852.5
+      ],
+      "control_seconds": [
+        96.5,
+        117.5
+      ],
+      "node_flips": 2,
+      "produced": [
+        {
+          "siege": 1,
+          "robot": 2
+        },
+        {
+          "robot": 2,
+          "dog": 2
+        }
+      ],
+      "deaths": [
+        {
+          "dog": 2,
+          "robot": 1,
+          "siege": 1
+        },
+        {
+          "dog": 4,
+          "robot": 3
+        }
+      ],
+      "spend": [
+        {
+          "build": 190,
+          "signal": 75,
+          "bomb": 30,
+          "tech": 60,
+          "repair": 20,
+          "produce": 125
+        },
+        {
+          "tech": 60,
+          "signal": 130,
+          "bomb": 90,
+          "build": 110,
+          "produce": 110,
+          "repair": 20
+        }
+      ]
+    },
+    {
+      "seed": 66,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 0,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        500
+      ],
+      "scores": [
+        744.5,
+        599.0
+      ],
+      "control_seconds": [
+        81.5,
+        33.0
+      ],
+      "node_flips": 2,
+      "produced": [
+        {
+          "robot": 2
+        },
+        {
+          "robot": 2,
+          "dog": 4
+        }
+      ],
+      "deaths": [
+        {
+          "dog": 2,
+          "robot": 3
+        },
+        {
+          "robot": 3,
+          "dog": 6
+        }
+      ],
+      "spend": [
+        {
+          "produce": 70,
+          "signal": 110,
+          "bomb": 120,
+          "build": 120,
+          "tech": 60
+        },
+        {
+          "produce": 150,
+          "bomb": 60,
+          "signal": 100,
+          "build": 110,
+          "repair": 20
+        }
+      ]
+    },
+    {
+      "seed": 67,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 1,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        500
+      ],
+      "scores": [
+        731.0,
+        876.5
+      ],
+      "control_seconds": [
+        77.0,
+        125.5
+      ],
+      "node_flips": 6,
+      "produced": [
+        {
+          "dog": 2,
+          "robot": 2
+        },
+        {
+          "robot": 2,
+          "siege": 2
+        }
+      ],
+      "deaths": [
+        {
+          "dog": 4,
+          "robot": 3
+        },
+        {
+          "dog": 2,
+          "robot": 3
+        }
+      ],
+      "spend": [
+        {
+          "build": 110,
+          "signal": 165,
+          "bomb": 60,
+          "produce": 110,
+          "repair": 20
+        },
+        {
+          "tech": 60,
+          "signal": 110,
+          "bomb": 60,
+          "build": 110,
+          "produce": 180,
+          "repair": 20
+        }
+      ]
+    },
+    {
+      "seed": 68,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 0,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        500
+      ],
+      "scores": [
+        899.0,
+        758.0
+      ],
+      "control_seconds": [
+        133.0,
+        86.0
+      ],
+      "node_flips": 6,
+      "produced": [
+        {
+          "dog": 4,
+          "siege": 2
+        },
+        {
+          "siege": 1
+        }
+      ],
+      "deaths": [
+        {
+          "dog": 2,
+          "robot": 1,
+          "siege": 1
+        },
+        {
+          "dog": 2,
+          "robot": 1,
+          "siege": 1
+        }
+      ],
+      "spend": [
+        {
+          "build": 130,
+          "signal": 60,
+          "bomb": 60,
+          "tech": 60,
+          "repair": 40,
+          "produce": 190
+        },
+        {
+          "build": 110,
+          "bomb": 120,
+          "signal": 95,
+          "repair": 60,
+          "tech": 60,
+          "produce": 55
+        }
+      ]
+    },
+    {
+      "seed": 69,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 0,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        440
+      ],
+      "scores": [
+        1038.5,
+        552.5
+      ],
+      "control_seconds": [
+        179.5,
+        37.5
+      ],
+      "node_flips": 4,
+      "produced": [
+        {
+          "dog": 8
+        },
+        {
+          "dog": 2
+        }
+      ],
+      "deaths": [
+        {
+          "dog": 6
+        },
+        {
+          "dog": 4,
+          "robot": 1
+        }
+      ],
+      "spend": [
+        {
+          "bomb": 150,
+          "signal": 170,
+          "build": 120,
+          "produce": 160
+        },
+        {
+          "build": 180,
+          "bomb": 60,
+          "signal": 80,
+          "tech": 60,
+          "produce": 40,
+          "repair": 20
+        }
+      ]
+    },
+    {
+      "seed": 70,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 1,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        500
+      ],
+      "scores": [
+        596.0,
+        1052.0
+      ],
+      "control_seconds": [
+        32.0,
+        184.0
+      ],
+      "node_flips": 4,
+      "produced": [
+        {
+          "robot": 2
+        },
+        {
+          "robot": 2,
+          "dog": 2
+        }
+      ],
+      "deaths": [
+        {
+          "robot": 3,
+          "dog": 2
+        },
+        {
+          "dog": 2,
+          "robot": 2
+        }
+      ],
+      "spend": [
+        {
+          "bomb": 120,
+          "signal": 120,
+          "build": 110,
+          "produce": 70,
+          "repair": 20
+        },
+        {
+          "produce": 110,
+          "signal": 130,
+          "build": 110,
+          "bomb": 150,
+          "repair": 40,
+          "tech": 60
+        }
+      ]
+    },
+    {
+      "seed": 71,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 0,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        475
+      ],
+      "scores": [
+        1074.5,
+        520.0
+      ],
+      "control_seconds": [
+        191.5,
+        15.0
+      ],
+      "node_flips": 3,
+      "produced": [
+        {
+          "robot": 2
+        },
+        {
+          "dog": 6
+        }
+      ],
+      "deaths": [
+        {
+          "dog": 2,
+          "robot": 3
+        },
+        {
+          "dog": 8,
+          "robot": 1
+        }
+      ],
+      "spend": [
+        {
+          "build": 130,
+          "signal": 165,
+          "bomb": 120,
+          "produce": 70,
+          "repair": 40
+        },
+        {
+          "produce": 120,
+          "bomb": 90,
+          "signal": 50,
+          "repair": 40,
+          "build": 60,
+          "tech": 60
+        }
+      ]
+    },
+    {
+      "seed": 72,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 1,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        350,
+        415
+      ],
+      "scores": [
+        654.5,
+        709.0
+      ],
+      "control_seconds": [
+        101.5,
+        98.0
+      ],
+      "node_flips": 7,
+      "produced": [
+        {
+          "dog": 6
+        },
+        {
+          "dog": 8
+        }
+      ],
+      "deaths": [
+        {
+          "dog": 7
+        },
+        {
+          "dog": 10,
+          "robot": 1
+        }
+      ],
+      "spend": [
+        {
+          "tech": 60,
+          "signal": 90,
+          "bomb": 30,
+          "produce": 120,
+          "repair": 40,
+          "build": 180
+        },
+        {
+          "build": 190,
+          "bomb": 30,
+          "signal": 40,
+          "repair": 20,
+          "produce": 160,
+          "tech": 60
+        }
+      ]
+    },
+    {
+      "seed": 73,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 1,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        500
+      ],
+      "scores": [
+        542.0,
+        906.5
+      ],
+      "control_seconds": [
+        14.0,
+        135.5
+      ],
+      "node_flips": 4,
+      "produced": [
+        {},
+        {
+          "dog": 2,
+          "robot": 2
+        }
+      ],
+      "deaths": [
+        {
+          "robot": 1,
+          "dog": 2
+        },
+        {
+          "dog": 3
+        }
+      ],
+      "spend": [
+        {
+          "build": 120,
+          "bomb": 90,
+          "signal": 110,
+          "tech": 60,
+          "repair": 40
+        },
+        {
+          "build": 110,
+          "bomb": 120,
+          "signal": 170,
+          "produce": 110,
+          "repair": 20
+        }
+      ]
+    },
+    {
+      "seed": 74,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 1,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        500
+      ],
+      "scores": [
+        500.0,
+        831.5
+      ],
+      "control_seconds": [
+        0.0,
+        110.5
+      ],
+      "node_flips": 1,
+      "produced": [
+        {},
+        {
+          "dog": 4
+        }
+      ],
+      "deaths": [
+        {
+          "dog": 2,
+          "robot": 1
+        },
+        {
+          "dog": 5,
+          "robot": 1
+        }
+      ],
+      "spend": [
+        {
+          "build": 130,
+          "signal": 110,
+          "bomb": 120,
+          "tech": 60
+        },
+        {
+          "build": 120,
+          "signal": 150,
+          "bomb": 90,
+          "tech": 60,
+          "repair": 20,
+          "produce": 80
+        }
+      ]
+    },
+    {
+      "seed": 75,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 0,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        468
+      ],
+      "scores": [
+        1001.0,
+        582.0
+      ],
+      "control_seconds": [
+        167.0,
+        38.0
+      ],
+      "node_flips": 3,
+      "produced": [
+        {
+          "dog": 2
+        },
+        {}
+      ],
+      "deaths": [
+        {
+          "dog": 3,
+          "robot": 1
+        },
+        {
+          "robot": 1,
+          "dog": 2
+        }
+      ],
+      "spend": [
+        {
+          "tech": 60,
+          "signal": 110,
+          "bomb": 120,
+          "build": 180,
+          "repair": 20,
+          "produce": 40
+        },
+        {
+          "build": 120,
+          "signal": 110,
+          "bomb": 90,
+          "repair": 80,
+          "tech": 60
+        }
+      ]
+    },
+    {
+      "seed": 76,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 0,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        445,
+        500
+      ],
+      "scores": [
+        827.5,
+        731.0
+      ],
+      "control_seconds": [
+        127.5,
+        77.0
+      ],
+      "node_flips": 7,
+      "produced": [
+        {
+          "robot": 2,
+          "dog": 2
+        },
+        {
+          "robot": 2
+        }
+      ],
+      "deaths": [
+        {
+          "dog": 2,
+          "robot": 3
+        },
+        {
+          "dog": 2,
+          "robot": 3
+        }
+      ],
+      "spend": [
+        {
+          "produce": 110,
+          "signal": 70,
+          "bomb": 60,
+          "build": 180,
+          "repair": 40,
+          "tech": 60
+        },
+        {
+          "build": 250,
+          "signal": 100,
+          "bomb": 60,
+          "produce": 70,
+          "repair": 20
+        }
+      ]
+    },
+    {
+      "seed": 77,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 1,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        500
+      ],
+      "scores": [
+        500.0,
+        1151.0
+      ],
+      "control_seconds": [
+        0.0,
+        217.0
+      ],
+      "node_flips": 2,
+      "produced": [
+        {},
+        {
+          "robot": 2,
+          "dog": 8
+        }
+      ],
+      "deaths": [
+        {
+          "robot": 1,
+          "dog": 2
+        },
+        {
+          "dog": 2,
+          "robot": 3
+        }
+      ],
+      "spend": [
+        {
+          "build": 180,
+          "bomb": 90,
+          "signal": 50,
+          "repair": 40,
+          "tech": 60
+        },
+        {
+          "produce": 230,
+          "bomb": 120,
+          "signal": 90,
+          "build": 120,
+          "tech": 60
+        }
+      ]
+    },
+    {
+      "seed": 78,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 0,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        500
+      ],
+      "scores": [
+        960.5,
+        591.5
+      ],
+      "control_seconds": [
+        153.5,
+        30.5
+      ],
+      "node_flips": 4,
+      "produced": [
+        {
+          "robot": 2,
+          "dog": 8
+        },
+        {
+          "dog": 4
+        }
+      ],
+      "deaths": [
+        {
+          "dog": 1,
+          "robot": 2
+        },
+        {
+          "dog": 6,
+          "robot": 1
+        }
+      ],
+      "spend": [
+        {
+          "produce": 230,
+          "signal": 125,
+          "build": 120,
+          "repair": 40,
+          "bomb": 30
+        },
+        {
+          "build": 110,
+          "signal": 130,
+          "bomb": 120,
+          "produce": 80
+        }
+      ]
+    },
+    {
+      "seed": 79,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 0,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        422
+      ],
+      "scores": [
+        770.0,
+        486.5
+      ],
+      "control_seconds": [
+        90.0,
+        21.5
+      ],
+      "node_flips": 6,
+      "produced": [
+        {
+          "robot": 2,
+          "dog": 4
+        },
+        {}
+      ],
+      "deaths": [
+        {
+          "dog": 4,
+          "robot": 1
+        },
+        {
+          "dog": 2,
+          "robot": 1
+        }
+      ],
+      "spend": [
+        {
+          "build": 110,
+          "signal": 100,
+          "bomb": 90,
+          "produce": 150,
+          "repair": 40
+        },
+        {
+          "build": 120,
+          "signal": 140,
+          "bomb": 120,
+          "tech": 60
+        }
+      ]
+    },
+    {
+      "seed": 80,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 0,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        460
+      ],
+      "scores": [
+        758.0,
+        545.5
+      ],
+      "control_seconds": [
+        86.0,
+        28.5
+      ],
+      "node_flips": 4,
+      "produced": [
+        {
+          "robot": 6
+        },
+        {
+          "dog": 2
+        }
+      ],
+      "deaths": [
+        {
+          "dog": 2,
+          "robot": 2
+        },
+        {
+          "robot": 1,
+          "dog": 4
+        }
+      ],
+      "spend": [
+        {
+          "build": 110,
+          "signal": 70,
+          "bomb": 30,
+          "tech": 60,
+          "repair": 20,
+          "produce": 210
+        },
+        {
+          "build": 240,
+          "bomb": 60,
+          "signal": 80,
+          "produce": 40,
+          "repair": 20
+        }
+      ]
+    },
+    {
+      "seed": 81,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 1,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        500
+      ],
+      "scores": [
+        758.0,
+        887.0
+      ],
+      "control_seconds": [
+        86.0,
+        129.0
+      ],
+      "node_flips": 8,
+      "produced": [
+        {
+          "dog": 6
+        },
+        {
+          "dog": 8
+        }
+      ],
+      "deaths": [
+        {
+          "robot": 1,
+          "dog": 7
+        },
+        {
+          "dog": 9,
+          "robot": 1
+        }
+      ],
+      "spend": [
+        {
+          "produce": 120,
+          "signal": 160,
+          "bomb": 60,
+          "build": 120,
+          "tech": 60
+        },
+        {
+          "build": 130,
+          "signal": 110,
+          "bomb": 60,
+          "tech": 60,
+          "produce": 160
+        }
+      ]
+    },
+    {
+      "seed": 82,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 0,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        490,
+        470
+      ],
+      "scores": [
+        1057.0,
+        588.5
+      ],
+      "control_seconds": [
+        189.0,
+        39.5
+      ],
+      "node_flips": 5,
+      "produced": [
+        {
+          "robot": 2
+        },
+        {
+          "robot": 2
+        }
+      ],
+      "deaths": [
+        {
+          "dog": 2,
+          "robot": 3
+        },
+        {
+          "dog": 2,
+          "robot": 3
+        }
+      ],
+      "spend": [
+        {
+          "bomb": 90,
+          "signal": 120,
+          "build": 260,
+          "repair": 60,
+          "produce": 70
+        },
+        {
+          "build": 220,
+          "signal": 60,
+          "bomb": 30,
+          "produce": 70,
+          "tech": 60
+        }
+      ]
+    },
+    {
+      "seed": 83,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 1,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        500
+      ],
+      "scores": [
+        768.5,
+        825.5
+      ],
+      "control_seconds": [
+        89.5,
+        108.5
+      ],
+      "node_flips": 4,
+      "produced": [
+        {
+          "robot": 2,
+          "dog": 2
+        },
+        {
+          "dog": 4
+        }
+      ],
+      "deaths": [
+        {
+          "dog": 2,
+          "robot": 3
+        },
+        {
+          "dog": 6,
+          "robot": 1
+        }
+      ],
+      "spend": [
+        {
+          "build": 110,
+          "signal": 130,
+          "bomb": 150,
+          "produce": 110
+        },
+        {
+          "build": 130,
+          "signal": 125,
+          "bomb": 90,
+          "repair": 20,
+          "tech": 60,
+          "produce": 80
+        }
+      ]
+    },
+    {
+      "seed": 84,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 1,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        430,
+        500
+      ],
+      "scores": [
+        430.0,
+        1106.0
+      ],
+      "control_seconds": [
+        0.0,
+        202.0
+      ],
+      "node_flips": 2,
+      "produced": [
+        {},
+        {
+          "dog": 2,
+          "robot": 2
+        }
+      ],
+      "deaths": [
+        {
+          "dog": 2,
+          "robot": 1
+        },
+        {
+          "dog": 4,
+          "robot": 3
+        }
+      ],
+      "spend": [
+        {
+          "build": 110,
+          "bomb": 120,
+          "signal": 90,
+          "repair": 40,
+          "tech": 60
+        },
+        {
+          "build": 120,
+          "signal": 125,
+          "bomb": 150,
+          "produce": 110,
+          "tech": 60
+        }
+      ]
+    },
+    {
+      "seed": 85,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 1,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        205,
+        500
+      ],
+      "scores": [
+        575.5,
+        747.5
+      ],
+      "control_seconds": [
+        123.5,
+        82.5
+      ],
+      "node_flips": 5,
+      "produced": [
+        {
+          "dog": 4
+        },
+        {
+          "dog": 4,
+          "robot": 4
+        }
+      ],
+      "deaths": [
+        {
+          "robot": 1,
+          "dog": 4
+        },
+        {
+          "dog": 4,
+          "robot": 4
+        }
+      ],
+      "spend": [
+        {
+          "build": 120,
+          "bomb": 90,
+          "signal": 130,
+          "repair": 40,
+          "produce": 80,
+          "tech": 60
+        },
+        {
+          "build": 110,
+          "signal": 90,
+          "bomb": 60,
+          "produce": 220,
+          "repair": 20
+        }
+      ]
+    },
+    {
+      "seed": 86,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 1,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        500
+      ],
+      "scores": [
+        696.5,
+        900.5
+      ],
+      "control_seconds": [
+        65.5,
+        133.5
+      ],
+      "node_flips": 4,
+      "produced": [
+        {
+          "dog": 2,
+          "siege": 2
+        },
+        {
+          "dog": 4
+        }
+      ],
+      "deaths": [
+        {
+          "robot": 1,
+          "dog": 4,
+          "siege": 2
+        },
+        {
+          "robot": 1,
+          "dog": 4
+        }
+      ],
+      "spend": [
+        {
+          "build": 110,
+          "signal": 60,
+          "bomb": 120,
+          "tech": 60,
+          "produce": 150
+        },
+        {
+          "signal": 95,
+          "bomb": 90,
+          "build": 130,
+          "tech": 60,
+          "produce": 80,
+          "repair": 40
+        }
+      ]
+    },
+    {
+      "seed": 87,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 0,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        500
+      ],
+      "scores": [
+        942.5,
+        674.0
+      ],
+      "control_seconds": [
+        147.5,
+        58.0
+      ],
+      "node_flips": 3,
+      "produced": [
+        {
+          "dog": 10
+        },
+        {
+          "dog": 2
+        }
+      ],
+      "deaths": [
+        {
+          "robot": 1,
+          "dog": 6
+        },
+        {
+          "dog": 4,
+          "robot": 1
+        }
+      ],
+      "spend": [
+        {
+          "produce": 200,
+          "bomb": 120,
+          "signal": 80,
+          "build": 120,
+          "repair": 20
+        },
+        {
+          "bomb": 150,
+          "signal": 160,
+          "build": 110,
+          "produce": 40,
+          "repair": 20
+        }
+      ]
+    },
+    {
+      "seed": 88,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 0,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        500
+      ],
+      "scores": [
+        878.0,
+        638.0
+      ],
+      "control_seconds": [
+        126.0,
+        46.0
+      ],
+      "node_flips": 3,
+      "produced": [
+        {
+          "robot": 4,
+          "siege": 1
+        },
+        {
+          "dog": 2
+        }
+      ],
+      "deaths": [
+        {
+          "dog": 2,
+          "robot": 2
+        },
+        {
+          "dog": 4,
+          "robot": 1
+        }
+      ],
+      "spend": [
+        {
+          "build": 110,
+          "bomb": 60,
+          "signal": 75,
+          "tech": 60,
+          "repair": 20,
+          "produce": 195
+        },
+        {
+          "build": 180,
+          "bomb": 60,
+          "signal": 90,
+          "produce": 40,
+          "repair": 20,
+          "tech": 60
+        }
+      ]
+    },
+    {
+      "seed": 89,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 0,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        30
+      ],
+      "scores": [
+        1125.5,
+        30.0
+      ],
+      "control_seconds": [
+        208.5,
+        0.0
+      ],
+      "node_flips": 2,
+      "produced": [
+        {
+          "robot": 2,
+          "dog": 4
+        },
+        {}
+      ],
+      "deaths": [
+        {
+          "dog": 3,
+          "robot": 1
+        },
+        {
+          "dog": 2,
+          "robot": 1
+        }
+      ],
+      "spend": [
+        {
+          "build": 130,
+          "bomb": 90,
+          "signal": 100,
+          "produce": 150,
+          "repair": 40,
+          "tech": 60
+        },
+        {
+          "build": 180,
+          "bomb": 90,
+          "signal": 90,
+          "tech": 60
+        }
+      ]
+    },
+    {
+      "seed": 90,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 0,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        425
+      ],
+      "scores": [
+        822.5,
+        576.5
+      ],
+      "control_seconds": [
+        107.5,
+        50.5
+      ],
+      "node_flips": 4,
+      "produced": [
+        {},
+        {
+          "dog": 4
+        }
+      ],
+      "deaths": [
+        {
+          "dog": 2,
+          "robot": 1
+        },
+        {
+          "dog": 6,
+          "robot": 1
+        }
+      ],
+      "spend": [
+        {
+          "build": 130,
+          "signal": 115,
+          "bomb": 90,
+          "repair": 80,
+          "tech": 60
+        },
+        {
+          "produce": 80,
+          "signal": 120,
+          "bomb": 60,
+          "tech": 60,
+          "build": 130
+        }
+      ]
+    },
+    {
+      "seed": 91,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": -1,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        500
+      ],
+      "scores": [
+        792.5,
+        792.5
+      ],
+      "control_seconds": [
+        97.5,
+        97.5
+      ],
+      "node_flips": 2,
+      "produced": [
+        {
+          "dog": 4
+        },
+        {
+          "dog": 4,
+          "robot": 2
+        }
+      ],
+      "deaths": [
+        {
+          "robot": 1,
+          "dog": 2
+        },
+        {
+          "robot": 3,
+          "dog": 6
+        }
+      ],
+      "spend": [
+        {
+          "build": 130,
+          "signal": 100,
+          "bomb": 90,
+          "tech": 60,
+          "repair": 40,
+          "produce": 80
+        },
+        {
+          "build": 110,
+          "bomb": 90,
+          "signal": 70,
+          "tech": 60,
+          "repair": 20,
+          "produce": 150
+        }
+      ]
+    },
+    {
+      "seed": 92,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 0,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        500
+      ],
+      "scores": [
+        825.5,
+        783.5
+      ],
+      "control_seconds": [
+        108.5,
+        94.5
+      ],
+      "node_flips": 6,
+      "produced": [
+        {
+          "dog": 8
+        },
+        {
+          "dog": 4
+        }
+      ],
+      "deaths": [
+        {
+          "dog": 9,
+          "robot": 1
+        },
+        {
+          "dog": 6,
+          "robot": 1
+        }
+      ],
+      "spend": [
+        {
+          "build": 130,
+          "signal": 85,
+          "bomb": 90,
+          "produce": 160,
+          "tech": 60
+        },
+        {
+          "build": 120,
+          "bomb": 120,
+          "signal": 120,
+          "repair": 60,
+          "produce": 80
+        }
+      ]
+    },
+    {
+      "seed": 93,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 0,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        460
+      ],
+      "scores": [
+        815.0,
+        725.5
+      ],
+      "control_seconds": [
+        105.0,
+        88.5
+      ],
+      "node_flips": 5,
+      "produced": [
+        {
+          "siege": 1
+        },
+        {
+          "dog": 2,
+          "robot": 2
+        }
+      ],
+      "deaths": [
+        {
+          "dog": 2,
+          "robot": 1,
+          "siege": 1
+        },
+        {
+          "dog": 4,
+          "robot": 3
+        }
+      ],
+      "spend": [
+        {
+          "build": 110,
+          "bomb": 90,
+          "signal": 125,
+          "repair": 100,
+          "tech": 60,
+          "produce": 55
+        },
+        {
+          "build": 130,
+          "signal": 130,
+          "repair": 20,
+          "bomb": 30,
+          "produce": 110,
+          "tech": 60
+        }
+      ]
+    },
+    {
+      "seed": 94,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 1,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        500
+      ],
+      "scores": [
+        789.5,
+        879.5
+      ],
+      "control_seconds": [
+        96.5,
+        126.5
+      ],
+      "node_flips": 7,
+      "produced": [
+        {
+          "robot": 4,
+          "dog": 4
+        },
+        {
+          "dog": 8
+        }
+      ],
+      "deaths": [
+        {
+          "dog": 2,
+          "robot": 5
+        },
+        {
+          "robot": 1,
+          "dog": 10
+        }
+      ],
+      "spend": [
+        {
+          "produce": 220,
+          "bomb": 60,
+          "signal": 90,
+          "build": 110,
+          "repair": 20
+        },
+        {
+          "build": 130,
+          "signal": 100,
+          "bomb": 90,
+          "produce": 160,
+          "tech": 60
+        }
+      ]
+    },
+    {
+      "seed": 95,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 1,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        470,
+        500
+      ],
+      "scores": [
+        516.5,
+        879.5
+      ],
+      "control_seconds": [
+        15.5,
+        126.5
+      ],
+      "node_flips": 3,
+      "produced": [
+        {},
+        {
+          "siege": 1,
+          "robot": 2
+        }
+      ],
+      "deaths": [
+        {
+          "dog": 2,
+          "robot": 1
+        },
+        {
+          "robot": 3,
+          "dog": 2
+        }
+      ],
+      "spend": [
+        {
+          "build": 120,
+          "bomb": 90,
+          "signal": 90,
+          "repair": 80,
+          "tech": 60
+        },
+        {
+          "build": 110,
+          "signal": 75,
+          "bomb": 90,
+          "tech": 60,
+          "repair": 60,
+          "produce": 125
+        }
+      ]
+    },
+    {
+      "seed": 96,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 0,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        470
+      ],
+      "scores": [
+        1032.5,
+        495.5
+      ],
+      "control_seconds": [
+        177.5,
+        8.5
+      ],
+      "node_flips": 3,
+      "produced": [
+        {
+          "dog": 2,
+          "siege": 2
+        },
+        {}
+      ],
+      "deaths": [
+        {
+          "robot": 1,
+          "dog": 1
+        },
+        {
+          "dog": 2,
+          "robot": 1
+        }
+      ],
+      "spend": [
+        {
+          "produce": 150,
+          "bomb": 60,
+          "signal": 160,
+          "build": 110,
+          "tech": 60,
+          "repair": 40
+        },
+        {
+          "build": 130,
+          "signal": 70,
+          "bomb": 120,
+          "tech": 60,
+          "repair": 40
+        }
+      ]
+    },
+    {
+      "seed": 97,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 0,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        470,
+        500
+      ],
+      "scores": [
+        857.0,
+        780.5
+      ],
+      "control_seconds": [
+        129.0,
+        93.5
+      ],
+      "node_flips": 4,
+      "produced": [
+        {
+          "siege": 2
+        },
+        {
+          "dog": 4
+        }
+      ],
+      "deaths": [
+        {
+          "dog": 2,
+          "robot": 1,
+          "siege": 2
+        },
+        {
+          "dog": 3,
+          "robot": 1
+        }
+      ],
+      "spend": [
+        {
+          "build": 120,
+          "bomb": 90,
+          "signal": 140,
+          "tech": 60,
+          "produce": 110
+        },
+        {
+          "bomb": 120,
+          "signal": 100,
+          "build": 120,
+          "repair": 40,
+          "tech": 60,
+          "produce": 80
+        }
+      ]
+    },
+    {
+      "seed": 98,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 1,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        500
+      ],
+      "scores": [
+        546.5,
+        1004.0
+      ],
+      "control_seconds": [
+        15.5,
+        168.0
+      ],
+      "node_flips": 4,
+      "produced": [
+        {
+          "dog": 2
+        },
+        {
+          "dog": 12
+        }
+      ],
+      "deaths": [
+        {
+          "dog": 4,
+          "robot": 1
+        },
+        {
+          "robot": 1,
+          "dog": 2
+        }
+      ],
+      "spend": [
+        {
+          "bomb": 90,
+          "signal": 110,
+          "build": 160,
+          "produce": 40,
+          "repair": 40
+        },
+        {
+          "build": 130,
+          "bomb": 30,
+          "signal": 80,
+          "tech": 60,
+          "produce": 240,
+          "repair": 20
+        }
+      ]
+    },
+    {
+      "seed": 99,
+      "p0": "random_legal",
+      "p1": "random_legal",
+      "winner": 1,
+      "end_reason": "timeout",
+      "ticks": 360,
+      "sim_seconds": 180.0,
+      "hq_hp": [
+        500,
+        500
+      ],
+      "scores": [
+        668.0,
+        929.0
+      ],
+      "control_seconds": [
+        56.0,
+        143.0
+      ],
+      "node_flips": 6,
+      "produced": [
+        {
+          "dog": 4
+        },
+        {
+          "dog": 4
+        }
+      ],
+      "deaths": [
+        {
+          "dog": 4
+        },
+        {
+          "dog": 6,
+          "robot": 1
+        }
+      ],
+      "spend": [
+        {
+          "build": 110,
+          "signal": 140,
+          "bomb": 90,
+          "tech": 60,
+          "produce": 80
+        },
+        {
+          "build": 120,
+          "bomb": 90,
+          "signal": 110,
+          "repair": 40,
+          "tech": 60,
+          "produce": 80
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "games": 100,
+    "wins_p0": 54,
+    "wins_p1": 45,
+    "draws": 1,
+    "hq_destroyed_rate": 0.01,
+    "timeout_rate": 0.99,
+    "avg_sim_seconds": 179.69,
+    "p95_sim_seconds": 180.0,
+    "avg_node_flips": 3.95,
+    "produced": [
+      {
+        "dog": 292,
+        "robot": 92,
+        "siege": 25
+      },
+      {
+        "robot": 72,
+        "dog": 302,
+        "siege": 9
+      }
+    ],
+    "deaths": [
+      {
+        "dog": 341,
+        "robot": 141,
+        "siege": 12
+      },
+      {
+        "robot": 140,
+        "dog": 390,
+        "siege": 5
+      }
+    ],
+    "spend": [
+      {
+        "build": 12830,
+        "signal": 10800,
+        "bomb": 9150,
+        "repair": 3020,
+        "produce": 10435,
+        "tech": 4260
+      },
+      {
+        "build": 13300,
+        "signal": 10350,
+        "bomb": 9090,
+        "tech": 4260,
+        "repair": 2760,
+        "produce": 9055
+      }
+    ]
+  },
+  "wall_seconds": 14.08882679999806
+}

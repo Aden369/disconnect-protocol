@@ -1,0 +1,565 @@
+{
+  "schema_version": "thuai10-replay-v0.1",
+  "rules_version": "game-rules-v0.1",
+  "config_version": "balance-v0.1",
+  "config": {
+    "version": "balance-v0.1",
+    "rules_version": "game-rules-v0.1",
+    "schema_version": "thuai10-replay-v0.1",
+    "obs_schema_version": "thuai10-obs-v0.1",
+    "map": {
+      "width": 17,
+      "height": 11,
+      "mirror_x": 16,
+      "hq": [
+        [
+          1,
+          5
+        ],
+        [
+          15,
+          5
+        ]
+      ],
+      "slots": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          3,
+          8
+        ]
+      ],
+      "deploys": [
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          4,
+          8
+        ]
+      ],
+      "nodes": [
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          8
+        ]
+      ],
+      "region_xs": [
+        2,
+        8,
+        14
+      ],
+      "region_ys": [
+        2,
+        5,
+        8
+      ]
+    },
+    "time": {
+      "tick_seconds": 0.5,
+      "rounds": 6,
+      "phase_ticks": {
+        "build": 10,
+        "layout": 6,
+        "repair": 4,
+        "attack": 40
+      },
+      "attack_decision_ticks": 4,
+      "attack_decisions": 10
+    },
+    "economy": {
+      "initial_resources": 120,
+      "resource_cap": 300,
+      "base_income": 60,
+      "node_income": 20,
+      "income_rounds_from": 2,
+      "repair_cost": 20,
+      "repair_amount": 80,
+      "tech_cost": 60,
+      "tech_max_level": 1
+    },
+    "limits": {
+      "max_buildings": 4,
+      "max_barracks": 2,
+      "max_cannon": 2,
+      "max_shield": 1,
+      "max_units": 12,
+      "deploy_per_round": 3,
+      "deploy_batch": 3,
+      "bombs_per_round": 1
+    },
+    "units": {
+      "dog": {
+        "price": 20,
+        "hp": 60,
+        "damage": 10,
+        "damage_building": 10,
+        "attack_interval_ticks": 2,
+        "range": 1,
+        "move_interval_ticks": 1,
+        "priority": "units_first",
+        "batch_per_barracks": 2,
+        "requires_tech": 0
+      },
+      "robot": {
+        "price": 35,
+        "hp": 100,
+        "damage": 15,
+        "damage_building": 15,
+        "attack_interval_ticks": 2,
+        "range": 2,
+        "move_interval_ticks": 2,
+        "priority": "units_first",
+        "batch_per_barracks": 2,
+        "requires_tech": 0
+      },
+      "siege": {
+        "price": 55,
+        "hp": 140,
+        "damage": 8,
+        "damage_building": 35,
+        "attack_interval_ticks": 4,
+        "range": 3,
+        "move_interval_ticks": 3,
+        "priority": "buildings_first",
+        "batch_per_barracks": 1,
+        "requires_tech": 1
+      }
+    },
+    "buildings": {
+      "hq": {
+        "hp": 500,
+        "cost": 0
+      },
+      "barracks": {
+        "hp": 180,
+        "cost": 70
+      },
+      "cannon": {
+        "hp": 160,
+        "cost": 60,
+        "range": 4,
+        "damage": 16,
+        "damage_tech1": 20,
+        "attack_interval_ticks": 2
+      },
+      "shield": {
+        "hp": 120,
+        "cost": 50,
+        "aura_range": 2,
+        "reduction": 8,
+        "min_damage": 1
+      }
+    },
+    "combat": {
+      "siege_damage_tech1_building": 35,
+      "blocked_walkable_after_destroy_ticks": 1
+    },
+    "nodes": {
+      "capture_range": 1,
+      "capture_ticks": 4,
+      "control_ticks_per_tick": 1,
+      "control_seconds_per_tick": 0.5,
+      "score_per_control_second": 3,
+      "progress_reset_each_round": true
+    },
+    "signal": {
+      "cost": 5,
+      "duration_ticks": 16
+    },
+    "bomb": {
+      "cost": 30,
+      "delay_ticks": 4,
+      "radius": 1,
+      "damage": 30,
+      "damage_tech1": 40
+    },
+    "initial": {
+      "buildings": {
+        "barracks": 0,
+        "cannon": 3
+      },
+      "reserve": {
+        "dog": 2,
+        "robot": 1,
+        "siege": 0
+      }
+    },
+    "reward": {
+      "win": 1,
+      "loss": -1,
+      "draw": 0
+    }
+  },
+  "seed": 2026,
+  "actions": [
+    [
+      20,
+      21
+    ],
+    [
+      29,
+      29
+    ],
+    [
+      0,
+      0
+    ],
+    [
+      45,
+      49
+    ],
+    [
+      45,
+      59
+    ],
+    [
+      48,
+      59
+    ],
+    [
+      55,
+      59
+    ],
+    [
+      55,
+      59
+    ],
+    [
+      55,
+      59
+    ],
+    [
+      55,
+      59
+    ],
+    [
+      55,
+      59
+    ],
+    [
+      55,
+      59
+    ],
+    [
+      55,
+      59
+    ],
+    [
+      20,
+      20
+    ],
+    [
+      29,
+      29
+    ],
+    [
+      38,
+      0
+    ],
+    [
+      45,
+      49
+    ],
+    [
+      48,
+      59
+    ],
+    [
+      55,
+      59
+    ],
+    [
+      55,
+      59
+    ],
+    [
+      55,
+      59
+    ],
+    [
+      55,
+      59
+    ],
+    [
+      55,
+      45
+    ],
+    [
+      55,
+      45
+    ],
+    [
+      55,
+      0
+    ],
+    [
+      55,
+      0
+    ],
+    [
+      20,
+      20
+    ],
+    [
+      29,
+      29
+    ],
+    [
+      38,
+      0
+    ],
+    [
+      45,
+      59
+    ],
+    [
+      55,
+      59
+    ],
+    [
+      55,
+      59
+    ],
+    [
+      55,
+      59
+    ],
+    [
+      55,
+      45
+    ],
+    [
+      55,
+      45
+    ],
+    [
+      55,
+      0
+    ],
+    [
+      55,
+      0
+    ],
+    [
+      55,
+      0
+    ],
+    [
+      55,
+      0
+    ],
+    [
+      20,
+      21
+    ],
+    [
+      29,
+      29
+    ],
+    [
+      0,
+      0
+    ],
+    [
+      45,
+      49
+    ],
+    [
+      55,
+      59
+    ],
+    [
+      55,
+      59
+    ],
+    [
+      55,
+      59
+    ],
+    [
+      55,
+      59
+    ],
+    [
+      0,
+      59
+    ],
+    [
+      0,
+      59
+    ],
+    [
+      0,
+      45
+    ],
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      0
+    ],
+    [
+      20,
+      21
+    ],
+    [
+      25,
+      29
+    ],
+    [
+      0,
+      0
+    ],
+    [
+      45,
+      49
+    ],
+    [
+      55,
+      59
+    ],
+    [
+      55,
+      59
+    ],
+    [
+      55,
+      45
+    ],
+    [
+      55,
+      0
+    ],
+    [
+      55,
+      0
+    ],
+    [
+      55,
+      0
+    ],
+    [
+      55,
+      0
+    ],
+    [
+      55,
+      0
+    ],
+    [
+      0,
+      0
+    ]
+  ],
+  "checks": [
+    "a211131649f67e909e4e425b6a69ff6416124bd504167bb55fe4ac32b8313174",
+    "9a98d830bb342cbeab76a8169c96d7b59068a13cb0483ee0daa7ae1f6dfd0ac8",
+    "9aae465f72072c75e7dace978053de1c1f8c9a177421bda3c4b03e9bc31c0f08",
+    "7180039a832ec9308131d92d41aa225b85a2b3764488a0f61d98eb5825728be5",
+    "dd2bf741e58f025357197fcdc8bd88e33462fd192b48da07027f3df698d22239",
+    "d486a804dec90b89d95ddae11ad01834ddfc663670674911f900933b15cb6b58",
+    "f19bb26dca99437fbe96afa1ac3e7982fd5daef5c81b05615e965f9a63720048",
+    "c3ed6d186d64b2a5b728d55890785d1aebd2d15e7bedb7c76239a3a681e3a9ab",
+    "4344a254c265d8f1198043b5498fbbefcaff83a96efe7dbb51004c94002cd30b",
+    "1199f930af805c85d3586525660c015939be3a9b9cb90eb7f9eebe9c2da92f7f",
+    "bf9605e42edbe0e55b7d441c2e07513f2279f7977ce2af95dd1f4c6e9e21d227",
+    "c70b2ffb575c3227830c66c955ed293edc7c7d391291c5c56874eb1c774c66cc",
+    "05bbd5b97bd15af824ff0e63986a013897402c8f2165f55a8ee273ef0442c230",
+    "a82e824737f0f01396f5b805941cc393cb257402db5769d1ec2137b7790d33b2",
+    "9885063f841bd9eaf8f2087f0e73960f8b5c6f02ef3bfefdf39a0d1b65c7594d",
+    "96569980b2fa4a18ea6a3424a4679a0340ab033e682112aebb40f249713ebf2c",
+    "59d315e32b55f2cb0e5fc59bcc979138cbca3fe5e0853fc661e1ab4919a1e9ca",
+    "314120a6cef7aab949d71206c62a974ff9b27605c4aa9a78767ef3a3dc99f7fb",
+    "cffb97dc6d4c4fd800fe40170a81d430cf1049008c90f0bb5a05db0a77ea68e4",
+    "6fe04054f17d1b1e19b74e661d7620da64e57dedc062e052b3654717dad84535",
+    "23527e55e71245dc6485c893405e196ead04722ee9f9282e52155f65c1851d98",
+    "4fb287d0724da5fee997ba993a91bc3e750ece9e6aa9298fe036cec97c45ecb5",
+    "ad8ebc006b31d71b07f9c98a733c11ad6f285af883143fda7f70f4ff2ee9a2ec",
+    "05212dc9409c3c8314777a827750b65ae58d394e9d0e730777345ab967fc4e47",
+    "52aa2a4f10722e605216f75f58734396e7c7272d784fcf883e2ec7f5e69940b0",
+    "3a710bf784a2a9215b0cf9c8f3c16b79a3c9c7002f42a143372bdc9624ede06d",
+    "b24972832c38a7a763aa7c8bdf39f1fc040de7c2b819e2676bd76a543c9e4fbb",
+    "9687a7dfdae53b0699ac4c0468c5b885bebbec55de0b2fdc497bf32111ad94ea",
+    "8b48b4cac9772c6092234804880a65a8e901c04afd9ac4ccaef40199bbd8557f",
+    "38a95b1335f3754011785008bf8e1c2afbc30931a6146c0e9521b7b430e38358",
+    "39930dae7bec95a116d9991e6995db39a2f18b3a264b14faf0febee54481837f",
+    "cf0c7fc705cf55b15f09c39d8b071ee7c430135e1bb8d81b52d963fa16978c1b",
+    "ebd8f7281fc2fade8ca68b01cd5a77e6c587d1058663472b53d33ceeb68f4a8c",
+    "707d1b04a360efc28ead154bd94d7eba572a0495d85a838ba57c41bbc375afef",
+    "e3106d97f82d365083d6c5f511bbd9756601cb9a9de07b2867e780fa447dc505",
+    "9bb6799bf58c10b64e4348b7a1725c099b5bcf4d864c372b746a4692dd209427",
+    "a1e9ca0b01437cfbd9aa2f0b31b5392bd67adec8758ca1f7af9251851b33789d",
+    "b03a249bc91c9aabdcfa9c1a8701921d6151c98d218e0f703cab647cfae8b9b6",
+    "4965327037ec4ac56cad9942d8abe3cc67ecdbbd6e6df37bc4c8c38ccbb8f4f0",
+    "cb01fa38abf34b88bcb25803b24316dd97880ede734fed17350f3b12d11fbbab",
+    "3cbfc8b0f4d6aa98e91847c684aad0b5ccd13550115b456b589eb66f251e9aed",
+    "bd602c5a8109df119c67f79ba6b1f1484fcfcd3d2c8f6a94fb67bcabe4b88152",
+    "3cf761f9e065c59b395f53c97eccfafe5f03dc63748b1ac9bcba430bce7a22d0",
+    "5d6c0c1cf123514332381b205033a2a8006075b64217064aa834f72c604d7820",
+    "a771a57320be9efe16595cbff2a34fae6a74d438be963ddb930317259b1b61c3",
+    "fc66a23397b6e090f377f64e7891e2313a9349a0f538682318af289fc31507de",
+    "0c52634a8c5c44d9830e343f66ec90c893bfb6b3f9327461cdf2a68f0c212be7",
+    "912d4351294b1beb71ffb60839558bc00348cf864215b9aad725e89fa52a434f",
+    "668d44b9e0cffc0aedd710b9dafd56974db1e1c5b811859ff77b9a30d048ab89",
+    "66f1165ee64f87a928f6438c89f307c1d2adc4abe3d14fd64742b3ff3ace67af",
+    "f4c033e721e20a8eaeff0b830a6690f02ecd7e2193d6f7f76b4e2c04c0611184",
+    "b11dd6ba36b9b45b8937fceeb17d3995c375fde425e3c3111487b6b6dee36b29",
+    "a98c3d8b1104565ba11eba2e94a1495b61c7eaed9d109299e9af3401c2a0d4a2",
+    "3b98ba8dc462f4c3e96ad4e225b860acaf3703bcd54831640f3a7ba5aa13eb9b",
+    "aec8e6b6e91890c472ce8bcba5f30fc8f80d4d8c4673787cf49d1368023d0090",
+    "0525e300440d65691d10d89bf7edfd8d6d76a672e0df034fd58237c26e920e5f",
+    "f404853aa568785b30930730e6f9752e63adf7195e56644bbe46724bbf32fe88",
+    "e7ede3421e1cc754ecb1c8b60147f4e5603684d14cfba216093a9efe44b7e82b",
+    "8fcf5b981f85d1423d7a6071581f043b39691002a22656ec8887a5ecee8cefa7",
+    "f86b22897c7acc6c2212c62efbf7f69cd2da6f1639aabe6b8f19c3a054ff0d7c",
+    "e5cbe066f26088d6875024f8b1825ee8f73e1b3b755d4d84588405d7d3e675bf",
+    "6acde2839f5084b450aae6073e86b4498d778290c689ba7a743ee5a96931af02",
+    "112ec12285e856c3afee992058920304b16d5da54e367110cace35f881dca632",
+    "89f1bf1bdee545b57ccc4586eeb2c5420394153488f48ae1ea4d67d3eb933535",
+    "d9659a21f189d87dbc5fef3a3167755c377ab37fe38be48b4d50ac26d9f3a952"
+  ],
+  "final": {
+    "winner": 1,
+    "end_reason": "hq_destroyed",
+    "steps": 65,
+    "ticks": 300,
+    "scores": [
+      260.0,
+      645.5
+    ]
+  },
+  "meta": {
+    "description": "node_grabber vs robot_push 示范回放",
+    "generator": "scripts/make_replay_example.py"
+  }
+}

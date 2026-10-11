@@ -1,0 +1,23 @@
+{
+    "version": "balance-v0.3",
+    "rules_version": "game-rules-v0.3",
+    "schema_version": "thuai10-fourway-replay-v0.3",
+    "obs_schema_version": "thuai10-fourway-obs-v0.3",
+    "map": {"size": 21, "hq_local": [2, 2], "deploy_local": [[5, 2], [2, 5]], "nodes": [[7, 7], [13, 7], [13, 13], [7, 13]], "regions": [2, 10, 18]},
+    "time": {"tick_seconds": 0.5, "decision_ticks": 4, "max_ticks": 360, "overload_tick": 240, "overload_initial": 12, "overload_increment": 6, "overload_period": 20},
+    "economy": {"initial": 140, "income": 6, "relay_income": 2, "cap": 300},
+    "limits": {"units": 12, "cannons": 2, "jammers": 1, "repairs": 5},
+    "units": {
+        "dog": {"hp": 65, "damage": 9, "building_damage": 9, "range": 1, "attack_ticks": 2, "move_ticks": 1, "batch": 2, "cost": 40, "air": false},
+        "robot": {"hp": 110, "damage": 15, "building_damage": 15, "range": 2, "attack_ticks": 2, "move_ticks": 1, "batch": 2, "cost": 70, "air": false},
+        "siege": {"hp": 170, "damage": 7, "building_damage": 38, "range": 3, "attack_ticks": 3, "move_ticks": 2, "batch": 1, "cost": 50, "air": false},
+        "drone": {"hp": 65, "damage": 5, "building_damage": 5, "range": 2, "attack_ticks": 2, "move_ticks": 1, "batch": 1, "cost": 30, "air": true}
+    },
+    "buildings": {"hq": {"hp": 500}, "cannon": {"hp": 180, "damage": 18, "range": 6, "attack_ticks": 2, "cost": 55}, "jammer": {"hp": 140, "radius": 4, "cost": 45}, "wall": {"hp": 100}},
+    "support": {"wall_cost": 25, "wall_repair": 35, "repair_cost": 30, "repair_hp": 60, "repair_cooldown": 16, "tech_cost": 50, "tech_unit_damage": 3, "tech_cannon_damage": 4},
+    "network": {"hq_link": 12, "relay_link": 8, "hq_coverage": 7, "relay_coverage": 6, "drone_coverage": 4},
+    "nodes": {"range": 1, "capture_ticks": 4},
+    "signal": {"cost": 8, "duration": 24, "cooldown": 8},
+    "missile": {"cost": 45, "flight": 8, "cooldown": 24, "radius": 1, "damage": 75, "lost_damage": 15},
+    "jam": {"cost": 25, "flight": 2, "duration": 20, "cooldown": 20, "radius": 4}
+}

@@ -1,0 +1,101 @@
+{
+  "version": "balance-v0.1",
+  "rules_version": "game-rules-v0.1",
+  "schema_version": "thuai10-replay-v0.1",
+  "obs_schema_version": "thuai10-obs-v0.1",
+  "map": {
+    "width": 17,
+    "height": 11,
+    "mirror_x": 16,
+    "hq": [[1, 5], [15, 5]],
+    "slots": [[2, 2], [3, 2], [2, 5], [3, 5], [2, 8], [3, 8]],
+    "deploys": [[4, 2], [4, 5], [4, 8]],
+    "nodes": [[8, 2], [8, 8]],
+    "region_xs": [2, 8, 14],
+    "region_ys": [2, 5, 8]
+  },
+  "time": {
+    "tick_seconds": 0.5,
+    "rounds": 6,
+    "phase_ticks": { "build": 10, "layout": 6, "repair": 4, "attack": 40 },
+    "attack_decision_ticks": 4,
+    "attack_decisions": 10
+  },
+  "economy": {
+    "initial_resources": 120,
+    "resource_cap": 300,
+    "base_income": 60,
+    "node_income": 20,
+    "income_rounds_from": 2,
+    "repair_cost": 20,
+    "repair_amount": 80,
+    "tech_cost": 60,
+    "tech_max_level": 1
+  },
+  "limits": {
+    "max_buildings": 4,
+    "max_barracks": 2,
+    "max_cannon": 2,
+    "max_shield": 1,
+    "max_units": 12,
+    "deploy_per_round": 3,
+    "deploy_batch": 3,
+    "bombs_per_round": 1
+  },
+  "units": {
+    "dog": {
+      "price": 20, "hp": 60, "damage": 10, "damage_building": 10,
+      "attack_interval_ticks": 2, "range": 1, "move_interval_ticks": 1,
+      "priority": "units_first", "batch_per_barracks": 2, "requires_tech": 0
+    },
+    "robot": {
+      "price": 35, "hp": 100, "damage": 15, "damage_building": 15,
+      "attack_interval_ticks": 2, "range": 2, "move_interval_ticks": 2,
+      "priority": "units_first", "batch_per_barracks": 2, "requires_tech": 0
+    },
+    "siege": {
+      "price": 55, "hp": 140, "damage": 8, "damage_building": 35,
+      "attack_interval_ticks": 4, "range": 3, "move_interval_ticks": 3,
+      "priority": "buildings_first", "batch_per_barracks": 1, "requires_tech": 1
+    }
+  },
+  "buildings": {
+    "hq": { "hp": 500, "cost": 0 },
+    "barracks": { "hp": 180, "cost": 70 },
+    "cannon": {
+      "hp": 160, "cost": 60, "range": 4, "damage": 16, "damage_tech1": 20,
+      "attack_interval_ticks": 2
+    },
+    "shield": {
+      "hp": 120, "cost": 50, "aura_range": 2, "reduction": 8, "min_damage": 1
+    }
+  },
+  "combat": {
+    "siege_damage_tech1_building": 35,
+    "blocked_walkable_after_destroy_ticks": 1
+  },
+  "nodes": {
+    "capture_range": 1,
+    "capture_ticks": 4,
+    "control_ticks_per_tick": 1,
+    "control_seconds_per_tick": 0.5,
+    "score_per_control_second": 3,
+    "progress_reset_each_round": true
+  },
+  "signal": {
+    "cost": 5,
+    "duration_ticks": 16
+  },
+  "bomb": {
+    "cost": 30,
+    "delay_ticks": 4,
+    "radius": 1,
+    "damage": 30,
+    "damage_tech1": 40
+  },
+  "initial": {
+    "buildings": { "barracks": 0, "cannon": 3 },
+    "reserve": { "dog": 2, "robot": 1, "siege": 0 }
+  },
+  "reward": { "win": 1, "loss": -1, "draw": 0 }
+}

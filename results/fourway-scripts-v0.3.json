@@ -1,0 +1,1044 @@
+{
+  "rules_version": "game-rules-v0.3",
+  "mode": "scripts",
+  "summary": {
+    "games": 24,
+    "completed": 24,
+    "champions_by_policy": {
+      "missile": 16,
+      "fortress": 4
+    },
+    "draws": 4,
+    "average_seconds": 168.66666666666666,
+    "max_seconds": 172.0,
+    "events": {
+      "deploy": 1484,
+      "signal": 168,
+      "build": 48,
+      "target": 552,
+      "jam_launch": 376,
+      "jam_cloud": 376,
+      "node_flip": 184,
+      "entity_destroyed": 1860,
+      "missile_launch": 144,
+      "lock_lost": 76,
+      "missile_impact": 144,
+      "wall_destroyed": 152,
+      "overload": 608,
+      "repair": 196,
+      "eliminated": 76,
+      "victory": 24
+    },
+    "wall_seconds": 21.777517499984242
+  },
+  "games": [
+    {
+      "seed": 0,
+      "policies": [
+        "breach",
+        "missile",
+        "electronic",
+        "fortress"
+      ],
+      "winner": 1,
+      "reason": "last_survivor",
+      "seconds": 170.0,
+      "hq_hp": [
+        0,
+        38,
+        0,
+        0
+      ],
+      "eliminated_ticks": [
+        340,
+        null,
+        332,
+        320
+      ],
+      "events": {
+        "deploy": 69,
+        "signal": 5,
+        "build": 2,
+        "target": 21,
+        "jam_launch": 15,
+        "jam_cloud": 15,
+        "node_flip": 8,
+        "entity_destroyed": 85,
+        "missile_launch": 4,
+        "lock_lost": 2,
+        "missile_impact": 4,
+        "wall_destroyed": 4,
+        "overload": 26,
+        "repair": 8,
+        "eliminated": 3,
+        "victory": 1
+      }
+    },
+    {
+      "seed": 1,
+      "policies": [
+        "breach",
+        "missile",
+        "fortress",
+        "electronic"
+      ],
+      "winner": 1,
+      "reason": "last_survivor",
+      "seconds": 166.0,
+      "hq_hp": [
+        0,
+        11,
+        0,
+        0
+      ],
+      "eliminated_ticks": [
+        332,
+        null,
+        312,
+        332
+      ],
+      "events": {
+        "deploy": 60,
+        "signal": 8,
+        "build": 2,
+        "missile_launch": 7,
+        "jam_launch": 19,
+        "jam_cloud": 19,
+        "target": 18,
+        "node_flip": 10,
+        "lock_lost": 4,
+        "missile_impact": 7,
+        "entity_destroyed": 75,
+        "wall_destroyed": 9,
+        "overload": 24,
+        "repair": 6,
+        "eliminated": 3,
+        "victory": 1
+      }
+    },
+    {
+      "seed": 2,
+      "policies": [
+        "breach",
+        "electronic",
+        "missile",
+        "fortress"
+      ],
+      "winner": 2,
+      "reason": "last_survivor",
+      "seconds": 170.0,
+      "hq_hp": [
+        0,
+        0,
+        38,
+        0
+      ],
+      "eliminated_ticks": [
+        340,
+        340,
+        null,
+        292
+      ],
+      "events": {
+        "deploy": 60,
+        "build": 2,
+        "signal": 10,
+        "jam_launch": 15,
+        "missile_launch": 8,
+        "jam_cloud": 15,
+        "target": 15,
+        "node_flip": 6,
+        "lock_lost": 3,
+        "missile_impact": 8,
+        "entity_destroyed": 76,
+        "wall_destroyed": 4,
+        "overload": 26,
+        "repair": 9,
+        "eliminated": 3,
+        "victory": 1
+      }
+    },
+    {
+      "seed": 3,
+      "policies": [
+        "breach",
+        "electronic",
+        "fortress",
+        "missile"
+      ],
+      "winner": 2,
+      "reason": "last_survivor",
+      "seconds": 164.0,
+      "hq_hp": [
+        0,
+        0,
+        17,
+        0
+      ],
+      "eliminated_ticks": [
+        328,
+        312,
+        null,
+        135
+      ],
+      "events": {
+        "deploy": 57,
+        "build": 2,
+        "signal": 4,
+        "jam_launch": 15,
+        "missile_launch": 4,
+        "jam_cloud": 15,
+        "target": 31,
+        "node_flip": 8,
+        "lock_lost": 3,
+        "missile_impact": 4,
+        "entity_destroyed": 73,
+        "wall_destroyed": 12,
+        "repair": 6,
+        "eliminated": 3,
+        "overload": 23,
+        "victory": 1
+      }
+    },
+    {
+      "seed": 4,
+      "policies": [
+        "breach",
+        "fortress",
+        "missile",
+        "electronic"
+      ],
+      "winner": 2,
+      "reason": "last_survivor",
+      "seconds": 170.0,
+      "hq_hp": [
+        0,
+        0,
+        38,
+        0
+      ],
+      "eliminated_ticks": [
+        316,
+        332,
+        null,
+        340
+      ],
+      "events": {
+        "deploy": 68,
+        "build": 2,
+        "signal": 6,
+        "target": 35,
+        "jam_launch": 13,
+        "jam_cloud": 13,
+        "node_flip": 7,
+        "entity_destroyed": 82,
+        "missile_launch": 5,
+        "wall_destroyed": 4,
+        "missile_impact": 5,
+        "lock_lost": 1,
+        "overload": 26,
+        "repair": 9,
+        "eliminated": 3,
+        "victory": 1
+      }
+    },
+    {
+      "seed": 5,
+      "policies": [
+        "breach",
+        "fortress",
+        "electronic",
+        "missile"
+      ],
+      "winner": -1,
+      "reason": "mutual_destruction",
+      "seconds": 172.0,
+      "hq_hp": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "eliminated_ticks": [
+        320,
+        344,
+        340,
+        344
+      ],
+      "events": {
+        "deploy": 57,
+        "build": 2,
+        "signal": 9,
+        "jam_launch": 17,
+        "missile_launch": 8,
+        "jam_cloud": 17,
+        "target": 18,
+        "node_flip": 7,
+        "lock_lost": 6,
+        "missile_impact": 8,
+        "entity_destroyed": 74,
+        "wall_destroyed": 5,
+        "overload": 27,
+        "repair": 11,
+        "eliminated": 4,
+        "victory": 1
+      }
+    },
+    {
+      "seed": 6,
+      "policies": [
+        "missile",
+        "breach",
+        "electronic",
+        "fortress"
+      ],
+      "winner": 3,
+      "reason": "last_survivor",
+      "seconds": 164.0,
+      "hq_hp": [
+        0,
+        0,
+        0,
+        17
+      ],
+      "eliminated_ticks": [
+        135,
+        328,
+        312,
+        null
+      ],
+      "events": {
+        "signal": 4,
+        "deploy": 57,
+        "build": 2,
+        "missile_launch": 4,
+        "jam_launch": 15,
+        "jam_cloud": 15,
+        "target": 31,
+        "node_flip": 8,
+        "lock_lost": 3,
+        "missile_impact": 4,
+        "entity_destroyed": 73,
+        "wall_destroyed": 12,
+        "repair": 6,
+        "eliminated": 3,
+        "overload": 23,
+        "victory": 1
+      }
+    },
+    {
+      "seed": 7,
+      "policies": [
+        "missile",
+        "breach",
+        "fortress",
+        "electronic"
+      ],
+      "winner": -1,
+      "reason": "mutual_destruction",
+      "seconds": 172.0,
+      "hq_hp": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "eliminated_ticks": [
+        344,
+        320,
+        344,
+        340
+      ],
+      "events": {
+        "signal": 9,
+        "deploy": 57,
+        "build": 2,
+        "missile_launch": 8,
+        "jam_launch": 17,
+        "jam_cloud": 17,
+        "target": 18,
+        "node_flip": 7,
+        "lock_lost": 6,
+        "missile_impact": 8,
+        "entity_destroyed": 74,
+        "wall_destroyed": 5,
+        "overload": 27,
+        "repair": 11,
+        "eliminated": 4,
+        "victory": 1
+      }
+    },
+    {
+      "seed": 8,
+      "policies": [
+        "missile",
+        "electronic",
+        "breach",
+        "fortress"
+      ],
+      "winner": 0,
+      "reason": "last_survivor",
+      "seconds": 170.0,
+      "hq_hp": [
+        38,
+        0,
+        0,
+        0
+      ],
+      "eliminated_ticks": [
+        null,
+        340,
+        316,
+        332
+      ],
+      "events": {
+        "signal": 6,
+        "build": 2,
+        "deploy": 68,
+        "target": 35,
+        "jam_launch": 13,
+        "jam_cloud": 13,
+        "node_flip": 7,
+        "entity_destroyed": 82,
+        "missile_launch": 5,
+        "wall_destroyed": 4,
+        "missile_impact": 5,
+        "lock_lost": 1,
+        "overload": 26,
+        "repair": 9,
+        "eliminated": 3,
+        "victory": 1
+      }
+    },
+    {
+      "seed": 9,
+      "policies": [
+        "missile",
+        "electronic",
+        "fortress",
+        "breach"
+      ],
+      "winner": 0,
+      "reason": "last_survivor",
+      "seconds": 170.0,
+      "hq_hp": [
+        38,
+        0,
+        0,
+        0
+      ],
+      "eliminated_ticks": [
+        null,
+        332,
+        320,
+        340
+      ],
+      "events": {
+        "signal": 5,
+        "build": 2,
+        "deploy": 69,
+        "target": 21,
+        "jam_launch": 15,
+        "jam_cloud": 15,
+        "node_flip": 8,
+        "entity_destroyed": 85,
+        "missile_launch": 4,
+        "lock_lost": 2,
+        "missile_impact": 4,
+        "wall_destroyed": 4,
+        "overload": 26,
+        "repair": 8,
+        "eliminated": 3,
+        "victory": 1
+      }
+    },
+    {
+      "seed": 10,
+      "policies": [
+        "missile",
+        "fortress",
+        "breach",
+        "electronic"
+      ],
+      "winner": 0,
+      "reason": "last_survivor",
+      "seconds": 170.0,
+      "hq_hp": [
+        38,
+        0,
+        0,
+        0
+      ],
+      "eliminated_ticks": [
+        null,
+        292,
+        340,
+        340
+      ],
+      "events": {
+        "signal": 10,
+        "build": 2,
+        "deploy": 60,
+        "missile_launch": 8,
+        "jam_launch": 15,
+        "jam_cloud": 15,
+        "target": 15,
+        "node_flip": 6,
+        "lock_lost": 3,
+        "missile_impact": 8,
+        "entity_destroyed": 76,
+        "wall_destroyed": 4,
+        "overload": 26,
+        "repair": 9,
+        "eliminated": 3,
+        "victory": 1
+      }
+    },
+    {
+      "seed": 11,
+      "policies": [
+        "missile",
+        "fortress",
+        "electronic",
+        "breach"
+      ],
+      "winner": 0,
+      "reason": "last_survivor",
+      "seconds": 166.0,
+      "hq_hp": [
+        11,
+        0,
+        0,
+        0
+      ],
+      "eliminated_ticks": [
+        null,
+        312,
+        332,
+        332
+      ],
+      "events": {
+        "signal": 8,
+        "build": 2,
+        "deploy": 60,
+        "missile_launch": 7,
+        "jam_launch": 19,
+        "jam_cloud": 19,
+        "target": 18,
+        "node_flip": 10,
+        "lock_lost": 4,
+        "missile_impact": 7,
+        "entity_destroyed": 75,
+        "wall_destroyed": 9,
+        "overload": 24,
+        "repair": 6,
+        "eliminated": 3,
+        "victory": 1
+      }
+    },
+    {
+      "seed": 12,
+      "policies": [
+        "electronic",
+        "breach",
+        "missile",
+        "fortress"
+      ],
+      "winner": 2,
+      "reason": "last_survivor",
+      "seconds": 166.0,
+      "hq_hp": [
+        0,
+        0,
+        11,
+        0
+      ],
+      "eliminated_ticks": [
+        332,
+        332,
+        null,
+        312
+      ],
+      "events": {
+        "build": 2,
+        "deploy": 60,
+        "signal": 8,
+        "jam_launch": 19,
+        "missile_launch": 7,
+        "jam_cloud": 19,
+        "target": 18,
+        "node_flip": 10,
+        "lock_lost": 4,
+        "missile_impact": 7,
+        "entity_destroyed": 75,
+        "wall_destroyed": 9,
+        "overload": 24,
+        "repair": 6,
+        "eliminated": 3,
+        "victory": 1
+      }
+    },
+    {
+      "seed": 13,
+      "policies": [
+        "electronic",
+        "breach",
+        "fortress",
+        "missile"
+      ],
+      "winner": 3,
+      "reason": "last_survivor",
+      "seconds": 170.0,
+      "hq_hp": [
+        0,
+        0,
+        0,
+        38
+      ],
+      "eliminated_ticks": [
+        340,
+        316,
+        332,
+        null
+      ],
+      "events": {
+        "build": 2,
+        "deploy": 68,
+        "signal": 6,
+        "jam_launch": 13,
+        "target": 35,
+        "jam_cloud": 13,
+        "node_flip": 7,
+        "entity_destroyed": 82,
+        "missile_launch": 5,
+        "wall_destroyed": 4,
+        "missile_impact": 5,
+        "lock_lost": 1,
+        "overload": 26,
+        "repair": 9,
+        "eliminated": 3,
+        "victory": 1
+      }
+    },
+    {
+      "seed": 14,
+      "policies": [
+        "electronic",
+        "missile",
+        "breach",
+        "fortress"
+      ],
+      "winner": -1,
+      "reason": "mutual_destruction",
+      "seconds": 172.0,
+      "hq_hp": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "eliminated_ticks": [
+        340,
+        344,
+        320,
+        344
+      ],
+      "events": {
+        "build": 2,
+        "signal": 9,
+        "deploy": 57,
+        "jam_launch": 17,
+        "missile_launch": 8,
+        "jam_cloud": 17,
+        "target": 18,
+        "node_flip": 7,
+        "lock_lost": 6,
+        "missile_impact": 8,
+        "entity_destroyed": 74,
+        "wall_destroyed": 5,
+        "overload": 27,
+        "repair": 11,
+        "eliminated": 4,
+        "victory": 1
+      }
+    },
+    {
+      "seed": 15,
+      "policies": [
+        "electronic",
+        "missile",
+        "fortress",
+        "breach"
+      ],
+      "winner": 1,
+      "reason": "last_survivor",
+      "seconds": 170.0,
+      "hq_hp": [
+        0,
+        38,
+        0,
+        0
+      ],
+      "eliminated_ticks": [
+        340,
+        null,
+        292,
+        340
+      ],
+      "events": {
+        "build": 2,
+        "signal": 10,
+        "deploy": 60,
+        "jam_launch": 15,
+        "missile_launch": 8,
+        "jam_cloud": 15,
+        "target": 15,
+        "node_flip": 6,
+        "lock_lost": 3,
+        "missile_impact": 8,
+        "entity_destroyed": 76,
+        "wall_destroyed": 4,
+        "overload": 26,
+        "repair": 9,
+        "eliminated": 3,
+        "victory": 1
+      }
+    },
+    {
+      "seed": 16,
+      "policies": [
+        "electronic",
+        "fortress",
+        "breach",
+        "missile"
+      ],
+      "winner": 3,
+      "reason": "last_survivor",
+      "seconds": 170.0,
+      "hq_hp": [
+        0,
+        0,
+        0,
+        38
+      ],
+      "eliminated_ticks": [
+        332,
+        320,
+        340,
+        null
+      ],
+      "events": {
+        "build": 2,
+        "deploy": 69,
+        "signal": 5,
+        "jam_launch": 15,
+        "target": 21,
+        "jam_cloud": 15,
+        "node_flip": 8,
+        "entity_destroyed": 85,
+        "missile_launch": 4,
+        "lock_lost": 2,
+        "missile_impact": 4,
+        "wall_destroyed": 4,
+        "overload": 26,
+        "repair": 8,
+        "eliminated": 3,
+        "victory": 1
+      }
+    },
+    {
+      "seed": 17,
+      "policies": [
+        "electronic",
+        "fortress",
+        "missile",
+        "breach"
+      ],
+      "winner": 1,
+      "reason": "last_survivor",
+      "seconds": 164.0,
+      "hq_hp": [
+        0,
+        17,
+        0,
+        0
+      ],
+      "eliminated_ticks": [
+        312,
+        null,
+        135,
+        328
+      ],
+      "events": {
+        "build": 2,
+        "signal": 4,
+        "deploy": 57,
+        "jam_launch": 15,
+        "missile_launch": 4,
+        "jam_cloud": 15,
+        "target": 31,
+        "node_flip": 8,
+        "lock_lost": 3,
+        "missile_impact": 4,
+        "entity_destroyed": 73,
+        "wall_destroyed": 12,
+        "repair": 6,
+        "eliminated": 3,
+        "overload": 23,
+        "victory": 1
+      }
+    },
+    {
+      "seed": 18,
+      "policies": [
+        "fortress",
+        "breach",
+        "missile",
+        "electronic"
+      ],
+      "winner": 2,
+      "reason": "last_survivor",
+      "seconds": 170.0,
+      "hq_hp": [
+        0,
+        0,
+        38,
+        0
+      ],
+      "eliminated_ticks": [
+        320,
+        340,
+        null,
+        332
+      ],
+      "events": {
+        "build": 2,
+        "deploy": 69,
+        "signal": 5,
+        "target": 21,
+        "jam_launch": 15,
+        "jam_cloud": 15,
+        "node_flip": 8,
+        "entity_destroyed": 85,
+        "missile_launch": 4,
+        "lock_lost": 2,
+        "missile_impact": 4,
+        "wall_destroyed": 4,
+        "overload": 26,
+        "repair": 8,
+        "eliminated": 3,
+        "victory": 1
+      }
+    },
+    {
+      "seed": 19,
+      "policies": [
+        "fortress",
+        "breach",
+        "electronic",
+        "missile"
+      ],
+      "winner": 3,
+      "reason": "last_survivor",
+      "seconds": 170.0,
+      "hq_hp": [
+        0,
+        0,
+        0,
+        38
+      ],
+      "eliminated_ticks": [
+        292,
+        340,
+        340,
+        null
+      ],
+      "events": {
+        "build": 2,
+        "deploy": 60,
+        "signal": 10,
+        "jam_launch": 15,
+        "missile_launch": 8,
+        "jam_cloud": 15,
+        "target": 15,
+        "node_flip": 6,
+        "lock_lost": 3,
+        "missile_impact": 8,
+        "entity_destroyed": 76,
+        "wall_destroyed": 4,
+        "overload": 26,
+        "repair": 9,
+        "eliminated": 3,
+        "victory": 1
+      }
+    },
+    {
+      "seed": 20,
+      "policies": [
+        "fortress",
+        "missile",
+        "breach",
+        "electronic"
+      ],
+      "winner": 0,
+      "reason": "last_survivor",
+      "seconds": 164.0,
+      "hq_hp": [
+        17,
+        0,
+        0,
+        0
+      ],
+      "eliminated_ticks": [
+        null,
+        135,
+        328,
+        312
+      ],
+      "events": {
+        "build": 2,
+        "signal": 4,
+        "deploy": 57,
+        "missile_launch": 4,
+        "jam_launch": 15,
+        "jam_cloud": 15,
+        "target": 31,
+        "node_flip": 8,
+        "lock_lost": 3,
+        "missile_impact": 4,
+        "entity_destroyed": 73,
+        "wall_destroyed": 12,
+        "repair": 6,
+        "eliminated": 3,
+        "overload": 23,
+        "victory": 1
+      }
+    },
+    {
+      "seed": 21,
+      "policies": [
+        "fortress",
+        "missile",
+        "electronic",
+        "breach"
+      ],
+      "winner": 1,
+      "reason": "last_survivor",
+      "seconds": 170.0,
+      "hq_hp": [
+        0,
+        38,
+        0,
+        0
+      ],
+      "eliminated_ticks": [
+        332,
+        null,
+        340,
+        316
+      ],
+      "events": {
+        "build": 2,
+        "signal": 6,
+        "deploy": 68,
+        "target": 35,
+        "jam_launch": 13,
+        "jam_cloud": 13,
+        "node_flip": 7,
+        "entity_destroyed": 82,
+        "missile_launch": 5,
+        "wall_destroyed": 4,
+        "missile_impact": 5,
+        "lock_lost": 1,
+        "overload": 26,
+        "repair": 9,
+        "eliminated": 3,
+        "victory": 1
+      }
+    },
+    {
+      "seed": 22,
+      "policies": [
+        "fortress",
+        "electronic",
+        "breach",
+        "missile"
+      ],
+      "winner": 3,
+      "reason": "last_survivor",
+      "seconds": 166.0,
+      "hq_hp": [
+        0,
+        0,
+        0,
+        11
+      ],
+      "eliminated_ticks": [
+        312,
+        332,
+        332,
+        null
+      ],
+      "events": {
+        "build": 2,
+        "deploy": 60,
+        "signal": 8,
+        "jam_launch": 19,
+        "missile_launch": 7,
+        "jam_cloud": 19,
+        "target": 18,
+        "node_flip": 10,
+        "lock_lost": 4,
+        "missile_impact": 7,
+        "entity_destroyed": 75,
+        "wall_destroyed": 9,
+        "overload": 24,
+        "repair": 6,
+        "eliminated": 3,
+        "victory": 1
+      }
+    },
+    {
+      "seed": 23,
+      "policies": [
+        "fortress",
+        "electronic",
+        "missile",
+        "breach"
+      ],
+      "winner": -1,
+      "reason": "mutual_destruction",
+      "seconds": 172.0,
+      "hq_hp": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "eliminated_ticks": [
+        344,
+        340,
+        344,
+        320
+      ],
+      "events": {
+        "build": 2,
+        "signal": 9,
+        "deploy": 57,
+        "jam_launch": 17,
+        "missile_launch": 8,
+        "jam_cloud": 17,
+        "target": 18,
+        "node_flip": 7,
+        "lock_lost": 6,
+        "missile_impact": 8,
+        "entity_destroyed": 74,
+        "wall_destroyed": 5,
+        "overload": 27,
+        "repair": 11,
+        "eliminated": 4,
+        "victory": 1
+      }
+    }
+  ]
+}

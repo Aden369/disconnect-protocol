@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>算力领土 · THUAI10 算法竞技场</title>
+        <link rel="stylesheet" href="/web/style.css" />
+    </head>
+    <body>
+        <header class="masthead">
+            <a class="brand" href="/"
+                ><span class="brand-mark">◈</span
+                ><span
+                    >算力领土<small>THUAI10 · ALGORITHM ARENA</small></span
+                ></a
+            >
+            <div class="match-badge">
+                <span class="live-dot"></span> 双算法自动对战
+            </div>
+            <span class="edition">未来公司的领土战争 <b>DEMO / 02</b></span>
+        </header>
+        <main>
+            <section class="arena">
+                <div class="match-header">
+                    <div class="team blue">
+                        <span class="team-emblem">A</span>
+                        <div>
+                            <small>蓝方算法</small
+                            ><strong id="name-0">抢点扩张</strong
+                            ><span id="strategy-0"
+                                >机器狗争夺节点，机器人进攻</span
+                            >
+                        </div>
+                    </div>
+                    <div class="round-clock">
+                        <small id="round">ROUND 01 / 06</small
+                        ><strong id="clock">00:00</strong
+                        ><span id="phase">建设阶段</span>
+                    </div>
+                    <div class="team red">
+                        <div>
+                            <small>红方算法</small
+                            ><strong id="name-1">科技攻城</strong
+                            ><span id="strategy-1"
+                                >升级科技，攻城车突破基地</span
+                            >
+                        </div>
+                        <span class="team-emblem">B</span>
+                    </div>
+                </div>
+                <div id="viewport">
+                    <canvas id="board" aria-label="3D 算力领土战场"></canvas>
+                    <div class="scene-caption">
+                        <span>战场直播</span
+                        ><small>拖动旋转 · 滚轮缩放 · 点击单位追踪</small>
+                    </div>
+                    <div id="labels"></div>
+                    <div id="scene-error" hidden></div>
+                    <div class="node-status">
+                        <span id="node-0">北节点 · 中立</span
+                        ><span id="node-1">南节点 · 中立</span>
+                    </div>
+                </div>
+                <div class="playback">
+                    <button id="pause" class="primary">暂停</button
+                    ><button id="step">单步 0.5s</button
+                    ><button id="restart">重新对战</button>
+                    <div class="speed-group">
+                        <button data-speed="1">1×</button
+                        ><button class="active" data-speed="2">2×</button
+                        ><button data-speed="4">4×</button>
+                    </div>
+                    <label
+                        ><input
+                            id="show-labels"
+                            type="checkbox"
+                            checked
+                        />行为标签</label
+                    ><button id="camera">复位视角</button
+                    ><button id="replay">导出回放</button>
+                </div>
+                <div class="progress-track"><div id="progress"></div></div>
+                <div class="lesson">
+                    <span>玩法解说</span>
+                    <p id="lesson">
+                        两套算法同时决定建设与出兵。摧毁敌方总部即胜；六轮结束按总部生命和节点控制时间计分。
+                    </p>
+                </div>
+                <div class="legend">
+                    <span
+                        ><i class="dog-icon"></i
+                        ><b>机器狗</b> 快速抢点并驻守</span
+                    ><span
+                        ><i class="robot-icon"></i
+                        ><b>机器人</b> 交战、推进总部</span
+                    ><span
+                        ><i class="siege-icon"></i
+                        ><b>攻城车</b> 优先拆除建筑</span
+                    ><span
+                        ><i class="node-icon"></i
+                        ><b>算力节点</b> 控制越久，得分越高</span
+                    >
+                </div>
+            </section>
+            <aside>
+                <section class="panel matchup">
+                    <h2><span>01</span> 对战阵容</h2>
+                    <label
+                        >蓝方策略<select id="bot-left">
+                            <option value="node_grabber">抢点扩张</option>
+                            <option value="robot_push">机器人推进</option>
+                            <option value="tech_siege">科技攻城</option>
+                            <option value="turtle">基地防守</option>
+                        </select></label
+                    ><label
+                        >红方策略<select id="bot-right">
+                            <option value="tech_siege">科技攻城</option>
+                            <option value="robot_push">机器人推进</option>
+                            <option value="node_grabber">抢点扩张</option>
+                            <option value="turtle">基地防守</option>
+                        </select></label
+                    >
+                    <div class="seed-line">
+                        <label
+                            >对局种子<input
+                                id="seed"
+                                type="number"
+                                value="10"
+                                min="0" /></label
+                        ><button id="apply">开始新对战</button>
+                    </div>
+                    <p class="subtle">
+                        你是观众。双方算法自主建设、布局、维修和进攻。
+                    </p>
+                </section>
+                <section class="panel">
+                    <h2><span>02</span> 公司状态</h2>
+                    <div id="companies"></div>
+                    <div id="result" hidden></div>
+                </section>
+                <section class="panel decisions">
+                    <h2><span>03</span> 算法正在决定什么</h2>
+                    <div id="decisions">
+                        <p class="subtle">等待第一步决策…</p>
+                    </div>
+                </section>
+                <section class="panel units">
+                    <h2>
+                        <span>04</span> 战场单位
+                        <small id="unit-count">0</small>
+                    </h2>
+                    <div id="unit-list"></div>
+                    <div id="selected-info" class="subtle">
+                        点击场上的单位：查看当前目标、行为和生命值。
+                    </div>
+                </section>
+                <section class="panel events">
+                    <h2><span>05</span> 战况记录</h2>
+                    <ol id="events"></ol>
+                </section>
+            </aside>
+        </main>
+        <footer>
+            THUAI10 策划原型 <span>规则 v0.2 · 3D 观战演示 · 数值仍在验证</span>
+        </footer>
+        <script type="module" src="/web/app.js"></script>
+    </body>
+</html>

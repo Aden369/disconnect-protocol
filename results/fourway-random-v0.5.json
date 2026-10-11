@@ -1,0 +1,554 @@
+{
+  "rules_version": "game-rules-v0.5",
+  "mode": "random",
+  "summary": {
+    "games": 12,
+    "completed": 12,
+    "champions_by_policy": {
+      "random": 6
+    },
+    "draws": 6,
+    "average_seconds": 165.83333333333334,
+    "max_seconds": 166.0,
+    "events": {
+      "jam_launch": 609,
+      "deploy": 206,
+      "target": 1792,
+      "jam_cloud": 609,
+      "signal": 552,
+      "tech": 31,
+      "node_flip": 129,
+      "wall_repair": 110,
+      "entity_destroyed": 446,
+      "wall_destroyed": 136,
+      "missile_launch": 14,
+      "lock_lost": 9,
+      "missile_impact": 14,
+      "overload": 287,
+      "repair": 49,
+      "eliminated": 42,
+      "victory": 12,
+      "build": 20
+    },
+    "wall_seconds": 25.90408139998908
+  },
+  "games": [
+    {
+      "seed": 0,
+      "policies": [
+        "random",
+        "random",
+        "random",
+        "random"
+      ],
+      "winner": -1,
+      "reason": "mutual_destruction",
+      "seconds": 166.0,
+      "hq_hp": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "eliminated_ticks": [
+        332,
+        328,
+        332,
+        332
+      ],
+      "events": {
+        "jam_launch": 55,
+        "deploy": 18,
+        "target": 146,
+        "jam_cloud": 55,
+        "signal": 56,
+        "tech": 4,
+        "node_flip": 7,
+        "wall_repair": 6,
+        "entity_destroyed": 37,
+        "wall_destroyed": 8,
+        "missile_launch": 1,
+        "lock_lost": 1,
+        "missile_impact": 1,
+        "overload": 24,
+        "repair": 3,
+        "eliminated": 4,
+        "victory": 1
+      }
+    },
+    {
+      "seed": 1,
+      "policies": [
+        "random",
+        "random",
+        "random",
+        "random"
+      ],
+      "winner": -1,
+      "reason": "mutual_destruction",
+      "seconds": 166.0,
+      "hq_hp": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "eliminated_ticks": [
+        332,
+        332,
+        332,
+        332
+      ],
+      "events": {
+        "deploy": 12,
+        "signal": 46,
+        "jam_launch": 53,
+        "jam_cloud": 53,
+        "tech": 4,
+        "node_flip": 7,
+        "build": 2,
+        "wall_repair": 9,
+        "entity_destroyed": 29,
+        "target": 151,
+        "wall_destroyed": 9,
+        "missile_launch": 1,
+        "missile_impact": 1,
+        "overload": 24,
+        "repair": 5,
+        "eliminated": 4,
+        "victory": 1
+      }
+    },
+    {
+      "seed": 2,
+      "policies": [
+        "random",
+        "random",
+        "random",
+        "random"
+      ],
+      "winner": -1,
+      "reason": "mutual_destruction",
+      "seconds": 166.0,
+      "hq_hp": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "eliminated_ticks": [
+        332,
+        332,
+        332,
+        328
+      ],
+      "events": {
+        "deploy": 18,
+        "jam_launch": 51,
+        "jam_cloud": 51,
+        "tech": 3,
+        "signal": 39,
+        "missile_launch": 2,
+        "node_flip": 9,
+        "missile_impact": 2,
+        "wall_destroyed": 9,
+        "target": 150,
+        "entity_destroyed": 37,
+        "wall_repair": 9,
+        "lock_lost": 1,
+        "repair": 5,
+        "overload": 24,
+        "eliminated": 4,
+        "victory": 1
+      }
+    },
+    {
+      "seed": 3,
+      "policies": [
+        "random",
+        "random",
+        "random",
+        "random"
+      ],
+      "winner": 3,
+      "reason": "last_survivor",
+      "seconds": 166.0,
+      "hq_hp": [
+        0,
+        0,
+        0,
+        116
+      ],
+      "eliminated_ticks": [
+        328,
+        332,
+        332,
+        null
+      ],
+      "events": {
+        "jam_launch": 45,
+        "signal": 45,
+        "deploy": 17,
+        "jam_cloud": 45,
+        "target": 152,
+        "build": 3,
+        "tech": 2,
+        "node_flip": 10,
+        "missile_launch": 1,
+        "wall_destroyed": 16,
+        "entity_destroyed": 37,
+        "missile_impact": 1,
+        "wall_repair": 10,
+        "overload": 24,
+        "repair": 5,
+        "eliminated": 3,
+        "victory": 1
+      }
+    },
+    {
+      "seed": 4,
+      "policies": [
+        "random",
+        "random",
+        "random",
+        "random"
+      ],
+      "winner": 0,
+      "reason": "last_survivor",
+      "seconds": 164.0,
+      "hq_hp": [
+        92,
+        0,
+        0,
+        0
+      ],
+      "eliminated_ticks": [
+        null,
+        328,
+        328,
+        328
+      ],
+      "events": {
+        "target": 156,
+        "signal": 48,
+        "jam_launch": 50,
+        "jam_cloud": 50,
+        "deploy": 18,
+        "build": 1,
+        "node_flip": 8,
+        "tech": 2,
+        "entity_destroyed": 36,
+        "wall_repair": 8,
+        "wall_destroyed": 9,
+        "missile_launch": 2,
+        "lock_lost": 2,
+        "missile_impact": 2,
+        "repair": 5,
+        "overload": 23,
+        "eliminated": 3,
+        "victory": 1
+      }
+    },
+    {
+      "seed": 5,
+      "policies": [
+        "random",
+        "random",
+        "random",
+        "random"
+      ],
+      "winner": 2,
+      "reason": "last_survivor",
+      "seconds": 166.0,
+      "hq_hp": [
+        0,
+        0,
+        32,
+        0
+      ],
+      "eliminated_ticks": [
+        332,
+        328,
+        null,
+        328
+      ],
+      "events": {
+        "jam_launch": 50,
+        "signal": 41,
+        "build": 2,
+        "jam_cloud": 50,
+        "target": 148,
+        "deploy": 18,
+        "node_flip": 12,
+        "wall_repair": 10,
+        "tech": 2,
+        "entity_destroyed": 36,
+        "missile_launch": 1,
+        "wall_destroyed": 10,
+        "lock_lost": 1,
+        "missile_impact": 1,
+        "repair": 5,
+        "overload": 24,
+        "eliminated": 3,
+        "victory": 1
+      }
+    },
+    {
+      "seed": 6,
+      "policies": [
+        "random",
+        "random",
+        "random",
+        "random"
+      ],
+      "winner": 0,
+      "reason": "last_survivor",
+      "seconds": 166.0,
+      "hq_hp": [
+        56,
+        0,
+        0,
+        0
+      ],
+      "eliminated_ticks": [
+        null,
+        328,
+        332,
+        332
+      ],
+      "events": {
+        "target": 145,
+        "tech": 3,
+        "signal": 45,
+        "build": 2,
+        "jam_launch": 54,
+        "jam_cloud": 54,
+        "node_flip": 10,
+        "entity_destroyed": 34,
+        "deploy": 15,
+        "wall_destroyed": 4,
+        "wall_repair": 6,
+        "missile_launch": 3,
+        "missile_impact": 3,
+        "overload": 24,
+        "repair": 4,
+        "lock_lost": 2,
+        "eliminated": 3,
+        "victory": 1
+      }
+    },
+    {
+      "seed": 7,
+      "policies": [
+        "random",
+        "random",
+        "random",
+        "random"
+      ],
+      "winner": -1,
+      "reason": "mutual_destruction",
+      "seconds": 166.0,
+      "hq_hp": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "eliminated_ticks": [
+        328,
+        332,
+        332,
+        332
+      ],
+      "events": {
+        "build": 1,
+        "jam_launch": 50,
+        "deploy": 19,
+        "jam_cloud": 50,
+        "target": 146,
+        "signal": 50,
+        "node_flip": 9,
+        "tech": 2,
+        "entity_destroyed": 38,
+        "wall_destroyed": 18,
+        "missile_launch": 1,
+        "missile_impact": 1,
+        "wall_repair": 12,
+        "overload": 24,
+        "repair": 3,
+        "eliminated": 4,
+        "victory": 1
+      }
+    },
+    {
+      "seed": 8,
+      "policies": [
+        "random",
+        "random",
+        "random",
+        "random"
+      ],
+      "winner": -1,
+      "reason": "mutual_destruction",
+      "seconds": 166.0,
+      "hq_hp": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "eliminated_ticks": [
+        328,
+        328,
+        332,
+        332
+      ],
+      "events": {
+        "jam_launch": 54,
+        "deploy": 18,
+        "signal": 51,
+        "jam_cloud": 54,
+        "tech": 3,
+        "build": 3,
+        "target": 147,
+        "node_flip": 14,
+        "entity_destroyed": 39,
+        "wall_destroyed": 11,
+        "wall_repair": 4,
+        "missile_launch": 1,
+        "lock_lost": 1,
+        "missile_impact": 1,
+        "overload": 24,
+        "repair": 2,
+        "eliminated": 4,
+        "victory": 1
+      }
+    },
+    {
+      "seed": 9,
+      "policies": [
+        "random",
+        "random",
+        "random",
+        "random"
+      ],
+      "winner": 1,
+      "reason": "last_survivor",
+      "seconds": 166.0,
+      "hq_hp": [
+        0,
+        8,
+        0,
+        0
+      ],
+      "eliminated_ticks": [
+        332,
+        null,
+        332,
+        332
+      ],
+      "events": {
+        "jam_launch": 50,
+        "signal": 44,
+        "target": 149,
+        "deploy": 19,
+        "jam_cloud": 50,
+        "build": 1,
+        "tech": 3,
+        "node_flip": 15,
+        "entity_destroyed": 40,
+        "wall_destroyed": 17,
+        "wall_repair": 10,
+        "overload": 24,
+        "repair": 5,
+        "eliminated": 3,
+        "victory": 1
+      }
+    },
+    {
+      "seed": 10,
+      "policies": [
+        "random",
+        "random",
+        "random",
+        "random"
+      ],
+      "winner": -1,
+      "reason": "mutual_destruction",
+      "seconds": 166.0,
+      "hq_hp": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "eliminated_ticks": [
+        332,
+        328,
+        332,
+        332
+      ],
+      "events": {
+        "jam_launch": 49,
+        "signal": 49,
+        "jam_cloud": 49,
+        "deploy": 16,
+        "tech": 2,
+        "build": 2,
+        "node_flip": 17,
+        "wall_repair": 14,
+        "target": 141,
+        "entity_destroyed": 41,
+        "wall_destroyed": 11,
+        "overload": 24,
+        "repair": 3,
+        "missile_launch": 1,
+        "lock_lost": 1,
+        "missile_impact": 1,
+        "eliminated": 4,
+        "victory": 1
+      }
+    },
+    {
+      "seed": 11,
+      "policies": [
+        "random",
+        "random",
+        "random",
+        "random"
+      ],
+      "winner": 2,
+      "reason": "last_survivor",
+      "seconds": 166.0,
+      "hq_hp": [
+        0,
+        0,
+        56,
+        0
+      ],
+      "eliminated_ticks": [
+        332,
+        332,
+        null,
+        328
+      ],
+      "events": {
+        "signal": 38,
+        "jam_launch": 48,
+        "jam_cloud": 48,
+        "target": 161,
+        "build": 3,
+        "deploy": 18,
+        "node_flip": 11,
+        "entity_destroyed": 42,
+        "tech": 1,
+        "wall_destroyed": 14,
+        "wall_repair": 12,
+        "overload": 24,
+        "repair": 4,
+        "eliminated": 3,
+        "victory": 1
+      }
+    }
+  ]
+}

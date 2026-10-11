@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>THUAI10 · 断链协议 · 四方竞技场</title>
+        <link rel="stylesheet" href="/web/four-style.css" />
+    </head>
+    <body>
+        <header>
+            <div class="brand">
+                <span class="mark">⌘</span>
+                <div>
+                    <strong>断链协议</strong
+                    ><small>THUAI10 / DISCONNECT PROTOCOL</small>
+                </div>
+            </div>
+            <div class="header-status"><i></i> FOUR AI · FREE FOR ALL</div>
+            <span class="version">NETWORK WARFARE <b>RULESET 0.5</b></span>
+        </header>
+        <main>
+            <section class="arena">
+                <div class="arena-heading">
+                    <div>
+                        <span class="eyebrow">LIVE SIMULATION</span>
+                        <h1>四家公司，一片战场。</h1>
+                        <p>破墙 · 建链 · 信号制导 · 电子压制</p>
+                    </div>
+                    <div class="clock">
+                        <span id="phase">常规作战</span
+                        ><strong id="clock">00:00.0</strong
+                        ><small
+                            >MAX 03:00 /
+                            <span id="alive-count">4</span> 核心存活</small
+                        >
+                    </div>
+                </div>
+                <div id="factions" class="factions"></div>
+                <div id="viewport">
+                    <canvas id="board" aria-label="四方科技战场"></canvas>
+                    <div class="map-note">
+                        <b>指挥链路 / REALTIME</b
+                        ><small>拖动旋转 · 滚轮缩放 · 点击追踪</small>
+                    </div>
+                    <div id="labels"></div>
+                    <div id="scene-error" hidden></div>
+                    <div id="node-status" class="node-status"></div>
+                </div>
+                <div class="playback">
+                    <button id="pause" class="primary">暂停</button
+                    ><button id="step">单步 0.5s</button
+                    ><button id="restart">重开对局</button>
+                    <div class="speeds">
+                        <button data-speed="1">1×</button
+                        ><button class="active" data-speed="2">2×</button
+                        ><button data-speed="4">4×</button>
+                    </div>
+                    <label
+                        ><input
+                            id="show-labels"
+                            type="checkbox"
+                            checked
+                        />选中标注</label
+                    ><label
+                        ><input
+                            id="show-links"
+                            type="checkbox"
+                            checked
+                        />链路</label
+                    ><button id="camera">复位视角</button
+                    ><button id="replay">回放</button>
+                </div>
+                <div class="progress-track"><div id="progress"></div></div>
+                <div class="lesson">
+                    <span>战术说明</span>
+                    <p id="lesson">
+                        最后存活者获胜。能量和中继帮助作战，从不用于判胜。
+                    </p>
+                </div>
+                <div class="defense-guide">
+                    <b>29×29 战场 / 9×9 基地 / 墙内 7×7</b>
+                    <p>
+                        磁轨炮：常规拦截 · 迫击炮：越墙打击地面集群 ·
+                        防空塔：只打无人机 ·
+                        干扰阵列：屏蔽附近通信。点击建筑查看生命和实际攻击目标。
+                    </p>
+                </div>
+                <div class="unit-guide" aria-label="兵种分工">
+                    <article>
+                        <b>01 / 机器狗 · 抢点</b>
+                        <p>
+                            四足轻步兵，成对生产。默认抢占并驻守中继；近战、不能防空。
+                        </p>
+                        <small>40能量 / 2只 · 65HP · 射程1</small>
+                    </article>
+                    <article>
+                        <b>02 / 战斗机甲 · 护卫</b>
+                        <p>
+                            双足持枪，优先打敌军，保护破城机；可射击越墙无人机。
+                        </p>
+                        <small>70能量 / 2台 · 110HP · 射程2</small>
+                    </article>
+                    <article>
+                        <b>03 / 破城机 · 拆墙</b>
+                        <p>
+                            履带长炮，优先拆墙和建筑。单发建筑伤害38，移动慢，不能防空。
+                        </p>
+                        <small>50能量 / 1台 · 170HP · 射程3</small>
+                    </article>
+                    <article>
+                        <b>04 / 链路无人机 · 通信</b>
+                        <p>
+                            越墙接力，默认跟随地面部队。无武器、不占点；机甲/炮塔可防空，EMP使链路失效。
+                        </p>
+                        <small>45能量 / 1架 · 45HP · 每方最多2架</small>
+                    </article>
+                </div>
+                <div class="legend">
+                    <span>◈ 信号弹 → 导弹锁定</span
+                    ><span>◎ EMP → 断链与失锁</span
+                    ><span>▰ 城墙 → 阻路，可摧毁</span
+                    ><span>◇ 无人机 → 无武装通信支援（上限 2）</span>
+                </div>
+            </section>
+            <aside>
+                <section class="panel">
+                    <h2><span>01 /</span> 算法阵容</h2>
+                    <div class="policy-grid">
+                        <label
+                            >苍蓝矩阵<select id="policy-0">
+                                <option value="breach">破墙突击</option>
+                                <option value="missile">信标制导</option>
+                                <option value="electronic">电子战压制</option>
+                                <option value="fortress">堡垒反击</option>
+                            </select></label
+                        ><label
+                            >赤焰军团<select id="policy-1">
+                                <option value="missile">信标制导</option>
+                                <option value="breach">破墙突击</option>
+                                <option value="electronic">电子战压制</option>
+                                <option value="fortress">堡垒反击</option>
+                            </select></label
+                        ><label
+                            >紫域干扰<select id="policy-2">
+                                <option value="electronic">电子战压制</option>
+                                <option value="breach">破墙突击</option>
+                                <option value="missile">信标制导</option>
+                                <option value="fortress">堡垒反击</option>
+                            </select></label
+                        ><label
+                            >翡翠堡垒<select id="policy-3">
+                                <option value="fortress">堡垒反击</option>
+                                <option value="breach">破墙突击</option>
+                                <option value="missile">信标制导</option>
+                                <option value="electronic">电子战压制</option>
+                            </select></label
+                        >
+                    </div>
+                    <div class="seed-row">
+                        <label
+                            >SEED<input
+                                id="seed"
+                                type="number"
+                                value="10" /></label
+                        ><button id="apply">启动四方对战</button>
+                    </div>
+                    <p class="subtle">
+                        四个算法同时决策。淘汰不能复活，不靠经济积分判胜。
+                    </p>
+                </section>
+                <section class="panel">
+                    <h2><span>02 /</span> 四方实时决策</h2>
+                    <div id="decisions"></div>
+                </section>
+                <section class="panel">
+                    <h2><span>03 /</span> 技能与链路状态</h2>
+                    <div id="systems"></div>
+                    <div id="result" hidden></div>
+                </section>
+                <section class="panel">
+                    <h2>
+                        <span>04 /</span> 战场追踪
+                        <small id="unit-count">0</small>
+                    </h2>
+                    <div id="unit-list"></div>
+                    <p id="selected-info" class="subtle">
+                        点击单位或城墙，查看目标、链路及生命。
+                    </p>
+                </section>
+                <section class="panel">
+                    <h2><span>05 /</span> 战况记录</h2>
+                    <ol id="events"></ol>
+                </section>
+            </aside>
+        </main>
+        <footer>
+            <span>THUAI10 · 策划原型 / 四方新框架</span
+            ><span
+                >资源是工具，生存才是结局。
+                <a href="/web/index.html">双人历史版本</a></span
+            >
+        </footer>
+        <script type="module" src="/web/four-app.js"></script>
+    </body>
+</html>

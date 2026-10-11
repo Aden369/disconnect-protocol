@@ -1,0 +1,797 @@
+{
+  "schema_version": "thuai10-fourway-replay-v0.4",
+  "rules_version": "game-rules-v0.4",
+  "config": {
+    "version": "balance-v0.4",
+    "rules_version": "game-rules-v0.4",
+    "schema_version": "thuai10-fourway-replay-v0.4",
+    "obs_schema_version": "thuai10-fourway-obs-v0.3",
+    "map": {
+      "size": 21,
+      "hq_local": [
+        2,
+        2
+      ],
+      "deploy_local": [
+        [
+          5,
+          2
+        ],
+        [
+          2,
+          5
+        ]
+      ],
+      "nodes": [
+        [
+          7,
+          7
+        ],
+        [
+          13,
+          7
+        ],
+        [
+          13,
+          13
+        ],
+        [
+          7,
+          13
+        ]
+      ],
+      "regions": [
+        2,
+        10,
+        18
+      ]
+    },
+    "time": {
+      "tick_seconds": 0.5,
+      "decision_ticks": 4,
+      "max_ticks": 360,
+      "overload_tick": 240,
+      "overload_initial": 12,
+      "overload_increment": 6,
+      "overload_period": 20
+    },
+    "economy": {
+      "initial": 140,
+      "income": 6,
+      "relay_income": 2,
+      "cap": 300
+    },
+    "limits": {
+      "units": 12,
+      "cannons": 2,
+      "jammers": 1,
+      "repairs": 5,
+      "drones": 2
+    },
+    "units": {
+      "dog": {
+        "hp": 65,
+        "damage": 9,
+        "building_damage": 9,
+        "range": 1,
+        "attack_ticks": 2,
+        "move_ticks": 1,
+        "batch": 2,
+        "cost": 40,
+        "air": false,
+        "anti_air": false
+      },
+      "robot": {
+        "hp": 110,
+        "damage": 15,
+        "building_damage": 15,
+        "range": 2,
+        "attack_ticks": 2,
+        "move_ticks": 1,
+        "batch": 2,
+        "cost": 70,
+        "air": false,
+        "anti_air": true
+      },
+      "siege": {
+        "hp": 170,
+        "damage": 7,
+        "building_damage": 38,
+        "range": 3,
+        "attack_ticks": 3,
+        "move_ticks": 2,
+        "batch": 1,
+        "cost": 50,
+        "air": false,
+        "anti_air": false
+      },
+      "drone": {
+        "hp": 45,
+        "damage": 0,
+        "building_damage": 0,
+        "range": 0,
+        "attack_ticks": 2,
+        "move_ticks": 1,
+        "batch": 1,
+        "cost": 45,
+        "air": true,
+        "armed": false,
+        "capture": false
+      }
+    },
+    "buildings": {
+      "hq": {
+        "hp": 500
+      },
+      "cannon": {
+        "hp": 180,
+        "damage": 18,
+        "range": 6,
+        "attack_ticks": 2,
+        "cost": 55
+      },
+      "jammer": {
+        "hp": 140,
+        "radius": 4,
+        "cost": 45
+      },
+      "wall": {
+        "hp": 100
+      }
+    },
+    "support": {
+      "wall_cost": 25,
+      "wall_repair": 35,
+      "repair_cost": 30,
+      "repair_hp": 60,
+      "repair_cooldown": 16,
+      "tech_cost": 50,
+      "tech_unit_damage": 3,
+      "tech_cannon_damage": 4
+    },
+    "network": {
+      "hq_link": 12,
+      "relay_link": 8,
+      "hq_coverage": 7,
+      "relay_coverage": 6,
+      "drone_coverage": 4
+    },
+    "nodes": {
+      "range": 1,
+      "capture_ticks": 4
+    },
+    "signal": {
+      "cost": 8,
+      "duration": 24,
+      "cooldown": 8
+    },
+    "missile": {
+      "cost": 45,
+      "flight": 8,
+      "cooldown": 24,
+      "radius": 1,
+      "damage": 75,
+      "lost_damage": 15
+    },
+    "jam": {
+      "cost": 25,
+      "flight": 2,
+      "duration": 20,
+      "cooldown": 20,
+      "radius": 4
+    }
+  },
+  "seed": 0,
+  "actions": [
+    [
+      3,
+      22,
+      6,
+      5
+    ],
+    [
+      3,
+      13,
+      38,
+      2
+    ],
+    [
+      13,
+      10,
+      11,
+      12
+    ],
+    [
+      3,
+      14,
+      2,
+      0
+    ],
+    [
+      0,
+      23,
+      0,
+      1
+    ],
+    [
+      32,
+      4,
+      0,
+      0
+    ],
+    [
+      0,
+      14,
+      34,
+      0
+    ],
+    [
+      0,
+      12,
+      0,
+      0
+    ],
+    [
+      0,
+      4,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      13,
+      34,
+      1
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      4,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      34,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      10,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      4,
+      14,
+      0,
+      0
+    ],
+    [
+      0,
+      23,
+      34,
+      1
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      11,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      34,
+      0
+    ],
+    [
+      13,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      4,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      1
+    ],
+    [
+      1,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      14,
+      0,
+      1
+    ],
+    [
+      0,
+      23,
+      34,
+      0
+    ],
+    [
+      32,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      13,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      34,
+      1
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      4
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      34,
+      0
+    ],
+    [
+      0,
+      4,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      22
+    ],
+    [
+      0,
+      0,
+      0,
+      7
+    ],
+    [
+      1,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      22
+    ],
+    [
+      0,
+      20,
+      0,
+      7
+    ],
+    [
+      0,
+      29,
+      0,
+      9
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      34,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      3
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      34,
+      0
+    ],
+    [
+      0,
+      0,
+      13,
+      1
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      4,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      38,
+      1
+    ],
+    [
+      0,
+      10,
+      0,
+      0
+    ],
+    [
+      1,
+      14,
+      0,
+      0
+    ],
+    [
+      0,
+      23,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      1
+    ],
+    [
+      8,
+      0,
+      38,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      8
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      8,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      8,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      8
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      8,
+      0,
+      38,
+      3
+    ],
+    [
+      0,
+      8,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      8
+    ],
+    [
+      0,
+      13,
+      0,
+      11
+    ],
+    [
+      0,
+      8,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ]
+  ],
+  "checks": [
+    "f2fd806fde452b98e48b7619984d67951d7a51707791f86a6e6d0b36116d1908",
+    "7d5abc4bc44c5778c660ca6756aaa8652bc76f959759a6cc425b82fc59563fab",
+    "46a7ebafe1a3390afc3d289a0d44c5d62d7a9eb210376198f37501e75068a296",
+    "094e74977dde6419f340ecd8bac73c0c3c472c3b999487fb54a91f5b43ec5207",
+    "f03365ad2957ba2b03a61e066b9c26940f62cae20d863bf82032f742a2df68cf",
+    "29ab36941962753c842fa95aa3a2101ed1e6ad4752b5dbcbc676b10c10b31f0c",
+    "9af15bed7f642baea5b1f8bae632e498cdd70e5a9fe5c16c6300c16488b648eb",
+    "3fab7ec9479e4298b9e4e83538053b834ebf13a34ca92172dbc74cd7399c7234",
+    "568723acf4f1e7d2f3975f80589ee092b8f0c8effa8a8604646c046b57ee0265",
+    "5a94ab37b8b8fbfee2917e1ad072fdf8599528d49c8a62b7019f2aa55e608659",
+    "9c582bb594920bf47a5843383ac57e05eb302a5878005c9123bc5bf1af34981e",
+    "a0636330925cf0878c24beebab48fb4df3c8ed418b447185961102b2f170b048",
+    "788a9e508d70ffcb8d79a0e0d2af7690d85534ab5eca535b4b357695724f2a71",
+    "c3033304d44c415abaa34705e383dbce402e045b6c71339fde5e00fce65d3d9a",
+    "b075b364f2d2407b31a876596975a2424586beb02397424ca2079c2f5feda2a3",
+    "0ba0353421f1410a68ff551e4457eb7d3bda83c721ee35da9315b0bbbd9b81f7",
+    "4d7f7e2ab78c1f83e9c10ac11eb04a51beb2ebe9778b74577ebec2a08700f3aa",
+    "c3f615bea14ded512282bbab8133fecd0b22b0904fb4f7160dc5b61b03615282",
+    "d9c10f4553ae8e1d49c17a8048abc7f728da0db73f27fb1461935139070a3ebc",
+    "10cf4ae353f5ffcd37fe9da598fc972b14f642f7ad8e80548c4fc3e6c8f97aa0",
+    "fb86412ba7a6a8c7e1b3025777ff1baa134e70b69fa2dd8346e8b7af9ef985c8",
+    "388e0f4b7c22c83ba135b8a62b12af87b0dd1f0527d0cab53760e15aad5b274f",
+    "3839f3c82aafbac52100061255db1a6959658e3f654863eab6424862389ded47",
+    "41378575e820479d243fae98ab135e4cfb3f3db8e8e0e6ef871884807e6fc47b",
+    "d99badbe97ac73bc8e006550362b2b0547e866f5bb6d3ad6e693f7391a703e83",
+    "94b62be78a09920cb8dd425d4d74a5f7b2a7968eba379443ce4bf3948dd35809",
+    "761560340193c9c20e5b7feb0a383d5e28146aec2397ece1176f451bf9ad80cc",
+    "43cac5831e0225b0ff571e3c052eec6bb7ebd52b65a515f8ef251d8aacb8cab0",
+    "85718ace4896a593e8e06ed9a76acb553cefb4537905f5f07436d98d16e371ce",
+    "668c3cf0680d1c84c72fa7d7505296c4f645de00350e3e5ba22938187217b4ae",
+    "7e6923c0265bd4b8e5d89d8313c8581624f214c594d6548c4ffc739841e44d14",
+    "cfb22e0ced175babb117cf0a6185cdf546d8570073b6367a6c3b6c06732271ff",
+    "56b3559a0acc84fbaacb55a7307de1c35af66d2141fa33fbd842fa80785da557",
+    "10b764b651c234d4092089a876adfd6c914ae5f538b87d7ad6162cc694648ac2",
+    "0b823873626692bd6c2395a197df8e262e8e1debe729e07c5b24e9d650f22bf4",
+    "900050d1b5214710f0ad7ceefd785c039195c5ad7f95d2e6e7fba6d1e57813e5",
+    "9058a557992f90b06c0ea4111103cb42e54f7a092eddbc430c4a790a7354aea0",
+    "2866b56532d3d87933d8c86dbe7de398c660776db9d7bce352289e925e1e6839",
+    "efda51a0afa7eacd51ef6107521b36ae480b583166c2425e2df05f449a7ca5ad",
+    "87b916399d4534796ce1fee3bace9f606bfaa1bf2eafbe49efb509c05ed41f91",
+    "a1585e81833076a40e0e1a1eefe1b85338d0d11682f98232cc80bb5595fa4dbe",
+    "3a56333421605f7a24c4ef1d2e3d34ac30f01824b7be891a584c19528f25e704",
+    "40b3c63c7fe9f828d1a2baa0048623c98ffee980e23becdd6ed770f77cf571ee",
+    "53fc1da740255536a3ddd6db6e32d59cd75aa399466edf81a34c7f85315423c9",
+    "ef11cf6c473eec0b47e947321ae17ec12c4a1876c98514d4ad07b8dd907071bd",
+    "38721d8aec85a6d7c0670b4ddeafa953b9ecbf526f65d7c8bde8b3e033812f75",
+    "ba45ffe8935c77115c2cfd34002d84f60eaae3425202dd3f293f3512ebb1c7a8",
+    "740d383d22eed7309060adaa738bcddd88245b4c904b33043e04255208356a59",
+    "de563c243bfaffccc618987cb816fcdf649935a2d14e1bd8946cdc05d2e529b5",
+    "4a94b8b903f7f8d79390ed58c1d4c7eb7628848691f3b4cb65d9f192f2def1bc",
+    "fe33ab4a9f79809b2ef36a69292696254baf24124fd50effebf77b0326264877",
+    "707c8180a17bf86a257d3cec3e1cbdee094be9dc9ce7cb98cfe117ba4ce07e26",
+    "a93dd48b9d6863689da09de8b3cef7541eb578e309667e564ef2810231661f40",
+    "78ebe462b1cf1661d92e836950b4a4de3b6a670b76e3bb8044258f9ffadd472b",
+    "e652162cbe6d33b5d6d3435e66a5d6c125f3edbec5fb277f787f9062ad93e086",
+    "5ce5c623b6fe73e1ccc0bc221edd9fa6a795e28285700a53e84dea583cdb5664",
+    "25e8aa016642b5b7c7b69d341d6ae8cabdb7d4a9b4fdb3f088eedd2c3fc14afe",
+    "56c7df4feba510708eb3c650e82d4d344c99cf02dd18e07eba45c3efda18fd52",
+    "53c5424c5ce7f5d9ee25057574a866af2ef2c2a48dbe20e76dd7791c11a9f806",
+    "1ab0ec6c378d59367a1656a5cbdefa612b9ff78040afde10aeaa55b6eec3f16a",
+    "668b60f98cf939c154439e76deb95402d10973ddb359df018ce01871971a591c",
+    "a2aa8f453b8b2e120a4ac069d9a688982f6eebdffee41fe090cd9952acdbfb6b",
+    "6cbca7bbe6da687d2337e2994a5e917c64a7579fbfe3c667b0ae100d468dc419",
+    "d720338a52df8c1866ee0b81c76cf1257c797795989a53f924c9fc60e603b444",
+    "01b0b17430b283c2c84e6b59589cca058e55c7fe2ae6b435a1b6751c3b9240ba",
+    "ea1e7b00626024098bd2c3311703c3cd1b5191813927c4f52490890081efd54d",
+    "9c51dd6209808831addaed19b67d086cd029852f58c547353594da402f4b7e36",
+    "21396f9fbaa4e9471a1a38a9f3ac6540e50c39d0ea8c59a718af14a3ba1459c1",
+    "9970d96c8572a50a92ef72d5d9538f4f6bd91b7bf182b0df77346500db272c5d",
+    "6df3e0c3fa14e61c551b5f02e263a32806a27c7fb816e435d202fd6f79b45df5",
+    "2f5ea3d84021e88fa5175e117ffee4599401a7296a8c9dd384b1366636ba052d",
+    "222c36590c060000887fb9c1df40daaa01f5e99b3f84deddf7ccab91cba681d1",
+    "2b695839f697ed0db83200259fa2456b396675a2640db3a3ed15d1989ca7b436",
+    "1de0b0efa1aec4e34d9bb887222cbb6008e782d30fe67971b121a68fba849ae0",
+    "8250c78b91961392295a0b99a3f7c0cf9b403253af8df7438befb11f80858da6",
+    "1ff46f37794dedc6412f79116ad9797af1a3ba3b7d5f560224d86313f8ee1cf4",
+    "ba50a4f54ef1806638a241b691d229c4855e9cf069c0a29ec3348b4aa0ba5310",
+    "c70ec0d1478cde7c4a7ffd644e861249bfcf4d507d959668c9058b033611d338",
+    "829ebdf7fd7d8cb267ca1d11a75d3bbb6eedbf2713ece8fdecb31a142f80c9fa",
+    "a75fed38362c0cff33a4b96f32d3a14040b14022514ac5f6a1e4020bb040241b",
+    "9c52496e8149b8eb2f53516c78ef766f39d95cdd274db3be826d9093ae579f6f",
+    "522ec62dee996fd3dc0272c138f35bab9b360d3f71050aece3fe7b218787f9aa",
+    "b994f033ccbea3361b1ef74831751013c498fa7a78ed7f716b1c5bdd5d11cf68",
+    "35b2dec1d81e4b3c5600609704cbcd9f53457b7b01e8236dd5551e197a7339a6",
+    "f3a800c1e1923c2787e555e2fdd3089f78538dec8854240a0bc254aeec9f53ce"
+  ],
+  "final": {
+    "winner": 1,
+    "reason": "last_survivor",
+    "tick": 340
+  },
+  "meta": {
+    "policies": [
+      "breach",
+      "missile",
+      "electronic",
+      "fortress"
+    ]
+  }
+}
