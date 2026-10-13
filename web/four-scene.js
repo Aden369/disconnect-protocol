@@ -146,15 +146,35 @@ export class FourScene {
                 ),
                 this.camera,
             );
+            const point = new THREE.Vector3();
+            const ground = raycaster.ray.intersectPlane(
+                new THREE.Plane(new THREE.Vector3(0, 1, 0), 0),
+                point,
+            );
+            const size = this.map?.size || 29;
+            const cell = ground
+                ? [
+                      Math.max(
+                          0,
+                          Math.min(size - 1, Math.round(point.x + mapCenter)),
+                      ),
+                      Math.max(
+                          0,
+                          Math.min(size - 1, Math.round(point.z + mapCenter)),
+                      ),
+                  ]
+                : null;
             const hit = raycaster.intersectObjects(
                 [...this.entities.values()].map((e) => e.group),
                 true,
             )[0];
+            let uid;
             if (hit) {
                 let m = hit.object;
                 while (m && m.userData.uid === undefined) m = m.parent;
-                if (m) this.onSelect(m.userData.uid);
+                if (m) uid = m.userData.uid;
             }
+            this.onSelect(uid, cell);
         });
         this.resizeObserver = new ResizeObserver(() => this.resize());
         this.resizeObserver.observe(canvas.parentElement);

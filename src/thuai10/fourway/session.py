@@ -12,20 +12,24 @@ class FourSession:
     bots: list
 
     def step(self, overrides=None):
-        actions = (
-            [self.bots[i].act(self.game, i) for i in range(4)]
-            if overrides is None
-            else [overrides.get(side, 0) for side in SIDES]
-        )
+        overrides = overrides or {}
+        actions = []
+        controlled = []
+        for i, side in enumerate(SIDES):
+            is_controlled = side in overrides
+            controlled.append(is_controlled)
+            actions.append(
+                overrides[side] if is_controlled else self.bots[i].act(self.game, i)
+            )
         decisions = [
             {
                 "player": i,
-                "bot": self.names[i],
+                "bot": "human" if controlled[i] else self.names[i],
                 "action": action,
                 "tick": self.game.tick,
-                "reason": getattr(self.bots[i], "last_reason", "")
-                if overrides is None
-                else "",
+                "reason": "玩家指令"
+                if controlled[i]
+                else getattr(self.bots[i], "last_reason", ""),
             }
             for i, action in enumerate(actions)
         ]

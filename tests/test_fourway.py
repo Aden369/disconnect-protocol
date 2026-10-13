@@ -221,6 +221,26 @@ def test_each_four_policy_called_once_with_same_old_tick():
     assert all(b.ticks == [0] for b in session.bots)
 
 
+def test_partial_override_controls_one_side_and_keeps_other_bots_running():
+    class Counting:
+        def __init__(self):
+            self.ticks = []
+            self.last_reason = "AI decision"
+
+        def act(self, game, player):
+            self.ticks.append(game.tick)
+            return 0
+
+    _, session = create()
+    session.bots = [Counting() for _ in range(4)]
+    out = session.step({"p1": 0})
+    assert session.bots[1].ticks == []
+    assert all(session.bots[i].ticks == [0] for i in (0, 2, 3))
+    assert out["decisions"][1]["bot"] == "human"
+    assert out["decisions"][1]["reason"] == "玩家指令"
+    assert all(out["decisions"][i]["bot"] != "human" for i in (0, 2, 3))
+
+
 def test_electronic_policy_interdicts_a_rivals_guided_missile():
     from thuai10.fourway.policies import Policy
 

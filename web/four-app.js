@@ -11,6 +11,7 @@ const POLICY_NAMES = {
     missile: "信标制导",
     electronic: "电子战压制",
     fortress: "堡垒反击",
+    human: "玩家接管",
 };
 const REGION_NAMES = [
     "西北基地",
@@ -47,12 +48,24 @@ const app = {
     terminal: null,
     time: 0,
     policies: [],
+    humanSide: -1,
+    masks: null,
+    skillMasks: null,
+    awaitingCommand: false,
+    targeting: null,
 };
 let scene;
 try {
-    scene = new FourScene($("board"), $("labels"), (uid) => {
-        app.selected = uid;
-        updateUnits();
+    scene = new FourScene($("board"), $("labels"), (uid, cell) => {
+        if (app.targeting && cell) {
+            const action = app.targeting === "signal" ? 14 : 32;
+            sendHumanAction({ action, target: cell });
+            return;
+        }
+        if (uid !== undefined) {
+            app.selected = uid;
+            updateUnits();
+        }
     });
 } catch (e) {
     $("scene-error").hidden = false;
@@ -70,10 +83,12 @@ async function api(path, body) {
 }
 async function newGame() {
     const gen = ++app.generation;
+    const humanSide = Number($("human-side").value);
     app.busy = true;
     app.paused = true;
     app.queue = [];
     app.terminal = null;
+    app.targeting = null;
     try {
         const policies = Array.from(
             { length: 4 },
@@ -96,13 +111,20 @@ async function newGame() {
             selected: null,
             time: 0,
             policies,
+            humanSide,
+            masks: data.masks,
+            skillMasks: data.skill_masks,
+            awaitingCommand: humanSide >= 0,
         });
         scene?.configureMap(data.config.map);
+        if (humanSide >= 0)
+            $("attack-target").value = String((humanSide + 1) % 4);
         $("events").replaceChildren();
         $("result").hidden = true;
+        $("commander-panel").hidden = humanSide < 0;
         $("decisions").innerHTML =
-            '<p class="subtle">四个算法基于同一战场状态同时决策。</p>';
-        app.paused = false;
+            `<p class="subtle">${humanSide < 0 ? "四个算法基于同一战场状态同时决策。" : "玩家接管 " + TEAM_NAMES[humanSide] + "，其他三方由算法同时决策。"}</p>`;
+        app.paused = humanSide >= 0;
         updateUI();
     } catch (e) {
         log("连接失败：" + e.message, 0);
@@ -113,28 +135,38 @@ async function newGame() {
         }
     }
 }
-async function requestStep() {
+async function requestStep(action) {
     if (app.busy || !app.id || app.terminal || app.queue.length) return;
+    if (app.humanSide >= 0 && action === undefined) return;
     const gen = app.generation,
         id = app.id;
     app.busy = true;
     try {
-        const out = await api(`/api/games/${id}/step`, {});
+        const body =
+            app.humanSide >= 0
+                ? { actions: { ["p" + app.humanSide]: action } }
+                : {};
+        const out = await api(`/api/games/${id}/step`, body);
         if (gen !== app.generation) return;
         app.queue = out.frames;
         app.cursor = 0;
         app.fraction = 0;
         app.events.push(...out.events);
         app.terminal = out.done ? out.state : null;
+        app.masks = out.masks;
+        app.skillMasks = out.skill_masks;
         $("decisions").innerHTML = out.decisions
             .map(
                 (d) =>
                     `<div class="order" style="--team:${hex(d.player)}"><b>${TEAM_NAMES[d.player]}</b><small>${POLICY_NAMES[d.bot]} / ${(d.tick * 0.5).toFixed(1)}s</small><p>${describe(d.action)}</p>${d.reason ? "<small>" + d.reason + "</small>" : ""}</div>`,
             )
             .join("");
+        if (out.illegal.some((item) => item.player === app.humanSide))
+            log("指令当前不可执行，已按等待处理", app.frame.tick);
     } catch (e) {
         if (gen === app.generation) {
             app.paused = true;
+            if (app.humanSide >= 0) app.awaitingCommand = true;
             log("推进失败：" + e.message, app.frame?.tick || 0);
         }
     } finally {
@@ -156,15 +188,101 @@ function advance() {
         app.cursor = 0;
         app.fraction = 0;
         app.previous = app.frame;
+        if (app.humanSide >= 0 && !app.terminal) {
+            if (app.frame.players[app.humanSide]?.alive) {
+                app.awaitingCommand = true;
+                app.paused = true;
+            } else {
+                log(
+                    `${TEAM_NAMES[app.humanSide]}已淘汰，自动切回全 AI 观战`,
+                    app.frame.tick,
+                );
+                app.humanSide = -1;
+                app.awaitingCommand = false;
+                app.paused = false;
+            }
+        }
     }
     updateUI();
     if (app.terminal && !app.queue.length) showResult();
 }
 function controls() {
     const finished = !!(app.terminal && !app.queue.length);
-    $("pause").textContent = finished ? "已结束" : app.paused ? "继续" : "暂停";
-    $("pause").disabled = finished;
-    $("step").disabled = app.busy || finished;
+    $("pause").textContent = finished
+        ? "已结束"
+        : app.awaitingCommand
+          ? "等待指令"
+          : app.paused
+            ? "继续"
+            : "暂停";
+    $("pause").disabled = finished || app.awaitingCommand;
+    $("step").disabled = app.busy || finished || app.awaitingCommand;
+    updateCommander();
+}
+function updateCommander() {
+    const panel = $("commander-panel");
+    if (!panel) return;
+    panel.hidden = app.humanSide < 0;
+    if (app.humanSide < 0 || !app.frame) return;
+    const key = "p" + app.humanSide,
+        player = app.frame.players[app.humanSide],
+        ready = app.awaitingCommand && !app.busy && player?.alive,
+        mask = app.masks?.[key] || [],
+        skills = app.skillMasks?.[key] || {},
+        signal = app.frame.signals.find(
+            (item) => item.player === app.humanSide && item.active,
+        );
+    $("command-status").textContent = !player?.alive
+        ? "公司核心已被摧毁，无法继续下令。"
+        : app.busy
+          ? "正在上传本回合指令……"
+          : app.targeting
+            ? `正在选择${app.targeting === "signal" ? "信号" : "EMP"}落点，请点击战场格。`
+            : app.awaitingCommand
+              ? `${TEAM_NAMES[app.humanSide]}等待指令 · ${player.resources} 能量`
+              : "本回合正在结算，结束后可继续下令。";
+    document.querySelectorAll("[data-command]").forEach((button) => {
+        const action = Number(button.dataset.command);
+        button.disabled = !ready || !mask[action];
+    });
+    const target = Number($("attack-target").value),
+        targetAction = 10 + target;
+    Array.from($("attack-target").options).forEach((option) => {
+        option.disabled = !mask[10 + Number(option.value)];
+    });
+    $("set-target").disabled = !ready || !mask[targetAction];
+    document.querySelectorAll("[data-skill]").forEach((button) => {
+        const kind = button.dataset.skill;
+        button.disabled =
+            !ready || !skills[kind] || (kind === "missile" && !signal);
+        button.classList.toggle("targeting", app.targeting === kind);
+    });
+    $("targeting-status").textContent = app.targeting
+        ? `点选 29×29 战场上的任意格来投放${app.targeting === "signal" ? "信号" : "EMP"}；再次点击该按钮可取消。`
+        : signal
+          ? `己方有效信标位于 (${signal.center.join(", ")})；导弹将自动锁定该点。`
+          : "信号与 EMP：点击按钮，再点击战场格；导弹自动锁定己方信标。";
+}
+async function sendHumanAction(action) {
+    if (app.humanSide < 0 || !app.awaitingCommand || app.busy || app.terminal)
+        return;
+    app.awaitingCommand = false;
+    app.targeting = null;
+    app.paused = false;
+    controls();
+    await requestStep(action);
+}
+function chooseSkill(kind) {
+    if (!app.awaitingCommand || app.busy) return;
+    if (kind === "missile") {
+        const signal = app.frame.signals.find(
+            (item) => item.player === app.humanSide && item.active,
+        );
+        if (signal) sendHumanAction({ action: 23, target: [...signal.center] });
+        return;
+    }
+    app.targeting = app.targeting === kind ? null : kind;
+    updateCommander();
 }
 function updateUI() {
     const f = app.frame;
@@ -183,7 +301,7 @@ function updateUI() {
     $("factions").innerHTML = f.players
         .map(
             (p) =>
-                `<div class="faction ${p.alive ? "" : "dead"}" style="--team:${hex(p.index)}"><b>${TEAM_NAMES[p.index]}</b><small>${p.alive ? POLICY_NAMES[app.policies[p.index]] : "已淘汰 " + (p.eliminated_tick * 0.5).toFixed(1) + "s"}</small><div class="health"><i style="width:${(p.hq.hp / p.hq.max_hp) * 100}%"></i></div><div class="metrics">核心 ${p.hq.hp} HP · ${p.unit_count} 部队 · 能量 ${p.resources}</div></div>`,
+                `<div class="faction ${p.alive ? "" : "dead"}" style="--team:${hex(p.index)}"><b>${TEAM_NAMES[p.index]}</b><small>${p.alive ? (p.index === app.humanSide ? POLICY_NAMES.human : POLICY_NAMES[app.policies[p.index]]) : "已淘汰 " + (p.eliminated_tick * 0.5).toFixed(1) + "s"}</small><div class="health"><i style="width:${(p.hq.hp / p.hq.max_hp) * 100}%"></i></div><div class="metrics">核心 ${p.hq.hp} HP · ${p.unit_count} 部队 · 能量 ${p.resources}</div></div>`,
         )
         .join("");
     $("node-status").innerHTML = f.nodes
@@ -375,6 +493,21 @@ $("step").onclick = async () => {
 $("restart").onclick = newGame;
 $("apply").onclick = newGame;
 $("camera").onclick = () => scene?.resetCamera();
+document
+    .querySelectorAll("[data-command]")
+    .forEach(
+        (button) =>
+            (button.onclick = () =>
+                sendHumanAction(Number(button.dataset.command))),
+    );
+$("set-target").onclick = () =>
+    sendHumanAction(10 + Number($("attack-target").value));
+$("attack-target").onchange = updateCommander;
+document
+    .querySelectorAll("[data-skill]")
+    .forEach(
+        (button) => (button.onclick = () => chooseSkill(button.dataset.skill)),
+    );
 document.querySelectorAll("[data-speed]").forEach(
     (b) =>
         (b.onclick = () => {

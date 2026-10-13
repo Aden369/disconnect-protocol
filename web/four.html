@@ -164,22 +164,67 @@
                                 value="10" /></label
                         ><button id="apply">启动四方对战</button>
                     </div>
+                    <label class="control-side"
+                        >控制方式<select id="human-side">
+                            <option value="-1">全 AI 观战</option>
+                            <option value="0">接管苍蓝矩阵</option>
+                            <option value="1">接管赤焰军团</option>
+                            <option value="2">接管紫域干扰</option>
+                            <option value="3">接管翡翠堡垒</option>
+                        </select></label
+                    >
                     <p class="subtle">
-                        四个算法同时决策。淘汰不能复活，不靠经济积分判胜。
+                        可接管一方，每 2 秒下达一次指令；其他阵营仍由算法控制。
+                    </p>
+                </section>
+                <section id="commander-panel" class="panel" hidden>
+                    <h2><span>02 /</span> 玩家指挥终端</h2>
+                    <p id="command-status" class="command-status">
+                        等待本回合指令。
+                    </p>
+                    <div class="command-grid">
+                        <button data-command="0">等待</button>
+                        <button data-command="1">机器狗 · 40</button>
+                        <button data-command="2">战斗机甲 · 70</button>
+                        <button data-command="3">破城机 · 50</button>
+                        <button data-command="4">链路无人机 · 45</button>
+                        <button data-command="5">磁轨炮 · 55</button>
+                        <button data-command="6">干扰阵列 · 45</button>
+                        <button data-command="7">加固城墙 · 25</button>
+                        <button data-command="8">维修核心 · 30</button>
+                        <button data-command="9">科技升级 · 50</button>
+                    </div>
+                    <div class="target-row">
+                        <select id="attack-target" aria-label="进攻目标">
+                            <option value="0">苍蓝矩阵</option>
+                            <option value="1">赤焰军团</option>
+                            <option value="2">紫域干扰</option>
+                            <option value="3">翡翠堡垒</option>
+                        </select>
+                        <button id="set-target">切换进攻对象</button>
+                    </div>
+                    <div class="skill-grid">
+                        <button data-skill="signal">地图点选信号 · 8</button>
+                        <button data-skill="missile">锁定信标导弹 · 45</button>
+                        <button data-skill="jam">地图点选 EMP · 25</button>
+                    </div>
+                    <p id="targeting-status" class="subtle">
+                        信号与
+                        EMP：点击按钮，再点击战场格；导弹自动锁定己方信标。
                     </p>
                 </section>
                 <section class="panel">
-                    <h2><span>02 /</span> 四方实时决策</h2>
+                    <h2><span>03 /</span> 四方实时决策</h2>
                     <div id="decisions"></div>
                 </section>
                 <section class="panel">
-                    <h2><span>03 /</span> 技能与链路状态</h2>
+                    <h2><span>04 /</span> 技能与链路状态</h2>
                     <div id="systems"></div>
                     <div id="result" hidden></div>
                 </section>
                 <section class="panel">
                     <h2>
-                        <span>04 /</span> 战场追踪
+                        <span>05 /</span> 战场追踪
                         <small id="unit-count">0</small>
                     </h2>
                     <div id="unit-list"></div>
@@ -188,7 +233,7 @@
                     </p>
                 </section>
                 <section class="panel">
-                    <h2><span>05 /</span> 战况记录</h2>
+                    <h2><span>06 /</span> 战况记录</h2>
                     <ol id="events"></ol>
                 </section>
             </aside>
